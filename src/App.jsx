@@ -61,14 +61,14 @@ function App() {
         <div className="menu">
           <img
             className="iconSize"
-            src="../../public/img/headerIcon/menu.png"
+            src="./img/headerIcon/menu.png"
             alt="Menu"
             onMouseEnter={handleMenuHover}
           />
           {showMenu && <MenuDrop hideDropMenu={handleMouseLeave} />}
           <img
             className="iconSize"
-            src="../../public/img/headerIcon/search.png"
+            src="./img/headerIcon/search.png"
             alt="Search"
             onMouseEnter={handleSearchHover}
           />
@@ -79,7 +79,7 @@ function App() {
           <a href="tel:380999999999">
             <img
               className="iconSize"
-              src="../../public/img/headerIcon/contact2.png"
+              src="./img/headerIcon/contact2.png"
               alt="Menu"
             />
           </a>
@@ -88,7 +88,7 @@ function App() {
           <div className="">
             <img
               className="iconSize"
-              src="../../public/img/headerIcon/cart.png"
+              src="./img/headerIcon/cart.png"
               alt="Cart"
               onClick={handleClick}
             />
@@ -104,7 +104,7 @@ function App() {
             <video
               width={"100%"}
               height={"800px"}
-              src={"../../public/video/intro.mp4"}
+              src={"./video/intro.mp4"}
               type="video/mp4"
               autoPlay
               loop
@@ -118,7 +118,7 @@ function App() {
             />
             <div className="mainText">
               <div className="logo">
-                <img src="../../public/img/logo/logo.png" alt="Logo" />
+                <img src="./img/logo/logo.png" alt="Logo" />
               </div>
               <h1>Look to the future, become more beautiful... </h1>
               <span></span>
@@ -136,7 +136,7 @@ function App() {
       {/* footer */}
       <footer>
         <div className="footerLeft">
-          <img src="../../public/img/logo/logo.png" alt="Logo" />
+          <img src="./public/img/logo/logo.png" alt="Logo" />
           <div className="footerText">
             <a href="tel:+380936918998">+38 (093) 691-89-98</a> <br />
             <a href="mailto:3sTnE@example.com">yourEmail@example.com</a>
