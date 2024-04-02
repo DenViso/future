@@ -21,31 +21,31 @@ export const SimpleSlider = () => {
           <div className="slider-container">
             <Slider {...settings}>
               <div>
-                <img src="./img/sliderPic/1.1.jpg" alt="" />
+                <img className='slideImg' src="./img/sliderPic/1.1.jpg" alt="" />
               </div>
               <div>
-              <img src="./img/sliderPic/1.2.jpg" alt="" />
+              <img className='slideImg' src="./img/sliderPic/1.2.jpg" alt="" />
               </div>
               <div>
-              <img src="./img/sliderPic/1.jpg" alt="" />
+              <img className='slideImg' src="./img/sliderPic/1.jpg" alt="" />
               </div>
               <div>
-              <img src="./img/sliderPic/2.jpg" alt="" />
+              <img className='slideImg' src="./img/sliderPic/2.jpg" alt="" />
               </div>
               <div>
               <video src="./img/sliderPic/3.mp4" autoPlay loop muted fullscreen='true' style={{width:"100vw"}} ></video>
               </div>
               <div>
-                <img src="./img/sliderPic/1.1.jpg" alt="" />
+                <img className='slideImg' src="./img/sliderPic/1.1.jpg" alt="" />
               </div>
               <div>
-              <img src="./img/sliderPic/1.2.jpg" alt="" />
+              <img className='slideImg' src="./img/sliderPic/1.2.jpg" alt="" />
               </div>
               <div>
-              <img src="./img/sliderPic/1.jpg" alt="" />
+              <img className='slideImg' src="./img/sliderPic/1.jpg" alt="" />
               </div>
               <div>
-              <img src="./img/sliderPic/2.jpg" alt="" />
+              <img className='slideImg' src="./img/sliderPic/2.jpg" alt="" />
               </div>
             </Slider>
           </div>
