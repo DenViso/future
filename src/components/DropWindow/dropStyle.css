@@ -16,20 +16,35 @@
   display: block;
 }
 .menuDropList{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
+ 
 }
-.menuDropPart>p{
-  color: white;
+.menuDropPart>a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 300px;
+  padding:1rem 3rem;
+  border-radius: 10px;
+  border: 3px solid rgb(5, 5, 5);
+}
+.menuDropPart>a>p{
+  color: rgb(2, 2, 2);
   font-family: "Cormorant SC", serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 28px;
   cursor: pointer;
   text-align: center;
+}
+.menuDropPart>a>img{
+  width: 40px;
 }
 .menuDropPart>p:hover{
   text-decoration: underline;
@@ -60,6 +75,10 @@
   z-index: 90;
  animation: dropIn 0.7s;   
  
+}
+.search>button>img{
+  width: 20px;
+  height: 20px;
 }
 .search{
   display: flex;
@@ -129,5 +148,6 @@ border: solid 3px rgb(3, 3, 3);
   }
   .search>button>img{
     width: 50px;
+    height: 50px;
   }
 }

@@ -330,7 +330,7 @@ footer {
 }
 /* media  */
 
-@media  (max-width: 700px), (max-width: 1500px) {
+@media  (max-width: 580px) {
 /* body{
     width: 100vw;
   } */
