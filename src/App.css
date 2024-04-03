@@ -63,8 +63,8 @@
 
 /* main */
 
-section {
-  width: 100%;
+.section {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,10 +85,12 @@ main {
   display: contents;
   align-items: center;
 }
-.video {
+.mainVideo > video {
   width: 100vw;
   max-height: 800px;
   overflow: hidden;
+  object-fit: cover;
+  
 }
 .mainText {
   position: absolute;
@@ -232,15 +234,26 @@ main {
 .sectionPart:hover {
   box-shadow: 1px 1px 10px 1px rgb(247, 245, 245);
 }
+.sectionPart>a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
 
-.sectionPart > h2 {
+}
+
+.sectionPart >a> h2 {
   color: rgb(0, 0, 0);
   font-family: "Cormorant SC", serif;
   font-weight: 800;
   font-size: 26px;
 }
 
-.sectionPart > img {
+.sectionPart >a> img {
+ 
   width: 70%;
   height: 70%;
   border-radius: 5px;
@@ -317,7 +330,7 @@ footer {
 }
 /* media  */
 
-@media  (max-width: 700px), (max-width: 1280px) {
+@media  (max-width: 700px), (max-width: 1500px) {
 /* body{
     width: 100vw;
   } */
@@ -331,6 +344,12 @@ footer {
     position: relative;
     display: flex;
     align-items: center;
+    overflow: hidden;
+
+  }
+  .video {
+    width: 100%;
+    max-height: 800px;
     overflow: hidden;
 
   }
@@ -359,7 +378,15 @@ footer {
 /* main */
 
 /* section  */
-
+.sectionList{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  
+}
 .sectionPart{
   width: 95%;
   display: flex;
@@ -369,11 +396,22 @@ footer {
   gap: 1.5rem;
 
 }
-.sectionPart > h2{
+.sectionPart>a{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.sectionPart > a > h2{
   
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   place-self: center;
+}
+.sectionPart> a >img{
+  width: 80%;
 }
 
 /* footer */

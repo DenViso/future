@@ -1,29 +1,35 @@
 import React, { useState } from "react";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./App.css";
-import { SimpleSlider } from "./components/SimpleSlider/SimpleSlider";
-import { Section } from "./components/Section/Section";
+import { MainePage } from "./components/MainPage/MainePage";
 import { MenuDrop } from "./components/DropWindow/MenuDrop";
 import { SearchDrop } from "./components/DropWindow/SearchDrop";
 import { Cart } from "./components/Cart/Cart";
-// import {Cart } from "./components/Cart/Cart";
-function App() {
+import {   Routes, Route, } from "react-router-dom";
+import { Ring } from "./components/Section/Ring";
+import { Diamond } from "./components/Section/Diamond";
+import { Services } from "./components/Section/Services";
+import { Care } from "./components/Section/Care";
+import { Reviwes } from "./components/Section/Reviwes";
+import { About } from "./components/Section/About";
+
+ const  App = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  
 
   const handleClick = () => {
     setShowCart(true);
   };
   const handleMenuHover = () => {
     setShowMenu(true);
-    setShowSearch(false); // При наведенні на меню приховати пошук
+    setShowSearch(false);
   };
 
   const handleSearchHover = () => {
     setShowSearch(true);
-    setShowMenu(false); // При наведенні на пошук приховати меню
+    setShowMenu(false);
   };
 
   const handleMouseLeave = () => {
@@ -31,33 +37,11 @@ function App() {
     setShowSearch(false);
   };
 
-  // const showDropMenu = () => {
-  //   const menuDrop = document.querySelector(".menuDrop");
-  //   menuDrop.classList.add("drop-active");
-  // }
-  // const hideDropMenu = () => {
-  //   const menuDrop = document.querySelector(".menuDrop");
-  //   menuDrop.classList.remove("drop-active");
-  // }
-  // const showDropSearch = () => {
-  //   const dropSearch = document.querySelector(".searchDrop");
-  //   dropSearch.classList.add("search-active");
-  // }
-  // const hidenSearchDrop = () => {
-  //   const searchDrop = document.querySelector(".searchDrop");
-  //   searchDrop.classList.remove("search-active");
-  // }
-
   return (
     <div className="wrapper">
       {/* header */}
+
       <header className="header">
-        {/* <div className="menu">
-          <img className='iconSize' src="../../public/img/headerIcon/menu.png" alt="Menu" onMouseEnter={showDropMenu || hidenSearchDrop} />
-          <MenuDrop hideDropMenu={hideDropMenu}/>
-          <img className='iconSize' src="../../public/img/headerIcon/search.png" alt="Search" onMouseEnter={MenuDrop || !SearchDrop ? hideDropMenu : showDropSearch}/>
-          <SearchDrop hidenSearchDrop={hidenSearchDrop}/>
-        </div> */}
         <div className="menu">
           <img
             className="iconSize"
@@ -83,8 +67,6 @@ function App() {
               alt="Menu"
             />
           </a>
-
-          {/* <a href={<Cart/>}> */}
           <div className="">
             <img
               className="iconSize"
@@ -94,46 +76,24 @@ function App() {
             />
             {showCart && <Cart setShowCart={setShowCart} />}
           </div>
-          {/* </a> */}
         </div>
       </header>
-      {/* main */}
-      <main>
-        <section>
-          <div className="mainVideo">
-            <video
-              width={"100%"}
-              height={"800px"}
-              src={"./video/intro.mp4"}
-              type="video/mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              style={{
-                objectFit: "cover",
-                maxHeight: "600px",
-                overflow: "hidden",
-              }}
-            />
-            <div className="mainText">
-              <div className="logo">
-                <img src="./img/logo/logo.png" alt="Logo" />
-              </div>
-              <h1>Look to the future, become more beautiful... </h1>
-              <span></span>
-            </div>
-          </div>
-        </section>
 
-        <section style={{ backgroundColor: "white" }}>
-          <SimpleSlider />
-        </section>
-        <section>
-          <Section />
-        </section>
-      </main>
+      {/* main */}
+      <Routes>
+        
+        <Route path="*" element={<MainePage/>} />
+        <Route path="/future/Ring" element={<Ring /> } />
+        <Route path="/future/Diamond" element={<Diamond />} />
+        <Route path="/future/Services" element={<Services/>} />
+        <Route path="/future/Care" element={<Care/>} />
+        <Route path="/future/Reviews" element={<Reviwes/>} />
+        <Route path="/future/About" element={<About/>} />
+      </Routes>
+      
+
       {/* footer */}
+
       <footer>
         <div className="footerLeft">
           <img src="./img/logo/logo.png" alt="Logo" />

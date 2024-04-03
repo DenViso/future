@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Cormorant+SC:wght@300;400;500;600;700&display=swap");
+
+/* Ring */
+
+/* Diamond */
+
+/* Services */
+.services > ul {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: black;
+  position: relative;
+  color: white;
+}
+.services > ul > li {
+  font-family: "Butterfly Kids", cursive;
+}
+.services > ul > li > h2 {
+  font-family: "Butterfly Kids", cursive;
+}
+.importAnim {
+  font-family: "Butterfly Kids", cursive;
+  animation: important 3s infinite;
+}
+@keyframes important {
+  0% {
+    color: rgb(0, 0, 0);
+  }
+  50% {
+    color: rgb(250, 250, 250);
+  }
+  100% {
+    color: rgb(0, 0, 0);
+  }
+}
+
+/* Care */
+.care > h2 {
+  font-family: "Butterfly Kids", cursive;
+}
+.care > p {
+  font-family: "Butterfly Kids", cursive;
+}
+.care > ul > li {
+  font-family: "Butterfly Kids", cursive;
+}
+.care > ul > li > span {
+  font-size: 30px;
+}
+.colorRock {
+  color: rgb(124, 122, 122);
+}
+/* Reviwes */
+.reviwesForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: black;
+  position: relative;
+}
+.reviwesForm > h2{
+  font-size: 34px;
+  font-family: "Butterfly Kids", cursive;
+}
+.reviwesForm > ul {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow-x: auto;  
+ 
+ 
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  box-shadow: 1px 1px 10px 1px rgb(247, 245, 245);
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border :1px solid rgb(255, 255, 255);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #030303;
+  height: 6px;
+  border-radius: 3px;
+}
+.reviwesForm > ul > li {
+  font-family: "Butterfly Kids", cursive;
+  font-size: 28px;
+  min-width: 150px;
+  height: 300px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border-radius: 7px;
+  padding: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+
+.reviwesForm > ul > li>strong {
+  font-family: "Butterfly Kids", cursive;
+  font-size: 30px;
+}
+.reviwesFormMain{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: black;
+  position: relative;
+  color: white;
+
+}
+
+.reviwesFormMain>input{
+  width: 45%;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 20px;
+  font-family: "Butterfly Kids", cursive;
+
+}
+.reviwesFormMain>button{
+  width: 23%;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 20px;
+  font-family: "Butterfly Kids", cursive;
+  cursor: pointer;
+  text-align: center;
+}
+.reviwesFormMain>button:hover{
+  background-color: white;
+  color: black;
+}
+
+.revswesImg{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+  background-color: black;
+  position: relative;
+  color: white;
+}
+.revswesImg>img{
+  width: 40%;
+  border-radius: 20px;
+  box-shadow: #ffffff 0 0 10px;
+
+}
+
+/* About */
+.about,
+.dip,
+.reviwes,
+.care,
+.services,
+.ring,
+.diamond {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: black;
+  position: relative;
+}
+.about > a,
+.ring > a,
+.dip > a,
+.reviwes > a,
+.care > a,
+.services > a,
+.diamond > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+  color: grey;
+}
+.about > a:hover,
+.ring > a:hover,
+.dip > a:hover,
+.reviwes > a:hover,
+.care > a:hover,
+.services > a:hover,
+.diamond > a:hover {
+  text-shadow: rgb(252, 252, 252) 0 0 10px;
+  color: white;
+}
+.about > h1,
+.dip > h1,
+.reviwes > h1,
+.care > h1,
+.services > h1,
+.ring > h1,
+.diamond > h1 {
+  color: white;
+  font-family: "Butterfly Kids", cursive;
+  font-weight: 600;
+  font-size: 36px;
+}
+.dip {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.dip > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .reviwesForm{
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .reviwesForm > ul {
+    width: 100%;
+  }
+  .reviwesFormMain {
+    flex-direction: column;
+  }
+  .reviwesFormMain > input {
+    width: 110%;
+    height: 60px;
+  }
+  .reviwesFormMain > button {
+    width: 110%;
+    height: 60px;
+  }
+  .revswesImg{
+    flex-direction: column;
+  }
+  .revswesImg>img{
+    
+    width: 100%;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
