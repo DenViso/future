@@ -29,9 +29,23 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
-  color: red;
+  color: rgb(95, 94, 94);
   font-weight: bold;
 }
 .close-btn:hover{
   text-shadow: 1px 1px 1px black;
+}
+@media (max-width: 768px) {
+  .cart{
+    width: 90%;
+    height: 80%;
+    background-color: white;
+  }
+  .cart>p{
+    font-size: 26px;
+  }
+  .close-btn{
+    font-size: 20px;
+  }
+  
 }

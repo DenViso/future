@@ -3,6 +3,51 @@
 /* Ring */
 
 /* Diamond */
+.diamondList{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  /* padding: 2rem; */
+  
+}
+.diamondList>li>{
+  font-family: "Butterfly Kids", cursive;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.diamondList>li>a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+
+}
+.diamondList>li>a>h2{
+  font-family: "Butterfly Kids", cursive;
+  font-size: 30px;
+  color: #030303;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.diamondList>li>a>img{
+  width: 350px;
+  height: 300px;
+  border-radius: 5px;
+}
+
 
 /* Services */
 .services > ul {

@@ -12,9 +12,9 @@ export const MenuDrop = ({hideDropMenu}) => {
         <li className="menuDropPart">
           <p>Прикраси</p>
         </li>
-        <li className="menuDropPart">
+        {/* <li className="menuDropPart">
           <p>Пусет</p>
-        </li>
+        </li> */}
         <li className="menuDropPart">
           <p>Жіночі каблучки</p>
         </li>

@@ -14,9 +14,9 @@ export const SearchDrop = ({ hidenSearchMenu }) => {
           <img
             src="./img/headerIcon/search.png"
             alt=""
-            style={{ width: "20px", height: "20px" }}
+            // style={{ width: "20px", height: "20px" }}
           />
-        </button>{" "}
+        </button>
       </div>
     </div>
   );
