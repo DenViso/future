@@ -14,7 +14,7 @@ export const MenuDrop = ({hideDropMenu}) => {
           
         </li>
         <li className="menuDropPart" onClick={hideDropMenu}>
-        <Link to="/future/Diamond" > <p>Камінці</p>
+        <Link to="/future/Diamond" > <p>Каміння</p>
           <img src="./img/logo/section/diamond.png" alt="" />
           </Link>
           

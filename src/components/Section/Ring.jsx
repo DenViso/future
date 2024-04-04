@@ -7,26 +7,26 @@ export const Ring = () => {
       <h1>Прикраси</h1>
       <ul className="ringList">
         <li>
-          <Link to="/future/Ring/1">
+          <Link to="/future/Engagement">
             Заручини
             <img src="./img/subsect/1.png" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="/future/Ring/1">
-          Обручки
+          <Link to="/future/WeddingRings">
+            Обручки
             <img src="./img/subsect/2.png" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="/future/Ring/1">
-          Жіночі
+          <Link to="/future/Women">
+            Жіночі
             <img src="./img/subsect/3.png" alt="" />
           </Link>
-          </li>
-          <li>
-                      <Link to="/future/Ring/1">
-          Чоловічі
+        </li>
+        <li>
+          <Link to="/future/Men">
+            Чоловічі
             <img src="./img/subsect/4.png" alt="" />
           </Link>
         </li>

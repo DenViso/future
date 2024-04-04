@@ -7,13 +7,13 @@ export const Diamond = () => {
       <h1>Коштовне каміння</h1>
       <ul className="diamondList">
         <li>
-          <Link>
+          <Link to="/future/">
           <h2>  Діамант</h2>
             <img src="./img/stoun/1.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link>
+          <Link >
             <h2>Авамарин</h2>
             <img src="./img/stoun/2.jpg" alt="" />
           </Link>

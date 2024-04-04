@@ -2,17 +2,22 @@ import React, { useState } from "react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./App.css";
+import { Routes, Route, } from "react-router-dom";
+
 import { MainePage } from "./components/MainPage/MainePage";
 import { MenuDrop } from "./components/DropWindow/MenuDrop";
 import { SearchDrop } from "./components/DropWindow/SearchDrop";
 import { Cart } from "./components/Cart/Cart";
-import {   Routes, Route, } from "react-router-dom";
 import { Ring } from "./components/Section/Ring";
 import { Diamond } from "./components/Section/Diamond";
 import { Services } from "./components/Section/Services";
 import { Care } from "./components/Section/Care";
 import { Reviwes } from "./components/Section/Reviwes";
 import { About } from "./components/Section/About";
+import {Engagement} from "./components/Section/SubSection/Engagement";
+import {WeddingRings} from "./components/Section/SubSection/WeddingRings";
+import {Women} from "./components/Section/SubSection/Women"
+import {Men} from "./components/Section/SubSection/Men"
 
  const  App = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -60,7 +65,7 @@ import { About } from "./components/Section/About";
         </div>
 
         <div className="contact">
-          <a href="tel:380999999999">
+          <a href="tel:+380936918998">
             <img
               className="iconSize"
               src="./img/headerIcon/contact2.png"
@@ -89,6 +94,10 @@ import { About } from "./components/Section/About";
         <Route path="/future/Care" element={<Care/>} />
         <Route path="/future/Reviews" element={<Reviwes/>} />
         <Route path="/future/About" element={<About/>} />
+        <Route path="/future/Engagement" element={<Engagement/>} />
+        <Route path="/future/WeddingRings" element={<WeddingRings/>} />
+        <Route path="/future/Women" element={<Women/>} />
+        <Route path="/future/Men" element={<Men/>} />
       </Routes>
       
 
