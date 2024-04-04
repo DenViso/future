@@ -1,6 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Cormorant+SC:wght@300;400;500;600;700&display=swap");
 
 /* Ring */
+.ring{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+
+}
+.ringList{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  /* padding: 2rem; */
+
+}
+.ringList>li{
+  /* font-family: "Butterfly Kids", cursive; */
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 2rem;
+  cursor: pointer;
+}
+.ringList>li>a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  color:black;
+  font-family: "Butterfly Kids", cursive;
+  font-size: 38px;
+  font-weight: 400;
+
+}
+.ringList>li>a>img{
+  width: 100px;
+  height: 100px;
+}
+.ringList>li:hover{
+  box-shadow: 1px 1px 10px 1px rgb(247, 245, 245);
+  
+}
+.ringList>li:hover>a{
+ text-decoration: underline;
+}
 
 /* Diamond */
 .diamondList{
@@ -328,17 +388,24 @@
   .diamondList{
     width: 100%;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
   }
+  .diamondList>li{
+    width: 40%;
+  }
+  .diamondList>li>a>h2{
+    font-size: 20px;
+  }
   .diamondList>li>a>img{
     width: 100%;
-    height: 300px;
+    height: 150px;
     border-radius: 5px;
   }
-  .diamondList>li>a {
+  /* .diamondList>li>a {
     width: 300px;
     height: 100%;
     display: flex;
@@ -348,5 +415,8 @@
     gap: 1.5rem;
     position: relative;
     margin: 0 1.5rem;
+} */
+.ringList>li>a{
+  font-size: 20px;
 }
 }
