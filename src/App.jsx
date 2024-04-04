@@ -114,7 +114,7 @@ const App = () => {
 
       <footer>
         <div className="footerLeft">
-          <img src="./img/logo/logo.png" alt="Logo" />
+          <Link to="/future/"><img src="./img/logo/logo.png" alt="Logo" /></Link>
           <div className="footerText">
             <a href="tel:+380936918998">+38 (093) 691-89-98</a> <br />
             <a href="mailto:3sTnE@example.com">yourEmail@example.com</a>
