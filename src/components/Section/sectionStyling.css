@@ -419,4 +419,10 @@
 .ringList>li>a{
   font-size: 20px;
 }
+.reviwesForm > ul > li>strong {
+  width: 140px;
+  overflow-wrap: break-word;
+  font-family: "Butterfly Kids", cursive;
+  font-size: 24px;
+}
 }
