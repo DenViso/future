@@ -21,9 +21,9 @@ export const MainePage = () => {
          
         />
         <div className="mainText">
-          <div className="logo">
+          {/* <div className="logo">
             <img src="./img/logo/logo.png" alt="Logo" />
-          </div>
+          </div> */}
           <h1>Look to the future, become more beautiful... </h1>
           <span></span>
         </div>

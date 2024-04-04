@@ -119,15 +119,17 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
-  background-color: black;
+  /* background-color: black; */
   position: relative;
   color: white;
 }
 .services > ul > li {
   font-family: "Butterfly Kids", cursive;
+  color: #030303;
 }
 .services > ul > li > h2 {
   font-family: "Butterfly Kids", cursive;
+  color: #030303;
 }
 .importAnim {
   font-family: "Butterfly Kids", cursive;
@@ -151,9 +153,11 @@
 }
 .care > p {
   font-family: "Butterfly Kids", cursive;
+  color: #030303;
 }
 .care > ul > li {
   font-family: "Butterfly Kids", cursive;
+  color: #030303;
 }
 .care > ul > li > span {
   font-size: 30px;
@@ -170,12 +174,13 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
-  background-color: black;
+  /* background-color: black; */
   position: relative;
 }
 .reviwesForm > h2{
   font-size: 34px;
   font-family: "Butterfly Kids", cursive;
+  color: #030303;
 }
 .reviwesForm > ul {
   width: 90%;
@@ -185,7 +190,7 @@
   gap: 1.5rem;
   padding: 2rem;
   overflow-x: auto;  
- 
+ /* background-color: #ffffff; */
  
 }
 ::-webkit-scrollbar {
@@ -211,11 +216,11 @@
   min-width: 150px;
   height: 300px;
   text-align: center;
-  color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
+  color: rgb(3, 3, 3);
+  background-color: rgb(250, 250, 250);
   border-radius: 7px;
   padding: 5px;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
 }
@@ -223,6 +228,7 @@
 .reviwesForm > ul > li>strong {
   font-family: "Butterfly Kids", cursive;
   font-size: 30px;
+  color: #030303;
 }
 .reviwesFormMain{
   width: 100%;
@@ -232,18 +238,18 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
-  background-color: black;
+  background-color: rgb(248, 248, 248);
   position: relative;
-  color: white;
+  color: rgb(7, 7, 7);
 
 }
 
 .reviwesFormMain>input{
   width: 45%;
   height: 30px;
-  background-color: black;
-  color: white;
-  border: 1px solid white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(2, 2, 2);
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 7px;
   padding: 5px;
   font-size: 20px;
@@ -277,7 +283,7 @@
   justify-content: center;
   gap: 3rem;
   padding: 2rem;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   position: relative;
   color: white;
 }
@@ -303,7 +309,7 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
-  background-color: black;
+  background-color: rgb(253, 253, 253);
   position: relative;
 }
 .about > a,
@@ -336,7 +342,7 @@
 .services > h1,
 .ring > h1,
 .diamond > h1 {
-  color: white;
+  color: rgb(3, 3, 3);
   font-family: "Butterfly Kids", cursive;
   font-weight: 600;
   font-size: 36px;

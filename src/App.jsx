@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./App.css";
-import { Routes, Route, } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import { MainePage } from "./components/MainPage/MainePage";
 import { MenuDrop } from "./components/DropWindow/MenuDrop";
@@ -14,15 +14,20 @@ import { Services } from "./components/Section/Services";
 import { Care } from "./components/Section/Care";
 import { Reviwes } from "./components/Section/Reviwes";
 import { About } from "./components/Section/About";
-import {Engagement} from "./components/Section/SubSection/Engagement";
-import {WeddingRings} from "./components/Section/SubSection/WeddingRings";
-import {Women} from "./components/Section/SubSection/Women"
-import {Men} from "./components/Section/SubSection/Men"
+import { Engagement } from "./components/Section/SubSection/Engagement";
+import { WeddingRings } from "./components/Section/SubSection/WeddingRings";
+import { Women } from "./components/Section/SubSection/Women";
+import { Men } from "./components/Section/SubSection/Men";
 
- const  App = () => {
+const App = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const handleClick = () => {
     setShowCart(true);
@@ -63,7 +68,9 @@ import {Men} from "./components/Section/SubSection/Men"
           />
           {showSearch && <SearchDrop hidenSearchMenu={handleMouseLeave} />}
         </div>
-
+        <div className="logo1">
+          <img src="./img/logo/logo1.png" alt="Logo" />
+        </div>
         <div className="contact">
           <a href="tel:+380936918998">
             <img
@@ -86,20 +93,18 @@ import {Men} from "./components/Section/SubSection/Men"
 
       {/* main */}
       <Routes>
-        
-        <Route path="*" element={<MainePage/>} />
-        <Route path="/future/Ring" element={<Ring /> } />
+        <Route path="*" element={<MainePage />} />
+        <Route path="/future/Ring" element={<Ring />} />
         <Route path="/future/Diamond" element={<Diamond />} />
-        <Route path="/future/Services" element={<Services/>} />
-        <Route path="/future/Care" element={<Care/>} />
-        <Route path="/future/Reviews" element={<Reviwes/>} />
-        <Route path="/future/About" element={<About/>} />
-        <Route path="/future/Engagement" element={<Engagement/>} />
-        <Route path="/future/WeddingRings" element={<WeddingRings/>} />
-        <Route path="/future/Women" element={<Women/>} />
-        <Route path="/future/Men" element={<Men/>} />
+        <Route path="/future/Services" element={<Services />} />
+        <Route path="/future/Care" element={<Care />} />
+        <Route path="/future/Reviews" element={<Reviwes />} />
+        <Route path="/future/About" element={<About />} />
+        <Route path="/future/Engagement" element={<Engagement />} />
+        <Route path="/future/WeddingRings" element={<WeddingRings />} />
+        <Route path="/future/Women" element={<Women />} />
+        <Route path="/future/Men" element={<Men />} />
       </Routes>
-      
 
       {/* footer */}
 
@@ -133,6 +138,6 @@ import {Men} from "./components/Section/SubSection/Men"
       </div>
     </div>
   );
-}
+};
 
 export default App;
