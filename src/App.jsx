@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Link } from "react-router-dom";
 
 import { MainePage } from "./components/MainPage/MainePage";
 import { MenuDrop } from "./components/DropWindow/MenuDrop";
@@ -70,7 +70,9 @@ const App = () => {
           {showSearch && <SearchDrop hidenSearchMenu={handleMouseLeave} />}
         </div>
         <div className="logo1">
-          <img src="./img/logo/logo1.png" alt="Logo" />
+          <Link to="/future/">
+             <img src="./img/logo/logo1.png" alt="Logo" />
+         </Link>
         </div>
         <div className="contact">
           <a href="tel:+380936918998">

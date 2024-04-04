@@ -65,7 +65,7 @@
   width: 535px;
 padding: 0 5.5rem;
 }
-.logo1>img{
+.logo1>a>img{
   width: 100%;
 }
 /* main */
@@ -374,7 +374,7 @@ footer {
     justify-content: center;
 
   }
-  .logo1>img{
+  .logo1>a>img{
     width: 180px;
   }
   .header{
