@@ -19,7 +19,7 @@ export const Women = () => {
           </Link>
         </li>
         <li>
-          <Link to="">
+          <Link to="/future/Puset">
             Пусети
             <img src="" alt="" />
           </Link>

@@ -18,6 +18,7 @@ import { Engagement } from "./components/Section/SubSection/Engagement";
 import { WeddingRings } from "./components/Section/SubSection/WeddingRings";
 import { Women } from "./components/Section/SubSection/Women";
 import { Men } from "./components/Section/SubSection/Men";
+import { Puset } from "./components/Section/SubSection/Puset";
 
 const App = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -104,6 +105,7 @@ const App = () => {
         <Route path="/future/WeddingRings" element={<WeddingRings />} />
         <Route path="/future/Women" element={<Women />} />
         <Route path="/future/Men" element={<Men />} />
+        <Route path="/future/Puset" element={<Puset />} />
       </Routes>
 
       {/* footer */}
