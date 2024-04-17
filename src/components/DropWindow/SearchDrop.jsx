@@ -1,7 +1,7 @@
 import React from "react";
 import "./dropStyle.css";
 
-export const SearchDrop = ({ hidenSearchMenu }) => {
+export const SearchDrop = ({ hidenSearchMenu, t }) => {
   // const hidenSearchDrop = () => {
   //   const searchDrop = document.querySelector(".searchDrop");
   //   searchDrop.classList.remove("search-active");
@@ -9,7 +9,7 @@ export const SearchDrop = ({ hidenSearchMenu }) => {
   return (
     <div className="searchDrop"onMouseLeave={hidenSearchMenu}>
       <div className="search">
-        <input type="text " placeholder="Пошук по коду" />
+        <input type="text " placeholder={t("dropMenu.sec7")} />
         <button>
           <img
             src="./img/headerIcon/search.png"

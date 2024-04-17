@@ -1,42 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Puset = () => {
+export const Puset = ({t}) => {
   return (
     <div className="ring">
-      <Link to="/future/Ring"> До прикрас</Link>
-      <h2>Обручки</h2>
+      <Link to="/future/Ring">{t("back.toJewelry")}</Link>
+      <h2>{t("section.section2")}</h2>
               <ul className="ringList">
           <li>
             <Link to="">
-              Соло
+              {t("section.section5")}
               <img src="" alt="" />
             </Link>
           </li>
           <li>
             <Link to="">
-              Соло + розсип
-              <img src="" alt="" />
-            </Link>
-          </li>
-          <li>
-            <Link to="">
-              {" "}
-              Фантазія соло
+              {t("section.section6")}
               <img src="" alt="" />
             </Link>
           </li>
           <li>
             <Link to="">
               {" "}
-              Фантазія + розсип
+              {t("section.section7")}
               <img src="" alt="" />
             </Link>
           </li>
           <li>
             <Link to="">
               {" "}
-              Кольорові
+              {t("section.section8")}
+              <img src="" alt="" />
+            </Link>
+          </li>
+          <li>
+            <Link to="">
+              {" "}
+              {t("section.section9")}
               <img src="" alt="" />
             </Link>
           </li>

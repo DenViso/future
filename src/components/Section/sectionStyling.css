@@ -11,6 +11,12 @@
   padding: 2rem;
 
 }
+.ring>h2{
+  font-family: "Butterfly Kids", cursive;
+  font-size: 40px;
+  color: #030303;
+  font-weight: 600;
+}
 .ringList{
   width: 100%;
   display: flex;
@@ -150,6 +156,7 @@
 /* Care */
 .care > h2 {
   font-family: "Butterfly Kids", cursive;
+  color: #030303;
 }
 .care > p {
   font-family: "Butterfly Kids", cursive;
@@ -159,11 +166,40 @@
   font-family: "Butterfly Kids", cursive;
   color: #030303;
 }
-.care > ul > li > span {
+.colorRockTitle {
   font-size: 30px;
+  color: #030303;
+  font-weight: 600;
+  text-align: center;
+  margin: 0rem 0 1rem 0;
+  animation: colorRockTitle 3s infinite;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+@keyframes colorRockTitle {
+  0% {
+    color: rgb(0, 0, 0);
+    /* text-shadow: #030303 0 0 10px; */
+    
+  }
+  50% {
+    color: #707070;
+    text-shadow: #707070 2px 2px 4px;
+  }
+  100% {
+    color: rgb(0, 0, 0);
+    /* text-shadow: #030303 0 0 10px; */
+  }
+}
+.colorRockNum {
+  font-size: 24px;
+  color: rgb(99, 99, 99);
+  font-weight: 600;
 }
 .colorRock {
-  color: rgb(124, 122, 122);
+  color: rgba(2, 2, 2, 0.582);
+  font-size: 36px;
+  font-weight: 800;
 }
 /* Reviwes */
 .reviwesForm {
@@ -223,12 +259,31 @@
   border: 1px solid rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
+  /* height: 100%; */
 }
 
 .reviwesForm > ul > li>strong {
   font-family: "Butterfly Kids", cursive;
   font-size: 30px;
   color: #030303;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  text-align: center;
+  height: 30%;
+  overflow: scroll;
+}
+
+.reviwesForm > ul > li>p {
+  font-family: "Butterfly Kids", cursive;
+  font-size: 30px;
+  color: #030303;
+  word-wrap: break-word;
+height: 60%;
+  overflow-wrap: break-word;
+  overflow: scroll;
+  width: 100%;
+  text-align: center;
 }
 .reviwesFormMain{
   width: 100%;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./cart.css";
-export const Cart = ({ setShowCart }) => {
+export const Cart = ({ setShowCart, t }) => {
   //   const [isCartVisible, setIsCartVisible] = useState(false);
 
   //   const toggleCartVisibility = () => {
@@ -10,9 +10,9 @@ export const Cart = ({ setShowCart }) => {
   return (
     <div>
       <div className="cart">
-        <p>You`r Cart is empty</p>
+        <p>{t("cart.text")}</p>
         <button className="close-btn" onClick={() => setShowCart(false)}>
-          close 
+          {t("cart.button")}
         </button>
       </div>
     </div>

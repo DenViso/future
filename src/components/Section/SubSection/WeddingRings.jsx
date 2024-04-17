@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-export const WeddingRings = () => {
+export const WeddingRings = ({t}) => {
 
   return (
 
     <div className="ring">
-           <Link to="/future/Ring"> До прикрас</Link>
-    <h2>Обручки</h2>
+           <Link to="/future/Ring">{t("back.toJewelry")}</Link>
+    <h2>{t("section.title2")}</h2>
       
     </div>
    

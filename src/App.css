@@ -44,6 +44,49 @@
   transform: scale(1.1) rotate(10deg) translateY(-5px);
   transition: all 0.5s ease-in-out;
 }
+/* lng button */
+.langButton{
+display: flex;
+width: 100px;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+position: relative;
+/* top: 100px; */
+z-index: 300;
+}
+
+.langButtonMain{
+  position: relative;
+  /* left: 10px; */
+  /* top: 100px; */
+  width: 70px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background:border-box;
+  /* box-shadow: 1px 1px 10px 1px rgb(247, 245, 245); */
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Cormorant SC", serif;
+  transition: all 1s ease-in-out;
+  /* z-index: 200; */
+}
+.activeLangButton{
+  transform: scale(1.1) rotate(10deg) translateY(-5px);
+  transition: all 1s ease-in-out;
+  /* color: #fff;
+  background-color: #000000; */
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 10px 1px rgb(247, 245, 245);
+
+}
 /* .logo {
   display: flex;
   align-items: center;
@@ -369,9 +412,27 @@ footer {
 }
 }
 @media  (max-width: 580px) {
-/* body{
-    width: 100vw;
-  } */
+  .langButton{
+ 
+    position: relative;
+    top: 0px;
+    right: 100px;
+    z-index: 300;
+    }
+    
+    .langButtonMain{
+      position: relative;
+      left: 10px;
+      top: 50px;
+      
+    }
+    .activeLangButton{
+     
+      color: #fff;
+      background-color: #000000;
+      
+    
+    }
   .wrapper {
     width: 100vw;
     overflow: hidden;

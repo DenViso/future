@@ -4,7 +4,7 @@ import "../../App.css"
 import {SimpleSlider} from '../SimpleSlider/SimpleSlider'
 import {Section} from '../Section/Section'
 
-export const MainePage = () => {
+export const MainePage = ({t}) => {
   return (
     
     <main>
@@ -21,9 +21,7 @@ export const MainePage = () => {
          
         />
         <div className="mainText">
-          {/* <div className="logo">
-            <img src="./img/logo/logo.png" alt="Logo" />
-          </div> */}
+          
           <h1>Look to the future, become more beautiful... </h1>
           <span></span>
         </div>
@@ -35,7 +33,7 @@ export const MainePage = () => {
     </section>
 
     <section>
-      <Section  />
+      <Section t={t} />
     </section>
   </main>
   )

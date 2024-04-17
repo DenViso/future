@@ -1,24 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export const Services = () => {
+export const Services = ({ t }) => {
   return (
     <div className="services">
-      <Link to="/future/">На головну</Link>
-      <h1>Послуги</h1>
+      <Link to="/future/">{t("back.toMain")}</Link>
+      <h1>{t("services.title")}</h1>
       <ul>
+        <li>{t("services.text1")}</li>
         <li>
-          Створюємо ювелірні прикраси, за нашим дизайном, а також за вашими
-          мотивами. Окремо спеціалізуємось на діамантах, кольорових каміннях.
+          {t("services.text2")}
+          <br />
+          {t("services.text2.1")}
+          <br />
+          {t("services.text2.2")}
+          <br />
+          {t("services.text2.3")}
+          <br />
+          {t("services.text2.4")}
+          <br />
+          {t("services.text2.5")}
+          <br />
+          {t("services.text2.6")}
+          <br />
+          {t("services.text2.7")}
+          <br />
+          {t("services.text2.8")}
         </li>
         <li>
-          Надамо послуги ремонту натільних ювелірних прикрас. <br />* пайка * <br /> * закріпка*<br />
-          * полірування * <br /> * рихтовка * <br />* збільшення чи зменшення розміру * <br /> * покриття
-          родієм * <br /> * відновлення виробу * <br /> * гравірування та інше...
-        </li>
-        <li>
-          <h2 className="importAnim">Важливо!</h2> Вартість робіт оголошується тільки після огляду нашим
-          майстром. <br /> <h2>Наприклад</h2> пайка ланцюжка може залежети від: ваги, дутий або
-          ні, двойне - тройне.. Плетіння, Біле чи червоне золото Та інше...
+          <h2 className="importAnim">{t("services.title1")}</h2>
+          {t("services.text3")}
+          <br />
+          <h2>{t("services.title2")}</h2>
+
+          {t("services.text3.1")}
         </li>
       </ul>
     </div>

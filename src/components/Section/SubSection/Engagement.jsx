@@ -1,43 +1,40 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-export const Engagement = () => {
+export const Engagement = ({t}) => {
   return (
 
     <div className="ring">
-     <Link to="/future/Ring"> До прикрас</Link>
-      <h1>Заручини</h1>
+     <Link to="/future/Ring">{t("back.toJewelry")}</Link>
+      <h1>{t("section.section1")}</h1>
       <ul className="ringList">
         <li>
           <Link to="">
-          Соло
+          {t("section.section5")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-          Соло + розсип
+          {t("section.section6")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-            {" "}
-            Фантазія соло
+          {t("section.section7")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-            {" "}
-            Фантазія + розсип
+          {t("section.section8")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-            {" "}
-            Кольорові
+          {t("section.section9")}
             <img src="" alt="" />
           </Link>
         </li>

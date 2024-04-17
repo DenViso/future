@@ -1,64 +1,64 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export const Women = () => {
+export const Women = ({t}) => {
   return (
     <div className="ring">
-      <Link to="/future/Ring"> До прикрас</Link>
-      <h2>Жіночі</h2>
+      <Link to="/future/Ring">{t("back.toJewelry")}</Link>
+      <h2>{t("section.section3")}</h2>
       <ul className="ringList">
         <li>
           <Link to="">
-            Каблучка
+            {t("section.section10")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-            Доріжка
+            {t("section.section11")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="/future/Puset">
-            Пусети
+            {t("section.section12")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
             {" "}
-            Сережки
+            {t("section.section13")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-            Хрестик
+            {t("section.section14")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-            Підвіс
+            {t("section.section15")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-            Ланцюг
+            {t("section.section16")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
             {" "}
-            Браслет
+            {t("section.section17")}
             <img src="" alt="" />
           </Link>
         </li>
         <li>
           <Link to="">
-            Інше
+            {t("section.section18")}
             <img src="" alt="" />
           </Link>
         </li>

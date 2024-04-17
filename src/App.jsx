@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useTrans } from "react";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "./App.css";
 import { Routes, Route, useLocation, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+const changeLanguage = (lng) => {
+  i18n.changeLanguage(lng);
+};
 
 import { MainePage } from "./components/MainPage/MainePage";
 import { MenuDrop } from "./components/DropWindow/MenuDrop";
@@ -21,6 +26,12 @@ import { Men } from "./components/Section/SubSection/Men";
 import { Puset } from "./components/Section/SubSection/Puset";
 
 const App = () => {
+  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
@@ -54,25 +65,28 @@ const App = () => {
 
       <header className="header">
         <div className="menu">
+          
           <img
             className="iconSize"
             src="./img/headerIcon/menu.png"
             alt="Menu"
             onMouseEnter={handleMenuHover}
           />
-          {showMenu && <MenuDrop hideDropMenu={handleMouseLeave} />}
+          {showMenu && <MenuDrop hideDropMenu={handleMouseLeave} t={t} />}
           <img
             className="iconSize"
             src="./img/headerIcon/search.png"
             alt="Search"
             onMouseEnter={handleSearchHover}
           />
-          {showSearch && <SearchDrop hidenSearchMenu={handleMouseLeave} />}
+          {showSearch && (
+            <SearchDrop hidenSearchMenu={handleMouseLeave} t={t} />
+          )}
         </div>
         <div className="logo1">
           <Link to="/future/">
-             <img src="./img/logo/logo1.png" alt="Logo" />
-         </Link>
+            <img src="./img/logo/logo1.png" alt="Logo" />
+          </Link>
         </div>
         <div className="contact">
           <a href="tel:+380936918998">
@@ -89,32 +103,39 @@ const App = () => {
               alt="Cart"
               onClick={handleClick}
             />
-            {showCart && <Cart setShowCart={setShowCart} />}
+            {showCart && <Cart setShowCart={setShowCart} t={t} />}
+          </div>
+           <div className="langButton">
+            <button className={i18n.language === "en"? "activeLangButton langButtonMain":"langButtonMain"} onClick={() => changeLanguage("en")}>En</button>
+            <button className={i18n.language === "uk"? "activeLangButton langButtonMain":"langButtonMain"} onClick={() => changeLanguage("uk")}>Укр</button>
           </div>
         </div>
+       
       </header>
 
       {/* main */}
       <Routes>
-        <Route path="*" element={<MainePage />} />
-        <Route path="/future/Ring" element={<Ring />} />
-        <Route path="/future/Diamond" element={<Diamond />} />
-        <Route path="/future/Services" element={<Services />} />
-        <Route path="/future/Care" element={<Care />} />
-        <Route path="/future/Reviews" element={<Reviwes />} />
-        <Route path="/future/About" element={<About />} />
-        <Route path="/future/Engagement" element={<Engagement />} />
-        <Route path="/future/WeddingRings" element={<WeddingRings />} />
-        <Route path="/future/Women" element={<Women />} />
-        <Route path="/future/Men" element={<Men />} />
-        <Route path="/future/Puset" element={<Puset />} />
+        <Route path="*" element={<MainePage t={t} />} />
+        <Route path="/future/Ring" element={<Ring t={t} />} />
+        <Route path="/future/Diamond" element={<Diamond t={t} />} />
+        <Route path="/future/Services" element={<Services t={t} />} />
+        <Route path="/future/Care" element={<Care t={t} />} />
+        <Route path="/future/Reviews" element={<Reviwes t={t} />} />
+        <Route path="/future/About" element={<About t={t} />} />
+        <Route path="/future/Engagement" element={<Engagement t={t} />} />
+        <Route path="/future/WeddingRings" element={<WeddingRings t={t} />} />
+        <Route path="/future/Women" element={<Women t={t} />} />
+        <Route path="/future/Men" element={<Men t={t} />} />
+        <Route path="/future/Puset" element={<Puset t={t} />} />
       </Routes>
 
       {/* footer */}
 
       <footer>
         <div className="footerLeft">
-          <Link to="/future/"><img src="./img/logo/logo.png" alt="Logo" /></Link>
+          <Link to="/future/">
+            <img src="./img/logo/logo.png" alt="Logo" />
+          </Link>
           <div className="footerText">
             <a href="tel:+380936918998">+38 (093) 691-89-98</a> <br />
             <a href="mailto:3sTnE@example.com">yourEmail@example.com</a>
@@ -125,12 +146,12 @@ const App = () => {
         </div>
         <div className="footerAdrress">
           <address>
-            <p>Київська обл.</p>
-            <p>м. Вишневе, вул. Європейська15, </p>
-            <p> Буд. Побуту, 3 поверх, на ліво дзвінок</p>
-            <p>Пн-Пт 10.00-19.00</p>
-            <p>Сб. 11.00-18.00</p>
-            <p>Нд. Вихідний</p>
+            <p>{t("adresses.strict")}</p>
+            <p>{t("adresses.adress")}, </p>
+            <p> {t("adresses.ofice")}</p>
+            <p>{t("adresses.time")},</p>
+            <p>{t("adresses.time2")},</p>
+            <p>{t("adresses.time3")}</p>
           </address>
         </div>
       </footer>
