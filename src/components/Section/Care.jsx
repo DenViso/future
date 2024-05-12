@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const Care = ({ t }) => {
   return (
     <div className="care">
-      <Link to="/future/">{t("back.toMain")}</Link>
+      <Link to="/">{t("back.toMain")}</Link>
       <h1> {t("care.title")}</h1>
       <p>
         {t("care.text")}

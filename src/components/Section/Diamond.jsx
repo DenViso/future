@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 export const Diamond = ({t}) => {
   return (
     <div className="diamond">
-      <Link to="/future/">{t("back.toMain")}</Link>
+      <Link to="/">{t("back.toMain")}</Link>
       <h1>{t("stones.title")}</h1>
       <ul className="diamondList">
         <li>
-          <Link to="/future/">
+          <Link to="/">
           <h2>{t("care.stone4")}</h2>
             <img src="./img/stoun/1.jpg" alt="" />
           </Link>
