@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 import { useLocation, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import { useTranslation } from "react-i18next";
@@ -25,18 +25,18 @@ const App = () => {
   const [products, setProducts] = useState([]);
   
 
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const response = await axios.get('http://localhost:8000/api/v1/products/');
-  //       setProducts(response.data);
-  //     } catch (error) {
-  //       console.error("Помилка отримання даних про продукти:", error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/v1/products/');
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Помилка отримання даних про продукти:", error);
+      }
+    };
 
-  //   fetchProducts();
-  // }, []);
+    fetchProducts();
+  }, []);
 
 
 

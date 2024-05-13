@@ -12,7 +12,7 @@ export const MainePage = ({t}) => {
       <div className="mainVideo">
         <video
           
-          src={"./video/intro.mp4"}
+          src={"/video/intro.mp4"}
           type="video/mp4"
           autoPlay
           loop

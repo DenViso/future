@@ -1,51 +1,49 @@
 import React from "react";
-import {  Link,  Router } from "react-router-dom";
+import { Link, Router } from "react-router-dom";
 
-
-export const Section = ({t}) => {
+export const Section = ({ t }) => {
   return (
-  <>
+    <>
       <div className="section">
         <ul className="sectionList">
           <li className="sectionPart">
-            <Link to="/future/Ring">
+            <Link to="/Ring">
               <h2>{t("dropMenu.sec1")}</h2>
-              <img src="./img/logo/section/ring.png" alt="" />
+              <img src="/img/logo/section/ring.png" alt="" />
             </Link>
           </li>
           <li className="sectionPart">
-            <Link to="/future/Diamond">
+            <Link to="/Diamond">
               <h2>{t("dropMenu.sec2")}</h2>
-              <img src="./img/logo/section/diamond.png" alt="" />
+              <img src="/img/logo/section/diamond.png" alt="" />
             </Link>
           </li>
           <li className="sectionPart">
-            <Link to="/future/Services">
+            <Link to="/Services">
               <h2>{t("dropMenu.sec3")}</h2>
-              <img src="./img/logo/section/Services.png" alt="" />
+              <img src="/img/logo/section/Services.png" alt="" />
             </Link>
           </li>
           <li className="sectionPart">
-            <Link to="/future/Care">
+            <Link to="/Care">
               <h2>{t("dropMenu.sec4")}</h2>
-              <img src="./img/logo/section/care.png" alt="" />
+              <img src="/img/logo/section/care.png" alt="" />
             </Link>
           </li>
           <li className="sectionPart">
-            <Link to="/future/Reviews">
+            <Link to="/Reviews">
               <h2>{t("dropMenu.sec5")}</h2>
-              <img src="./img/logo/section/reviews.png" alt="" />
+              <img src="/img/logo/section/reviews.png" alt="" />
             </Link>
           </li>
           <li className="sectionPart">
-            <Link to="/future/About">
+            <Link to="/About">
               <h2>{t("dropMenu.sec6")}</h2>
-              <img src="./img/logo/section/team.png" alt="" />
+              <img src="/img/logo/section/team.png" alt="" />
             </Link>
           </li>
         </ul>
-     
       </div>
-    </> 
+    </>
   );
 };

@@ -7,45 +7,45 @@ export const MenuDrop = ({ hideDropMenu, t }) => {
     <div className="menuDrop" onMouseLeave={hideDropMenu}>
       <ul className="menuDropList">
         <li className="menuDropPart" onClick={hideDropMenu}>
-          <Link to="/future/Ring">
+          <Link to="Ring">
             {" "}
             <p>{t("dropMenu.sec1")}</p>
-            <img src="./img/logo/section/ring.png" alt="" />
+            <img src="/img/logo/section/ring.png" alt="" />
           </Link>
         </li>
         <li className="menuDropPart" onClick={hideDropMenu}>
-          <Link to="/future/Diamond">
+          <Link to="Diamond">
             {" "}
             <p>{t("dropMenu.sec2")}</p>
-            <img src="./img/logo/section/diamond.png" alt="" />
+            <img src="/img/logo/section/diamond.png" alt="" />
           </Link>
         </li>
         <li className="menuDropPart" onClick={hideDropMenu}>
-          <Link to="/future/Services">
+          <Link to="Services">
             {" "}
             <p>{t("dropMenu.sec3")}</p>
-            <img src="./img/logo/section/Services.png" alt="" />
+            <img src="/img/logo/section/Services.png" alt="" />
           </Link>
         </li>
         <li className="menuDropPart" onClick={hideDropMenu}>
-          <Link to="/future/Care">
+          <Link to="Care">
             {" "}
             <p>{t("dropMenu.sec4")}</p>
-            <img src="./img/logo/section/reviews.png" alt="" />
+            <img src="/img/logo/section/reviews.png" alt="" />
           </Link>
         </li>
         <li className="menuDropPart" onClick={hideDropMenu}>
-          <Link to="/future/Reviews">
+          <Link to="Reviews">
             {" "}
             <p>{t("dropMenu.sec5")}</p>
-            <img src="./img/logo/section/care.png" alt="" />
+            <img src="/img/logo/section/care.png" alt="" />
           </Link>
         </li>
         <li className="menuDropPart" onClick={hideDropMenu}>
-          <Link to="/future/About">
+          <Link to="About">
             {" "}
             <p>{t("dropMenu.sec6")}</p>
-            <img src="./img/logo/section/team.png" alt="" />
+            <img src="/img/logo/section/team.png" alt="" />
           </Link>
         </li>
       </ul>
