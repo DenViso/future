@@ -23,7 +23,6 @@ import { Inner } from "./components/Section/Inner";
 const App = () => {
   const { t, i18n } = useTranslation();
   const [products, setProducts] = useState([]);
-  
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -38,28 +37,16 @@ const App = () => {
     fetchProducts();
   }, []);
 
-
-
-  // console.log(products);
-  // console.log(products.id);
-  // console.log(products.id.map(product => product.id));
-
-  // useEffect(() => {
-  //   const productsId = products.map(product => product.id);
-  //   console.log(productsId);
-  // }, [products]);
-
-  window.addEventListener('beforeunload', function (e) {
+  window.addEventListener("beforeunload", function (e) {
     // Скасувати подію перезавантаження
     e.preventDefault();
     // Встановити повідомлення для користувача
-    e.returnValue = '';
+    e.returnValue = "";
   });
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-   
   }, [location.pathname]);
 
   useEffect(() => {
@@ -67,17 +54,17 @@ const App = () => {
       // Перевірка, чи відбувається перезавантаження сторінки
       if (e.currentTarget.performance.navigation.type === 1) {
         // Перенаправлення на головну сторінку
-        window.location.href = '/';
+        window.location.href = "/";
       }
     };
-  
-    window.addEventListener('beforeunload', handleBeforeUnload);
-  
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
-  
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
@@ -99,9 +86,9 @@ const App = () => {
         <Route path="WeddingRings" element={<WeddingRings t={t} />} />
         <Route path="Women" element={<Women t={t} />} />
         <Route path="Men" element={<Men t={t} />} />
-        <Route path="Puset" element={<Puset t={t}  products={products}/>} />
+        <Route path="Puset" element={<Puset t={t} products={products} />} />
         <Route path="CreatedBy" element={<CreatedBy t={t} />} />
-        <Route path="Puset/Inner" element={<Inner t={t} products={products}/>} />
+        <Route path="Inner" element={<Inner t={t} products={products} />} />
       </Route>
     </Routes>
   );
