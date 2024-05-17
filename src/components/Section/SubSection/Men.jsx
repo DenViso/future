@@ -9,33 +9,33 @@ import { Link } from "react-router-dom";
       <h2>{t("section.section4")}</h2>
       <ul className="ringList">
         <li>
-          <Link to="ManOtherInner/1">
+          <Link to="WomenInner/1">
             {t("section.section19")}
             <img src="/img/men/ring.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="ManOtherInner/4">
+          <Link to="WomenInner/4">
             {t("section.section16")}
             <img src="/img/men/chain.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="ManOtherInner/5">
+          <Link to="WomenInner/5">
             {" "}
             {t("section.section20")}
             <img src="/img/men/bracel.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="ManOtherInner/5">
+          <Link to="WomenInner/5">
             {" "}
             {t("section.section21")}
             <img src="/img/men/cross.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="ManOtherInner/3">
+          <Link to="WomenInner/3">
             {" "}
             {t("section.section18")}
             <img src="/img/men/other.jpg" alt="" />

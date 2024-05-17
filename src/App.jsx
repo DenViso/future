@@ -20,7 +20,7 @@ import { CreatedBy } from "./components/MainPage/CreatedBy";
 import { Layout } from "./components/Layout";
 import { Inner } from "./components/Section/Inner/Inner";
 import { WomenInner} from "./components/Section/Inner/WomenInner";
-import { ManOtherInner } from "./components/Section/Inner/ManOtherInner";
+// import { ManOtherInner } from "./components/Section/Inner/ManOtherInner";
 // import { EngagemrntInner } from "./components/Section/Inner/EngagemrntInner";
 
 const App = () => {
@@ -109,9 +109,9 @@ const App = () => {
         <Route path="WeddingRings" element={<WeddingRings t={t} cat1={cat1} />} />
 
         <Route path="Women" element={<Women t={t}  cat1={cat1}/>} />
-        <Route path="Women/WomenInner/:paramValue" element={<WomenInner cat1={cat1} />} />
+        <Route path="Women/WomenInner/:paramValue" element={<WomenInner cat1={cat1} t={t}/>} />
         <Route path="Men" element={<Men t={t}  cat1={cat1}/>} />
-        <Route path="Men/ManOtherInner/:paramValue" element={<ManOtherInner cat1={cat1} />} />
+        <Route path="Men/WomenInner/:paramValue" element={<WomenInner cat1={cat1} t ={t}/>} />
        
        
         <Route path="CreatedBy" element={<CreatedBy t={t} />} />
