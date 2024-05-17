@@ -18,16 +18,20 @@ import { Men } from "./components/Section/SubSection/Men";
 import { Puset } from "./components/Section/SubSection/Puset";
 import { CreatedBy } from "./components/MainPage/CreatedBy";
 import { Layout } from "./components/Layout";
-import { Inner } from "./components/Section/Inner";
+import { Inner } from "./components/Section/Inner/Inner";
+import { WomenInner} from "./components/Section/Inner/WomenInner";
+import { ManOtherInner } from "./components/Section/Inner/ManOtherInner";
+// import { EngagemrntInner } from "./components/Section/Inner/EngagemrntInner";
 
 const App = () => {
   const { t, i18n } = useTranslation();
   const [products, setProducts] = useState([]);
+  const [cat1, setCat1] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/v1/products/');
+        const response = await axios.get('http://api.future.in.ua/api/v1/products/');
         setProducts(response.data);
       } catch (error) {
         console.error("Помилка отримання даних про продукти:", error);
@@ -36,6 +40,21 @@ const App = () => {
 
     fetchProducts();
   }, []);
+  useEffect(() => {
+    const categoryMan = async () => {
+      try {
+        const cat1 = await axios.get('https://api.future.in.ua/api/v1/products/');
+        
+        setCat1(cat1.data);
+      } catch (error) {
+        console.error("Помилка отримання даних про продукти:", error);
+      }
+    };
+
+    categoryMan();
+  }, []);
+ 
+// const productsMan = (cat1.map((product) => product));
 
   window.addEventListener("beforeunload", function (e) {
     // Скасувати подію перезавантаження
@@ -82,13 +101,24 @@ const App = () => {
         <Route path="Care" element={<Care t={t} />} />
         <Route path="Reviews" element={<Reviwes t={t} />} />
         <Route path="About" element={<About t={t} />} />
-        <Route path="Engagement" element={<Engagement t={t} />} />
-        <Route path="WeddingRings" element={<WeddingRings t={t} />} />
-        <Route path="Women" element={<Women t={t} />} />
-        <Route path="Men" element={<Men t={t} />} />
-        <Route path="Puset" element={<Puset t={t} products={products} />} />
+
+        <Route path="Engagement" element={<Engagement t={t} products={products}/>} />
+        <Route path="Engagement/Inner/:paramValue" element={<Inner t={t} cat1={cat1} />} />
+         <Route path="Puset" element={<Puset t={t} products={products} />} />
+        <Route path="Puset/Inner/:paramValue" element={<Inner t={t} cat1={cat1} />} />
+        <Route path="WeddingRings" element={<WeddingRings t={t} cat1={cat1} />} />
+
+        <Route path="Women" element={<Women t={t}  cat1={cat1}/>} />
+        <Route path="Women/WomenInner/:paramValue" element={<WomenInner cat1={cat1} />} />
+        <Route path="Men" element={<Men t={t}  cat1={cat1}/>} />
+        <Route path="Men/ManOtherInner/:paramValue" element={<ManOtherInner cat1={cat1} />} />
+       
+       
         <Route path="CreatedBy" element={<CreatedBy t={t} />} />
-        <Route path="Inner" element={<Inner t={t} products={products} />} />
+
+        
+      
+        
       </Route>
     </Routes>
   );
