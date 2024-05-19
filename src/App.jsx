@@ -25,7 +25,7 @@ const App = () => {
   const [cat1, setCat1] = useState([]);
   const [showLanguageModal, setShowLanguageModal] = useState(true);
   const location = useLocation();
-console.log(showLanguageModal);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -90,8 +90,10 @@ console.log(showLanguageModal);
           element={
             <Layout
               t={t}
-              i18n={i18n}
-              changeLanguage={changeLanguage}
+              // i18n={i18n}
+              // changeLanguage={changeLanguage}
+              cat1={cat1}
+              products={products}
             />
           }
         >

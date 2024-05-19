@@ -4,7 +4,7 @@ import { MenuDrop } from "./DropWindow/MenuDrop";
 import { SearchDrop } from "./DropWindow/SearchDrop";
 import { Cart } from "./Cart/Cart";
 
-export const Layout = ({ t, i18n, changeLanguage }) => {
+export const Layout = ({ t, cat1  }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
@@ -58,7 +58,7 @@ export const Layout = ({ t, i18n, changeLanguage }) => {
             onMouseEnter={handleSearchHover}
           />
           {showSearch && (
-            <SearchDrop hidenSearchMenu={handleMouseLeave} t={t} />
+            <SearchDrop hidenSearchMenu={handleMouseLeave} t={t} cat1={cat1}/>
           )}
         </div>
         <div className="logo1">
