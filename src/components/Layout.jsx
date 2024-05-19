@@ -83,7 +83,7 @@ export const Layout = ({ t, i18n, changeLanguage }) => {
             />
             {showCart && <Cart setShowCart={setShowCart} t={t} />}
           </div>
-          
+{/*           
           <div className="langButton">
             <button
               className={
@@ -105,7 +105,7 @@ export const Layout = ({ t, i18n, changeLanguage }) => {
             >
               Укр
             </button>
-          </div>
+          </div> */}
         </div>
       </header>
 

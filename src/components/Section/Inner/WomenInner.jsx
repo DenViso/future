@@ -32,7 +32,7 @@ export const WomenInner = ({ t, cat1 }) => {
                   {(!product.media_files[0].photo ||
                     product.media_files.length === 0) &&
                     product.media_files[0].video && (
-                      <video src={product.media_files[0].video} autoPlay alt=""></video>
+                      <video src={product.media_files[0].video} autoPlay  alt=""></video>
                     )}
                     <p className="text-scu"><span>Арт:</span>{product.sku}</p>
                 </div>

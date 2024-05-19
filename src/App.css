@@ -582,3 +582,49 @@ footer{
 }
 
 }
+.language-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.language-modal button {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid var(--white);
+}
+.language-modal button:hover {
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid var(--black);
+}
+.language-modal>img{
+  width: 80%;
+  
+}

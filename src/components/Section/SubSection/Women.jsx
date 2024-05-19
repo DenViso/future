@@ -7,14 +7,14 @@ export const Women = ({t}) => {
       <h2>{t("section.section3")}</h2>
       <ul className="ringList">
         <li>
-          <Link to="WomenInner/16">
+          <Link to="Inner/16">
             {t("section.section10")}
             <img src="/img/women/wr.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* todo */}
-          <Link to="WomenInner/"> 
+          <Link to="Inner/"> 
             {t("section.section11")}
             <img src="/img/women/wt.jpg" alt="" />
           </Link>
@@ -27,7 +27,7 @@ export const Women = ({t}) => {
           </Link>
         </li>
         <li>
-          <Link to="WomenInner/7">
+          <Link to="Inner/7">
             {" "}
             {t("section.section13")}
             <img src="/img/women/e.jpg" alt="" />
@@ -35,26 +35,26 @@ export const Women = ({t}) => {
         </li>
         <li>
           {/* todo */}
-          <Link to="WomenInner/">
+          <Link to="Inner/">
             {t("section.section14")}
             <img src="/img/women/c.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="WomenInner/8">
+          <Link to="Inner/8">
             {t("section.section15")}
             <img src="/img/women/susp.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* todo */}
-          <Link to="womenInner/4">
+          <Link to="Inner/4">
             {t("section.section16")}
             <img src="/img/women/chain.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="WomenInner/2">
+          <Link to="Inner/2">
             {" "}
             {t("section.section17")}
             <img src="/img/women/bracel.jpg" alt="" />
@@ -62,7 +62,7 @@ export const Women = ({t}) => {
         </li>
         <li>
           {/* todo */}
-          <Link to="WomenInner/3">
+          <Link to="Inner/3">
             {t("section.section18")}
             <img src="/img/men/other.jpg" alt="" />
           </Link>
