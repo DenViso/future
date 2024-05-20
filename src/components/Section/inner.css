@@ -153,3 +153,43 @@ font-size: 10px;
   font-size: 20px;
   margin-bottom: 3px;
 }
+@media (max-width: 768px){
+  .subInner-conteiner{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--black);
+    z-index: 10;
+    position: relative;
+  }
+  .subInner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 1000px; */
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--black);
+    z-index: 10;
+    position: relative;
+  }
+  .subInner-section{
+    display: flex;
+    width: 45%;
+    height: 200px;
+  }
+  .subInner-section-img {
+    width: 100%;
+    height: 100%;
+  }
+  .subBack{
+    padding-left: 10px;
+    font-size: 20px;
+    color: var(--white);
+}}
