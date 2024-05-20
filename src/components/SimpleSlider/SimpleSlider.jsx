@@ -1,22 +1,52 @@
 import Slider from 'react-slick'
 import React from 'react'
+import { NextArrow, PrevArrow } from "./CustomArrows";
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
 export const SimpleSlider = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 2500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay:true,
-    // autoplaySpeed: 000,
-     arrows:false,
-    // beforeChange: function(currentSlide, nextSlide) {
-    //   console.log('before change', currentSlide, nextSlide)
-    // }
-  }
+//   const settings = {
+//     dots: true,
+//     infinite: true,
+//     speed: 2000,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay:true,
+//     arrows:false,
+//      // autoplaySpeed: 000,
+//     // beforeChange: function(currentSlide, nextSlide) {
+//     //   console.log('before change', currentSlide, nextSlide)
+//     // }
+//   }
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 2000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  // responsive: [
+  //   {
+  //     breakpoint: 2024,
+  //     settings: {
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       infinite: true,
+  //       dots: true
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 2600,
+  //     settings: {
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1
+  //     }
+  //   }
+  // ]
+};
          return (
           <div className="slider-container">
             <Slider {...settings}>
