@@ -6,19 +6,46 @@ export const Reviwes = ({ t }) => {
 
   // Викликаємо useEffect для завантаження відгуків після завантаження компоненту
   useEffect(() => {
-    // Отримуємо відгуки з локального сховища (можна замінити на вибірку з сервера)
-    const savedFeedbacks = localStorage.getItem("feedbacks");
-    if (savedFeedbacks) {
-      setFeedbacks(JSON.parse(savedFeedbacks));
-    }
+    // Отримуємо відгуки з сервера
+    fetch("https://api.future.in.ua/api/v1/reviews/")
+      .then((response) => response.json())
+      .then((data) => {
+        setFeedbacks(data);
+        // Також зберігаємо відгуки в локальному сховищі як резервну копію
+        localStorage.setItem("feedbacks", JSON.stringify(data));
+      })
+      .catch((error) => {
+        console.error("Error fetching feedbacks:", error);
+        // Якщо не вдалося отримати відгуки з сервера, завантажуємо з локального сховища
+        const savedFeedbacks = localStorage.getItem("feedbacks");
+        if (savedFeedbacks) {
+          setFeedbacks(JSON.parse(savedFeedbacks));
+        }
+      });
   }, []);
 
   // Функція для додавання нового відгуку
   const addFeedback = (name, newFeedback) => {
-    const updatedFeedbacks = [...feedbacks, { name, text: newFeedback }];
-    setFeedbacks(updatedFeedbacks);
-    // Зберігаємо відгуки в локальному сховищі
-    localStorage.setItem("feedbacks", JSON.stringify(updatedFeedbacks));
+    const newEntry = { name, text: newFeedback };
+    const updatedFeedbacks = [...feedbacks, newEntry];
+
+    // Відправляємо новий відгук на сервер
+    fetch("https://api.future.in.ua/api/v1/reviews/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newEntry),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setFeedbacks(updatedFeedbacks);
+        // Зберігаємо відгуки в локальному сховищі
+        localStorage.setItem("feedbacks", JSON.stringify(updatedFeedbacks));
+      })
+      .catch((error) => {
+        console.error("Error adding feedback:", error);
+      });
   };
 
   return (

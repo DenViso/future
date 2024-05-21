@@ -3,7 +3,7 @@ duration = 4s;
 delay = 0s; */
 
 .contLoader {
-  background: var(--black);
+  background: var(--white);
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -17,7 +17,7 @@ delay = 0s; */
   position: relative;
 }
 .contLoader > h1 {
-  color: var(--white);
+  color: var(--black);
   font-size: 2.5rem;
   font-weight: 600;
   font-family: var(--fontFamily);
@@ -32,7 +32,7 @@ delay = 0s; */
 .loader>.box1,
 .loader>.box2,
 .loader>.box3 {
-  border: 16px solid var(--white);
+  border: 16px solid var(--black);
   box-sizing: border-box;
   position: absolute;
   display: block;
