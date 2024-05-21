@@ -16,7 +16,7 @@ export const Inner = ({ t, cat1 }) => {
   useEffect(() => {
     const delay = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(delay);
   }, []);

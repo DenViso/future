@@ -77,7 +77,7 @@ const App = () => {
     <>
       {showLanguageModal ? (
         <div className="language-modal">
-          <img src="/img/logo/logo.png" alt="" />
+          <img src="/img/logo/logo1.png" alt="" />
           <h2>Виберіть мову</h2>
           <button onClick={() => changeLanguage("uk")}>Українська</button>
           <h2>Choose language</h2>
