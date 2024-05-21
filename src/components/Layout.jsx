@@ -4,21 +4,33 @@ import { MenuDrop } from "./DropWindow/MenuDrop";
 import { SearchDrop } from "./DropWindow/SearchDrop";
 import { Cart } from "./Cart/Cart";
 
-export const Layout = ({ t, cat1  }) => {
+export const Layout = ({ t, cat1 }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    window.addEventListener('beforeunload', function (e) {
-      // Встановити повідомлення для користувача
-      e.returnValue = 'Ви впевнені, що хочете покинути цю сторінку?';
-      // Перенаправлення на головну сторінку
-      window.location.href = '/';
-    })
-    
+
+    const beforeUnloadHandler = (e) => {
+      e.returnValue = "Ви впевнені, що хочете покинути цю сторінку?";
+    };
+
+    window.addEventListener("beforeunload", beforeUnloadHandler);
+
+    return () => {
+      window.removeEventListener("beforeunload", beforeUnloadHandler);
+    };
   }, [location.pathname]);
+
+  const handlePhoneClick = () => {
+    window.removeEventListener("beforeunload", handleBeforeUnload);
+  };
+
+  const handleBeforeUnload = (e) => {
+    e.returnValue = "Ви впевнені, що хочете покинути цю сторінку?";
+  };
 
   const handleClick = () => {
     setShowCart(true);
@@ -58,7 +70,7 @@ export const Layout = ({ t, cat1  }) => {
             onMouseEnter={handleSearchHover}
           />
           {showSearch && (
-            <SearchDrop hidenSearchMenu={handleMouseLeave} t={t} cat1={cat1}/>
+            <SearchDrop hidenSearchMenu={handleMouseLeave} t={t} cat1={cat1} />
           )}
         </div>
         <div className="logo1">
@@ -67,7 +79,7 @@ export const Layout = ({ t, cat1  }) => {
           </Link>
         </div>
         <div className="contact">
-          <a href="tel:+380936918998">
+          <a href="tel:+380936918998" onClick={handlePhoneClick}>
             <img
               className="iconSize"
               src="/img/headerIcon/contact2.png"
@@ -83,7 +95,7 @@ export const Layout = ({ t, cat1  }) => {
             />
             {showCart && <Cart setShowCart={setShowCart} t={t} />}
           </div>
-{/*           
+          {/*           
           <div className="langButton">
             <button
               className={
@@ -119,7 +131,7 @@ export const Layout = ({ t, cat1  }) => {
             <img src="/img/logo/logo.png" alt="Logo" />
           </Link>
           <div className="footerText">
-            <a href="tel:+380936918998">+38 (093) 691-89-98</a> <br />
+            <a href="tel:+380936918998" onClick={handlePhoneClick}>+38 (093) 691-89-98</a> <br />
             <a href="mailto:3sTnE@example.com">yourEmail@example.com</a>
           </div>
         </div>
@@ -130,9 +142,9 @@ export const Layout = ({ t, cat1  }) => {
           <address>
             <p>{t("adresses.strict")}</p>
             <p>{t("adresses.adress")}, </p>
-            <p> {t("adresses.ofice")}</p>
-            <p>{t("adresses.time")},</p>
-            <p>{t("adresses.time2")},</p>
+            <p>{t("adresses.ofice")}</p>
+            <p>{t("adresses.time")}</p>
+            <p>{t("adresses.time2")}</p>
             <p>{t("adresses.time3")}</p>
           </address>
         </div>

@@ -36,7 +36,7 @@ const App = () => {
       } catch (error) {
         console.error("Error fetching products:", error);
       }
-    };
+    }; /*  */
 
     fetchProducts();
   }, []);
@@ -83,64 +83,65 @@ const App = () => {
           <h2>Choose language</h2>
           <button onClick={() => changeLanguage("en")}>English</button>
         </div>
-      ):(
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout
-              t={t}
-              // i18n={i18n}
-              // changeLanguage={changeLanguage}
-              cat1={cat1}
-              products={products}
+      ) : (
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout
+                t={t}
+                // i18n={i18n}
+                // changeLanguage={changeLanguage}
+                cat1={cat1}
+                products={products}
+              />
+            }
+          >
+            <Route index element={<MainePage t={t} />} />
+            <Route path="Ring" element={<Ring t={t} />} />
+            <Route path="Diamond" element={<Diamond t={t} />} />
+            <Route path="Services" element={<Services t={t} />} />
+            <Route path="Care" element={<Care t={t} />} />
+            <Route path="Reviews" element={<Reviwes t={t} />} />
+            <Route path="About" element={<About t={t} />} />
+
+            <Route
+              path="Engagement"
+              element={<Engagement t={t} products={products} />}
             />
-          }
-        >
-          <Route index element={<MainePage t={t} />} />
-          <Route path="Ring" element={<Ring t={t} />} />
-          <Route path="Diamond" element={<Diamond t={t} />} />
-          <Route path="Services" element={<Services t={t} />} />
-          <Route path="Care" element={<Care t={t} />} />
-          <Route path="Reviews" element={<Reviwes t={t} />} />
-          <Route path="About" element={<About t={t} />} />
+            <Route
+              path="Engagement/Inner/:paramValue"
+              element={<Inner t={t} cat1={cat1} />}
+            />
+            <Route path="Puset" element={<Puset t={t} products={products} />} />
+            <Route
+              path="Puset/Inner/:paramValue"
+              element={<Inner t={t} cat1={cat1} />}
+            />
+            <Route
+              path="WeddingRings"
+              element={<WeddingRings t={t} products={products} cat1={cat1} />}
+            />
+            <Route
+              path="WeddingRings/Inner/:paramValue"
+              element={<Inner t={t} cat1={cat1} />}
+            />
 
-          <Route
-            path="Engagement"
-            element={<Engagement t={t} products={products} />}
-          />
-          <Route
-            path="Engagement/Inner/:paramValue"
-            element={<Inner t={t} cat1={cat1} />}
-          />
-          <Route path="Puset" element={<Puset t={t} products={products} />} />
-          <Route
-            path="Puset/Inner/:paramValue"
-            element={<Inner t={t} cat1={cat1} />}
-          />
-          <Route
-            path="WeddingRings"
-            element={<WeddingRings t={t} products={products} cat1={cat1}/>}
-          />
-          <Route
-            path="WeddingRings/Inner/:paramValue"
-            element={<Inner t={t} cat1={cat1} />}
-          />
+            <Route path="Women" element={<Women t={t} cat1={cat1} />} />
+            <Route
+              path="Women/Inner/:paramValue"
+              element={<Inner cat1={cat1} t={t} />}
+            />
+            <Route path="Men" element={<Men t={t} cat1={cat1} />} />
+            <Route
+              path="Men/Inner/:paramValue"
+              element={<Inner cat1={cat1} t={t} />}
+            />
 
-          <Route path="Women" element={<Women t={t} cat1={cat1} />} />
-          <Route
-            path="Women/Inner/:paramValue"
-            element={<Inner cat1={cat1} t={t} />}
-          />
-          <Route path="Men" element={<Men t={t} cat1={cat1} />} />
-          <Route
-            path="Men/Inner/:paramValue"
-            element={<Inner cat1={cat1} t={t} />}
-          />
-
-          <Route path="CreatedBy" element={<CreatedBy t={t} />} />
-        </Route>
-      </Routes>)}
+            <Route path="CreatedBy" element={<CreatedBy t={t} />} />
+          </Route>
+        </Routes>
+      )}
     </>
   );
 };
