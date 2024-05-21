@@ -109,6 +109,9 @@
    "section19":"Ring",
    "section20":"Bracelet", 
    "section21":"Cross"
- }
+ },
+ "created":{
+  "title":"Created by"
+}
  
 }
