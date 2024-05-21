@@ -13,15 +13,15 @@ export const Layout = ({ t, cat1 }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const beforeUnloadHandler = (e) => {
-      e.returnValue = "Ви впевнені, що хочете покинути цю сторінку?";
-    };
+    // const beforeUnloadHandler = (e) => {
+    //   e.returnValue = "Ви впевнені, що хочете покинути цю сторінку?";
+    // };
 
-    window.addEventListener("beforeunload", beforeUnloadHandler);
+    // window.addEventListener("beforeunload", beforeUnloadHandler);
 
-    return () => {
-      window.removeEventListener("beforeunload", beforeUnloadHandler);
-    };
+    // return () => {
+    //   window.removeEventListener("beforeunload", beforeUnloadHandler);
+    // };
   }, [location.pathname]);
 
   const handlePhoneClick = () => {
