@@ -22,14 +22,15 @@
     "sec7": "Search by code"
   },
   "cart": {
-    "text": "Your cart is empty",
-    "button": "Close"
+   
+    "button": "Close",
+    "empty":"Your cart is empty"
   },
   "about": {
     "title": "We`re the best!"
   },
   "care": {
-    "title": "Jewelry Care :",
+    "title": "Jewelry Care ",
     "text": "The main thing in taking care of jewelry is to understand that it is a precious thing! The appearance and beauty will depend on how you take care of yours ring or favorite earrings. The main thing that unites almost everyone body jewelry, like everything that surrounds us, has the property of being covered dirt, and from time to time, at least once every six months, this dirt must be removed. But if you want, for example, your diamond to always impress with its game, then you will have to visit a jewelry workshop at least once a month. Products with mechanical joints that wear out over time, a chain, a bracelet, carrings with hanging elements...this is often noticed when the product is broken, and this is the risk of losing your jewel! The same applies to inserts, especially with precious stones,when wearing a krapan (paw) for a long time,which they hold stones,can bend, wear out. Therefore, our advice is from time to time time to take the jewelry to a competent jeweler for cleaning and inspection. It is also worth understanding that some jewelry must be removed when taking a shower, visiting spa salons, swimming in seas,oceans, sports or homework.",
 
     "title2": "Details about some properties:",
@@ -41,10 +42,10 @@
     "stone4": "Diamond",
     "stone5": "Tapaz",
     "ta": "ta",
-    "text1": "...According to their structure, these are rather fragile and soft stones, too strongly react to chemical elements, it can be cosmetics or spa salons It is advisable to store the boxes so that the parts do not collide with each other one.",
-    "text3": ":A very fragile stone! But very expensive! Therefore, it is important to wear jewelry with this charming stone, consider these features. Also it is important to clean properly. Emeralds cannot, like most stones, just wash in an ultrasonic bath. There are many nuances, the first is that approximately 95% of emeralds are treated with oil, which can leak (iein some cases, can be corrected), there are also other processing methods which must be taken into account. If you don't even have an oiled Emerald, what is it? costs many times more, you still have to be very careful with it.",
-    "text4": ":one of the least capricious stones, but there are some polished diamonds that can deteriorate in ultrasonic cleaners. Enriched or not can be specified in the correct certificate, or final gemologist.",
-    "text5": ":rauch topaz lovers of these stones should know over time when exposed to the sun for a long time, these stones can burn out."
+    "text1": "аccording to their structure, these are rather fragile and soft stones, too strongly react to chemical elements, it can be cosmetics or spa salons It is advisable to store the boxes so that the parts do not collide with each other one.",
+    "text3": "A very fragile stone! But very expensive! Therefore, it is important to wear jewelry with this charming stone, consider these features. Also it is important to clean properly. Emeralds cannot, like most stones, just wash in an ultrasonic bath. There are many nuances, the first is that approximately 95% of emeralds are treated with oil, which can leak (iein some cases, can be corrected), there are also other processing methods which must be taken into account. If you don't even have an oiled Emerald, what is it? costs many times more, you still have to be very careful with it.",
+    "text4": "one of the least capricious stones, but there are some polished diamonds that can deteriorate in ultrasonic cleaners. Enriched or not can be specified in the correct certificate, or final geologist.",
+    "text5": "rauch topaz lovers of these stones should know over time when exposed to the sun for a long time, these stones can burn out."
   },
   "stones": {
     "title": "Gems",
@@ -78,7 +79,7 @@
     "title1":"Important!",
     "text3":"The cost of the works is announced only after inspection by our master.",
     "title2":"For example",
-    "text3.1":"soldering chain can depend on: weight, blown or not, double - triple...Weaving, White or red gold And other..."
+    "text3.1":"soldering chain can depend on: weight, blown or not, double - triple weaving, white or red gold and other..."
  },
  "section": {
 

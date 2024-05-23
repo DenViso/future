@@ -8,11 +8,13 @@ export const Inner = ({ t, cat1 }) => {
   const { paramValue } = useParams();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [loading, setLoading] = useState(true); 
+  const [likedProducts, setLikedProducts] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [selectedProduct]);
-  
+
   useEffect(() => {
     const delay = setTimeout(() => {
       setLoading(false);
@@ -21,12 +23,40 @@ export const Inner = ({ t, cat1 }) => {
     return () => clearTimeout(delay);
   }, []);
 
+  useEffect(() => {
+    const storedLikes = localStorage.getItem('likedProducts');
+    if (storedLikes) {
+      setLikedProducts(JSON.parse(storedLikes));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (selectedProduct) {
+      const isProductLiked = likedProducts.some(
+        (product) => product.id === selectedProduct.id
+      );
+      setIsLiked(isProductLiked);
+    }
+  }, [selectedProduct, likedProducts]);
+
   const openModal = (product) => {
     setSelectedProduct(product);
   };
 
   const closeModal = () => {
     setSelectedProduct(null);
+  };
+
+  const handleLike = (product) => {
+    let updatedLikes;
+    if (isLiked) {
+      updatedLikes = likedProducts.filter((item) => item.id !== product.id);
+    } else {
+      updatedLikes = [...likedProducts, product];
+    }
+    setLikedProducts(updatedLikes);
+    localStorage.setItem('likedProducts', JSON.stringify(updatedLikes));
+    setIsLiked(!isLiked);
   };
 
   return (
@@ -98,12 +128,17 @@ export const Inner = ({ t, cat1 }) => {
                       alt=""
                       autoPlay
                       controls
-                      onFocus={() => setSelectedProduct(item)}
-                      onBlur={() => setSelectedProduct(null)}
                     />
                   )
                 ))}
             </div>
+            <button
+              className="like-button"
+              onClick={() => handleLike(selectedProduct)}
+              style={{ color: isLiked ? "red" : "white" }}
+            >
+              ❤ 
+            </button>
           </div>
         </div>
       )}

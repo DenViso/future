@@ -221,3 +221,20 @@ font-size: 10px;
     font-size: 20px;
     color: var(--white);
 }}
+.like-button {
+  position: absolute;
+  top: 5px;
+  left: 60px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: initial;
+  border: none;
+  font-size: 30px;
+  place-self: center;
+  cursor: pointer;
+
+}
+.like-button::backdrop {
+  color: var(--black);
+}
