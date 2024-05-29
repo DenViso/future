@@ -88,6 +88,13 @@ position: relative;
   width: 100%;
   text-align:start;
   padding: 10px;
+  color: var(--black);
+}
+.cart-text>h2{
+  width: 100%;
+  text-align:start;
+  padding: 10px;
+  color: var(--black);
 }
 @media (max-width: 580px) {
   .cart{
@@ -132,7 +139,7 @@ position: relative;
     color:var(--black);
     position: fixed;
     top:0px;
-    left:-360px;
+    left:-320px;
     font-size: 20px;
     padding: 2px;
   }
