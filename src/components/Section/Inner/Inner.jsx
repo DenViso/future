@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 export const Inner = ({ t, cat1 }) => {
   const { paramValue } = useParams();
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   const [likedProducts, setLikedProducts] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,7 +25,7 @@ export const Inner = ({ t, cat1 }) => {
   }, []);
 
   useEffect(() => {
-    const storedLikes = localStorage.getItem('likedProducts');
+    const storedLikes = localStorage.getItem("likedProducts");
     if (storedLikes) {
       setLikedProducts(JSON.parse(storedLikes));
     }
@@ -55,13 +56,40 @@ export const Inner = ({ t, cat1 }) => {
       updatedLikes = [...likedProducts, product];
     }
     setLikedProducts(updatedLikes);
-    localStorage.setItem('likedProducts', JSON.stringify(updatedLikes));
+    localStorage.setItem("likedProducts", JSON.stringify(updatedLikes));
     setIsLiked(!isLiked);
+
+    // Оновлення стану після зміни локального сховища
+    refreshProducts();
   };
+
+  const refreshProducts = () => {
+    // Логіка для повторного завантаження даних
+    const storedLikes = localStorage.getItem("likedProducts");
+    if (storedLikes) {
+      setLikedProducts(JSON.parse(storedLikes));
+    } else {
+      setLikedProducts([]);
+    }
+  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  })
+console.log(scroll);
 
   return (
     <div className="subInner-conteiner">
-      <Link to="/Ring">{t("back.toJewelry")}</Link>
+     {!scroll === true ? <Link className="back" to="/Ring">{t("back.toJewelry")}</Link>:
+     <Link className="scroll" to="/Ring">&#8593;</Link>
+     }
       {!loading ? (
         !selectedProduct && (
           <div className="subInner">
@@ -103,12 +131,35 @@ export const Inner = ({ t, cat1 }) => {
               &times;
             </span>
             <div className="modal-info">
-              <h2>Арт. продукту:<br /> {selectedProduct.sku}</h2> 
-              {selectedProduct.gold_assay && <p>Проба :<br /> {selectedProduct.gold_assay}</p>} 
-              {selectedProduct.gold_color && <p>Колір :<br /> {selectedProduct.gold_color}</p>} 
-              {selectedProduct.size && <p>Розмір :<br /> {selectedProduct.size}</p>} 
-              {selectedProduct.stone_characteristics && <p>Характеристики каміння :<br /> {selectedProduct.stone_characteristics}</p>} 
-              {selectedProduct.weight && <p>Вага виробу :<br /> {selectedProduct.weight}</p>} 
+              {/* i18n to do */}
+              <h2>
+                Арт. продукту:<br /> {selectedProduct.sku}
+              </h2>
+              {selectedProduct.gold_assay && (
+                <p>
+                  Проба :<br /> {selectedProduct.gold_assay}
+                </p>
+              )}
+              {selectedProduct.gold_color && (
+                <p>
+                  Колір :<br /> {selectedProduct.gold_color}
+                </p>
+              )}
+              {selectedProduct.size && (
+                <p>
+                  Розмір :<br /> {selectedProduct.size}
+                </p>
+              )}
+              {selectedProduct.stone_characteristics && (
+                <p>
+                  Характеристики каміння :<br /> {selectedProduct.stone_characteristics}
+                </p>
+              )}
+              {selectedProduct.weight && (
+                <p>
+                  Вага виробу :<br /> {selectedProduct.weight}
+                </p>
+              )}
             </div>
             <div className="modal-img">
               {selectedProduct.media_files &&
@@ -120,25 +171,24 @@ export const Inner = ({ t, cat1 }) => {
             <div className="modal-video">
               {selectedProduct.media_files &&
                 selectedProduct.media_files.length > 0 &&
-                selectedProduct.media_files.map((item) => (
-                  item.video && (
-                    <video
-                      key={item.id}
-                      src={item.video}
-                      alt=""
-                      autoPlay
-                      controls
-                    />
-                  )
-                ))}
+                selectedProduct.media_files.map(
+                  (item) =>
+                    item.video && (
+                      <video
+                        key={item.id}
+                        src={item.video}
+                        alt=""
+                        autoPlay
+                        controls
+                      />
+                    )
+                )}
             </div>
-            <button
-              className="like-button"
+            <div
+              className="heart"
               onClick={() => handleLike(selectedProduct)}
               style={{ color: isLiked ? "red" : "white" }}
-            >
-              ❤ 
-            </button>
+            ></div>
           </div>
         </div>
       )}

@@ -5,50 +5,84 @@ import { SearchDrop } from "./DropWindow/SearchDrop";
 import { Cart } from "./Cart/Cart";
 
 export const Layout = ({ t, cat1 }) => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null); // "menu", "search", or null
   const [showCart, setShowCart] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const location = useLocation();
+
+  // console.log(mousePosition);
+  // console.log(activeMenu);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    // const beforeUnloadHandler = (e) => {
-    //   e.returnValue = "Ви впевнені, що хочете покинути цю сторінку?";
-    // };
-
-    // window.addEventListener("beforeunload", beforeUnloadHandler);
-
-    // return () => {
-    //   window.removeEventListener("beforeunload", beforeUnloadHandler);
-    // };
+    setActiveMenu(null);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  // useEffect(() => {
+  //   const handleMouseLeave = () => {
+  //     if (!activeMenu) return;
+
+  //     if (activeMenu == "search") {
+  //       const menu = document.querySelector(".search");
+  //       if (!menu) return;
+
+  //       const { top, bottom, left, right } = menu.getBoundingClientRect();
+  //       const buffer = 50;
+
+  //       if (
+  //         mousePosition.y < top - buffer ||
+  //         mousePosition.y > bottom + buffer ||
+  //         mousePosition.x < left - buffer ||
+  //         mousePosition.x > right + buffer
+  //       ) {
+  //         setActiveMenu(null);
+  //       }
+  //     }
+  //   };
+    
+  //   // handleMouseLeave();
+  // }, [mousePosition, activeMenu]);
+
+  const handleMouseLeave = () => {
+     mousePosition > { x: 0, y: 0 } &&
+      setActiveMenu(null);
+  }
+    
+  
+
+// console.log(activeMenu);
 
   const handlePhoneClick = () => {
     window.removeEventListener("beforeunload", handleBeforeUnload);
   };
 
-  const handleBeforeUnload = (e) => {
-    e.returnValue = "Ви впевнені, що хочете покинути цю сторінку?";
-  };
+  // const handleBeforeUnload = (e) => {
+  //   e.returnValue = "Ви впевнені, що хочете покинути цю сторінку?";
+  // };
 
   const handleClick = () => {
     setShowCart(true);
   };
 
-  const handleMenuHover = () => {
-    setShowMenu(true);
-    setShowSearch(false);
+  const handleSearch = () => {
+    setActiveMenu(null); // Закриття пошукового меню після натискання кнопки пошуку
+    // Логіка пошуку
   };
 
-  const handleSearchHover = () => {
-    setShowSearch(true);
-    setShowMenu(false);
-  };
-
-  const handleMouseLeave = () => {
-    setShowMenu(false);
-    setShowSearch(false);
+  const handleMouseEnter = (menu) => {
+    setActiveMenu(menu);
   };
 
   return (
@@ -60,17 +94,28 @@ export const Layout = ({ t, cat1 }) => {
             className="iconSize"
             src="/img/headerIcon/menu.png"
             alt="Menu"
-            onMouseEnter={handleMenuHover}
+            onMouseEnter={() => handleMouseEnter("menu")}
           />
-          {showMenu && <MenuDrop hideDropMenu={handleMouseLeave} t={t} />}
+          {activeMenu === "menu" && (
+            <MenuDrop hideDropMenu={() => setActiveMenu(null)} t={t} />
+          )}
           <img
             className="iconSize"
             src="/img/headerIcon/search.png"
             alt="Search"
-            onMouseEnter={handleSearchHover}
+            onMouseEnter={() => handleMouseEnter("search")}
+             onMouseLeave={() => handleMouseLeave(null)}
+             
           />
-          {showSearch && (
-            <SearchDrop hidenSearchMenu={handleMouseLeave} t={t} cat1={cat1} />
+          {activeMenu === "search" && (
+            <SearchDrop
+              className="search-menu"
+              handleSearch={handleSearch}
+              // hidenSearchMenu={hidenSearchMenu}
+
+              t={t}
+              cat1={cat1}
+            />
           )}
         </div>
         <div className="logo1">
@@ -95,29 +140,6 @@ export const Layout = ({ t, cat1 }) => {
             />
             {showCart && <Cart setShowCart={setShowCart} t={t} />}
           </div>
-          {/*           
-          <div className="langButton">
-            <button
-              className={
-                i18n.language === "en"
-                  ? "activeLangButton langButtonMain"
-                  : "langButtonMain"
-              }
-              onClick={() => changeLanguage("en")}
-            >
-              En
-            </button>
-            <button
-              className={
-                i18n.language === "uk"
-                  ? "activeLangButton langButtonMain"
-                  : "langButtonMain"
-              }
-              onClick={() => changeLanguage("uk")}
-            >
-              Укр
-            </button>
-          </div> */}
         </div>
       </header>
 
@@ -131,7 +153,10 @@ export const Layout = ({ t, cat1 }) => {
             <img src="/img/logo/logo.png" alt="Logo" />
           </Link>
           <div className="footerText">
-            <a href="tel:+380936918998" onClick={handlePhoneClick()}>+38 (093) 691-89-98</a> <br />
+            <a href="tel:+380936918998" onClick={handlePhoneClick}>
+              +38 (093) 691-89-98
+            </a>{" "}
+            <br />
             <a href="mailto:3sTnE@example.com">yourEmail@example.com</a>
           </div>
         </div>

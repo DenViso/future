@@ -9,31 +9,32 @@ export const Engagement = ({t}) => {
       <h1>{t("section.section1")}</h1>
       <ul className="ringList">
         <li>
-          <Link to="Inner/18">
+          <Link to="Inner/47">
           {t("section.section5")}
             <img src="/img/engag/solo.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="Inner/20">
+          <Link to="Inner/48">
           {t("section.section6")}
             <img src="/img/engag/sp.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="Inner/19">
+          <Link to="Inner/51">
           {t("section.section7")}
             <img src="/img/engag/fs.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="Inner/21">
+          <Link to="Inner/50">
           {t("section.section8")}
             <img src="/img/engag/fp.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="Inner/22">
+          {/* знайти назву каталога */}
+          <Link to="Inner/49">
           {t("section.section9")}
             <img src="/img/engag/c.jpg" alt="" />
           </Link>

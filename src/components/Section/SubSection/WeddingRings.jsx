@@ -38,7 +38,7 @@ export const WeddingRings = ({ t, cat1 }) => {
             {cat1 !== null &&
               // cat1.length > 0 &&
               cat1.map((product) =>
-                product.category == 21 ? (
+                product.category == 53 ? (
                   <div
                     className="subInner-section"
                     key={product.id}

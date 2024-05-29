@@ -21,56 +21,42 @@ import { Inner } from "./components/Section/Inner/Inner";
 
 const App = () => {
   const { t, i18n } = useTranslation();
-  const [products, setProducts] = useState([]);
   const [cat1, setCat1] = useState([]);
-  const [showLanguageModal, setShowLanguageModal] = useState(true);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get(
-          "http://api.future.in.ua/api/v1/products/"
-        );
-        setProducts(response.data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    }; /*  */
+  const categoryMan = async () => {
+    try {
+      const response = await axios.get(
+        "https://api.future.in.ua/api/v1/products/"
+      );
+      setCat1(response.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
 
-    fetchProducts();
-  }, []);
+  const debouncedCategoryMan = debounce(categoryMan, 500); // debounce затримує виклики categoryMan на 500 мс
 
   useEffect(() => {
-    const categoryMan = async () => {
-      try {
-        const cat1 = await axios.get(
-          "https://api.future.in.ua/api/v1/products/"
-        );
-
-        setCat1(cat1.data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-
-    categoryMan();
+    const languageSelected = localStorage.getItem("languageSelected");
+    if (!languageSelected) {
+      setShowLanguageModal(true);
+    } else {
+      debouncedCategoryMan(); // Викликається лише один раз при монтуванні компонента
+    }
   }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  useEffect(() => {
-    if (!localStorage.getItem("language")) {
-      setShowLanguageModal(true);
-    }
-  }, []);
-
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     localStorage.setItem("language", lng);
+    localStorage.setItem("languageSelected", "true");
     setShowLanguageModal(false);
+    categoryMan(); // Завантаження продуктів після вибору мови
   };
 
   return (
@@ -90,10 +76,7 @@ const App = () => {
             element={
               <Layout
                 t={t}
-                // i18n={i18n}
-                // changeLanguage={changeLanguage}
                 cat1={cat1}
-                products={products}
               />
             }
           >
@@ -107,20 +90,20 @@ const App = () => {
 
             <Route
               path="Engagement"
-              element={<Engagement t={t} products={products} />}
+              element={<Engagement t={t} cat1={cat1} />}
             />
             <Route
               path="Engagement/Inner/:paramValue"
               element={<Inner t={t} cat1={cat1} />}
             />
-            <Route path="Puset" element={<Puset t={t} products={products} />} />
+            <Route path="Puset" element={<Puset t={t} cat1={cat1} />} />
             <Route
               path="Puset/Inner/:paramValue"
               element={<Inner t={t} cat1={cat1} />}
             />
             <Route
               path="WeddingRings"
-              element={<WeddingRings t={t} products={products} cat1={cat1} />}
+              element={<WeddingRings t={t} cat1={cat1} />}
             />
             <Route
               path="WeddingRings/Inner/:paramValue"
@@ -145,5 +128,16 @@ const App = () => {
     </>
   );
 };
+
+// Допоміжна функція debounce
+function debounce(func, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
 
 export default App;

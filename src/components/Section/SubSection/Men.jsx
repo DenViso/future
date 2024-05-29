@@ -9,33 +9,38 @@ import { Link } from "react-router-dom";
       <h2>{t("section.section4")}</h2>
       <ul className="ringList">
         <li>
-          <Link to="Inner/1">
+          {/* чолов перст */}
+          <Link to="Inner/41">
             {t("section.section19")}
             <img src="/img/men/ring.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="Inner/4">
+          {/* ланцюг */}
+          <Link to="Inner/43">
             {t("section.section16")}
             <img src="/img/men/chain.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="Inner/5">
+          {/* браслет чоловічий */}
+          <Link to="Inner/44">
             {" "}
             {t("section.section20")}
             <img src="/img/men/bracel.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="Inner/5">
+          {/* хрест */}
+          <Link to="Inner/45">
             {" "}
             {t("section.section21")}
             <img src="/img/men/cross.jpg" alt="" />
           </Link>
         </li>
         <li>
-          <Link to="Inner/3">
+          {/* інше */}
+          <Link to="Inner/42">
             {" "}
             {t("section.section18")}
             <img src="/img/men/other.jpg" alt="" />

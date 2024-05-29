@@ -62,6 +62,46 @@
 }
 
 /* DropSearch */
+.closed{
+
+    color: var(--black);
+    font-size: 45px;
+    text-align: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    border: 1px solid  var(--black);
+  
+  }
+  .closed:hover{
+    animation: 1s pulsar ;
+  }
+  @keyframes pulsar {
+    0% {
+      rotate: 0deg;
+    }
+  
+    50% {
+     rotate: 180deg;
+     box-shadow: 1px 1px 10px 1px var(--white);
+    }
+  
+    100% {
+      rotate: 0deg;
+    }
+  }
+  
+  /* @-webkit-keyframes pulse {
+    0% {
+      -webkit-transform: scale(0.95); */
 
 .searchDrop{
   position: absolute;
@@ -74,6 +114,7 @@
   border-radius: 0 7px 7px 0;
   z-index: 90;
  animation: dropIn 0.7s;   
+ 
  
 }
 .search>button>img{
@@ -178,12 +219,12 @@ border: solid 3px var(--black);
   padding: 1rem;
   width: 100vw;
   height: fit-content;
-  background-color: rgba(0, 0, 0);
+  background-color: var(--grey);
   position: relative;
   top: 0;
   left: 0;
   z-index: 20;
-  
+ 
 }
 .modal-info-search-conteiner{
 display: flex;
@@ -192,7 +233,7 @@ align-items: center;
 justify-content: center;
   border-bottom: 1px solid var(--white);
   padding-bottom: 20px;
- 
+  margin-top: 2rem;
 }
 .modal-info-search-conteiner>button{
   color: var(--black);
@@ -215,15 +256,14 @@ input{
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  flex-direction: column;
-  gap: 1rem;
+  /* flex-direction: column; */
+  gap: 2rem;
   padding: 1rem;
   width: 100vw;
   height: fit-content;
-  background-color: rgba(0, 0, 0);
+  background-color: var(--grey);
   position: relative;
   top: 0;
   left: 0;
   z-index: 20;
-  
 }
