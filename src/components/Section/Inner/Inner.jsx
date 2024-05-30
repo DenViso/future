@@ -12,9 +12,9 @@ export const Inner = ({ t, cat1 }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [scroll, setScroll] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [selectedProduct]);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [selectedProduct]);
 
   useEffect(() => {
     const delay = setTimeout(() => {
@@ -78,11 +78,12 @@ export const Inner = ({ t, cat1 }) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  console.log(cat1);
 
   return (
     <div className="subInner-container">
       {!scroll ? (
-        <Link className="back" to="/Ring">
+        <Link className={selectedProduct ?"": "back"} to="/Ring">
           {t("back.toJewelry")}
         </Link>
       ) : (

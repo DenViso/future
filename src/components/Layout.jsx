@@ -4,19 +4,30 @@ import { MenuDrop } from "./DropWindow/MenuDrop";
 import { SearchDrop } from "./DropWindow/SearchDrop";
 import { Cart } from "./Cart/Cart";
 
-export const Layout = ({ t, cat1 }) => {
+export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   const [activeMenu, setActiveMenu] = useState(null); // "menu", "search", or null
   const [showCart, setShowCart] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const location = useLocation();
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 700);
 
-  // console.log(mousePosition);
-  // console.log(activeMenu);
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     setActiveMenu(null);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 700);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -30,47 +41,13 @@ export const Layout = ({ t, cat1 }) => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const handleMouseLeave = () => {
-  //     if (!activeMenu) return;
-
-  //     if (activeMenu == "search") {
-  //       const menu = document.querySelector(".search");
-  //       if (!menu) return;
-
-  //       const { top, bottom, left, right } = menu.getBoundingClientRect();
-  //       const buffer = 50;
-
-  //       if (
-  //         mousePosition.y < top - buffer ||
-  //         mousePosition.y > bottom + buffer ||
-  //         mousePosition.x < left - buffer ||
-  //         mousePosition.x > right + buffer
-  //       ) {
-  //         setActiveMenu(null);
-  //       }
-  //     }
-  //   };
-    
-  //   // handleMouseLeave();
-  // }, [mousePosition, activeMenu]);
-
   const handleMouseLeave = () => {
-     mousePosition > { x: 0, y: 0 } &&
-      setActiveMenu(null);
-  }
-    
-  
-
-// console.log(activeMenu);
+    mousePosition > { x: 0, y: 0 } && setActiveMenu(null);
+  };
 
   const handlePhoneClick = () => {
     window.removeEventListener("beforeunload", handleBeforeUnload);
   };
-
-  // const handleBeforeUnload = (e) => {
-  //   e.returnValue = "Ви впевнені, що хочете покинути цю сторінку?";
-  // };
 
   const handleClick = () => {
     setShowCart(true);
@@ -85,6 +62,8 @@ export const Layout = ({ t, cat1 }) => {
     setActiveMenu(menu);
   };
 
+  const currentLanguage = i18n.language;
+console.log(currentLanguage);
   return (
     <>
       {/*HEADER*/}
@@ -104,15 +83,12 @@ export const Layout = ({ t, cat1 }) => {
             src="/img/headerIcon/search.png"
             alt="Search"
             onMouseEnter={() => handleMouseEnter("search")}
-             onMouseLeave={() => handleMouseLeave(null)}
-             
+            onMouseLeave={() => handleMouseLeave(null)}
           />
           {activeMenu === "search" && (
             <SearchDrop
               className="search-menu"
               handleSearch={handleSearch}
-              // hidenSearchMenu={hidenSearchMenu}
-
               t={t}
               cat1={cat1}
             />
@@ -123,22 +99,41 @@ export const Layout = ({ t, cat1 }) => {
             <img src="/img/logo/logo1.png" alt="Logo" />
           </Link>
         </div>
+
         <div className="contact">
-          <a href="tel:+380936918998" onClick={handlePhoneClick}>
-            <img
-              className="iconSize"
-              src="/img/headerIcon/contact2.png"
-              alt="Menu"
-            />
-          </a>
-          <div className="">
-            <img
-              className="iconSize"
-              src="/img/headerIcon/cart.png"
-              alt="Cart"
-              onClick={handleClick}
-            />
-            {showCart && <Cart setShowCart={setShowCart} t={t} />}
+          {!isMobileView && (
+            <div className="lng">
+              <button
+                className={currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"}
+                onClick={() => changeLanguage("uk")}
+              >
+                Укр
+              </button>
+              <button
+                className={currentLanguage == "en" ? "lngBtn  activeLng" : "lngBtn"}
+                onClick={() => changeLanguage("en")}
+              >
+                Eng
+              </button>
+            </div>
+          )}
+          <div className="lng">
+            <a href="tel:+380936918998" onClick={handlePhoneClick}>
+              <img
+                className="iconSize"
+                src="/img/headerIcon/contact2.png"
+                alt="Menu"
+              />
+            </a>
+            <div className="">
+              <img
+                className="iconSize"
+                src="/img/headerIcon/cart.png"
+                alt="Cart"
+                onClick={handleClick}
+              />
+              {showCart && <Cart setShowCart={setShowCart} t={t} />}
+            </div>
           </div>
         </div>
       </header>
@@ -172,6 +167,34 @@ export const Layout = ({ t, cat1 }) => {
             <p>{t("adresses.time2")}</p>
             <p>{t("adresses.time3")}</p>
           </address>
+          {isMobileView && (
+            <div
+              className="lng"
+              style={{
+                color: "white",
+                // border: "1px solid white",
+                display: "flex",
+                // flexDirection: "column",
+                alignItems: "center",
+                marginTop: "20px",
+              }}
+            >
+              <button
+                className={currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"}
+                style={{ color: "white", border: "1px solid white", marginBottom: "10px" }}
+                onClick={() => changeLanguage("uk")}
+              >
+                Укр
+              </button>
+              <button
+                className={currentLanguage == "en" ? " lngBtn  activeLng" : "lngBtn"}
+                style={{ color: "white", border: "1px solid white" }}
+                onClick={() => changeLanguage("en")}
+              >
+                Eng
+              </button>
+            </div>
+          )}
         </div>
       </footer>
       <div

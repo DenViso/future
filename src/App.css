@@ -37,6 +37,32 @@
   background:var(--white);
   padding: 1rem 3rem;
 }
+.lng{
+  /* width: 60px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.lngBtn{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--);
+  cursor: pointer;
+  /* border: none; */
+  outline: none;
+  background:transparent;
+    color:var(--black);
+  font-size:1rem;
+  font-weight: 500;
+
+}
+.activeLng{
+  background:var(--grey);
+  border: none;
+  
+}
 .menu,
 .contact {
   display: flex;
@@ -53,50 +79,6 @@
   transform: scale(1.1) rotate(10deg) translateY(-5px);
   transition: all 0.5s ease-in-out;
 }
-/* lng button */
-.langButton{
-display: flex;
-width: 100px;
-align-items: center;
-justify-content: center;
-gap: 1rem;
-position: relative;
-/* top: 100px; */
-z-index: 300;
-}
-
-.langButtonMain{
-  position: relative;
-  /* left: 10px; */
-  /* top: 100px; */
-  width: 70px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  background:border-box;
-  /* box-shadow: 1px 1px 10px 1px rgb(247, 245, 245); */
-  color: var(--black);
-  font-size: 1.5rem;
-  font-weight: 600;
-  font-family: var(--fontFamily);
-  transition: all 1s ease-in-out;
-  /* z-index: 200; */
-}
-.activeLangButton{
-  transform: scale(1.1) rotate(10deg) translateY(-5px);
-  transition: all 1s ease-in-out;
-  /* color: #fff;
-  background-color: #000000; */
-  width: fit-content;
-  height: fit-content;
-  padding: 5px;
-  border-radius: 50%;
-  box-shadow: 1px 1px 10px 1px var(--white);
-
-}
-
 .logo1 {
   display: flex;
   width: 535px;
@@ -552,6 +534,27 @@ footer {
   border-radius: 7px;
   background-color:var(--white);
 }
+.contact{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  flex-wrap: wrap;
+
+}
+.lng {
+  /* width: 60px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+cursor: pointer;  
+}
+.logo1>a>img{
+  min-width: 250px;
+}
+
+
 }
 @media  (max-width: 580px) {
   .langButton{

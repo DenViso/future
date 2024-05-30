@@ -11,7 +11,7 @@ import { Care } from "./components/Section/Care";
 import { Reviwes } from "./components/Section/Reviwes";
 import { About } from "./components/Section/About";
 import { Engagement } from "./components/Section/SubSection/Engagement";
-import { WeddingRings } from "./components/Section/SubSection/WeddingRings";
+// import { WeddingRings } from "./components/Section/SubSection/WeddingRings";
 import { Women } from "./components/Section/SubSection/Women";
 import { Men } from "./components/Section/SubSection/Men";
 import { Puset } from "./components/Section/SubSection/Puset";
@@ -22,7 +22,7 @@ import { Inner } from "./components/Section/Inner/Inner";
 const App = () => {
   const { t, i18n } = useTranslation();
   const [cat1, setCat1] = useState([]);
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  // const [showLanguageModal, setShowLanguageModal] = useState(false);
   const location = useLocation();
 
   const categoryMan = async () => {
@@ -36,18 +36,18 @@ const App = () => {
     }
   };
 
-  const debouncedCategoryMan = debounce(categoryMan, 500);
+  // const debouncedCategoryMan = debounce(categoryMan, 500);
   //  debounce затримує виклики categoryMan на 500 мс
 
-  useEffect(() => {
-    const languageSelected = localStorage.getItem("languageSelected");
-    if (!languageSelected) {
-      setShowLanguageModal(true);
-    }
-   else {
-      debouncedCategoryMan(); // Викликається лише один раз при монтуванні компонента
-    }
-  }, []);
+  // useEffect(() => {
+  //   const languageSelected = localStorage.getItem("languageSelected");
+  //   if (!languageSelected) {
+  //     setShowLanguageModal(true);
+  //   }
+  //  else {
+  //     debouncedCategoryMan(); // Викликається лише один раз при монтуванні компонента
+  //   }
+  // }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,13 +57,13 @@ const App = () => {
     i18n.changeLanguage(lng);
     localStorage.setItem("language", lng);
     localStorage.setItem("languageSelected", "true");
-    setShowLanguageModal(false);
+    // setShowLanguageModal(false);
     categoryMan(); // Завантаження продуктів після вибору мови
   };
 
   return (
     <>
-      {showLanguageModal ? (
+      {/* {showLanguageModal ? (
         <div className="language-modal">
           <img src="/img/logo/logo1.png" alt="" />
           <h2>Виберіть мову</h2>
@@ -71,7 +71,7 @@ const App = () => {
           <h2>Choose language</h2>
           <button onClick={() => changeLanguage("en")}>English</button>
         </div>
-      ) : (
+      ) : ( */}
         <Routes>
           <Route
             path="/"
@@ -79,6 +79,9 @@ const App = () => {
               <Layout
                 t={t}
                 cat1={cat1}
+                changeLanguage={changeLanguage}
+                i18n={i18n}
+                
               />
             }
           >
@@ -126,20 +129,20 @@ const App = () => {
             <Route path="CreatedBy" element={<CreatedBy t={t} />} />
           </Route>
         </Routes>
-      )}
+      {/* )} */}
     </>
   );
 };
 
 // Допоміжна функція debounce
-function debounce(func, delay) {
-  let timer;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
-}
+// function debounce(func, delay) {
+//   let timer;
+//   return function (...args) {
+//     clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       func.apply(this, args);
+//     }, delay);
+//   };
+// }
 
 export default App;
