@@ -36,13 +36,15 @@ const App = () => {
     }
   };
 
-  const debouncedCategoryMan = debounce(categoryMan, 500); // debounce затримує виклики categoryMan на 500 мс
+  const debouncedCategoryMan = debounce(categoryMan, 500);
+  //  debounce затримує виклики categoryMan на 500 мс
 
   useEffect(() => {
     const languageSelected = localStorage.getItem("languageSelected");
     if (!languageSelected) {
       setShowLanguageModal(true);
-    } else {
+    }
+   else {
       debouncedCategoryMan(); // Викликається лише один раз при монтуванні компонента
     }
   }, []);
@@ -101,12 +103,12 @@ const App = () => {
               path="Puset/Inner/:paramValue"
               element={<Inner t={t} cat1={cat1} />}
             />
-            <Route
-              path="WeddingRings"
+            {/* <Route
+              path="WeddingRings/:53"
               element={<WeddingRings t={t} cat1={cat1} />}
-            />
+            /> */}
             <Route
-              path="WeddingRings/Inner/:paramValue"
+              path="Inner/:paramValue"
               element={<Inner t={t} cat1={cat1} />}
             />
 

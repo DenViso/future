@@ -59,12 +59,10 @@ export const Inner = ({ t, cat1 }) => {
     localStorage.setItem("likedProducts", JSON.stringify(updatedLikes));
     setIsLiked(!isLiked);
 
-    // Оновлення стану після зміни локального сховища
     refreshProducts();
   };
 
   const refreshProducts = () => {
-    // Логіка для повторного завантаження даних
     const storedLikes = localStorage.getItem("likedProducts");
     if (storedLikes) {
       setLikedProducts(JSON.parse(storedLikes));
@@ -72,28 +70,30 @@ export const Inner = ({ t, cat1 }) => {
       setLikedProducts([]);
     }
   };
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
+      setScroll(window.scrollY > 0);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  })
-console.log(scroll);
+  }, []);
 
   return (
-    <div className="subInner-conteiner">
-     {!scroll === true ? <Link className="back" to="/Ring">{t("back.toJewelry")}</Link>:
-     <Link className="scroll" to="/Ring">&#8593;</Link>
-     }
+    <div className="subInner-container">
+      {!scroll ? (
+        <Link className="back" to="/Ring">
+          {t("back.toJewelry")}
+        </Link>
+      ) : (
+        <Link className="scroll" to="/Ring">
+          &#8593;
+        </Link>
+      )}
       {!loading ? (
         !selectedProduct && (
           <div className="subInner">
-            {cat1 !== null &&
+            {cat1 &&
               cat1.length > 0 &&
               cat1.map((product) =>
                 product.category == paramValue ? (
@@ -103,13 +103,11 @@ console.log(scroll);
                     onClick={() => openModal(product)}
                   >
                     <div className="subInner-section-img">
-                      {product.media_files.length > 0 &&
-                        product.media_files[0].photo && (
-                          <img
-                            src={product.media_files[0].photo}
-                            alt=""
-                          />
-                        )}
+                      {product.media_files && product.media_files.length > 0 && product.media_files[0].photo ? (
+                        <img src={product.media_files[0].photo} alt="" />
+                      ) : (
+                        <img src="/img/noImg.png" alt="" />
+                      )}
                       <p className="text-scu">
                         <span>Арт:</span>
                         {product.sku}
@@ -131,7 +129,6 @@ console.log(scroll);
               &times;
             </span>
             <div className="modal-info">
-              {/* i18n to do */}
               <h2>
                 Арт. продукту:<br /> {selectedProduct.sku}
               </h2>
@@ -177,7 +174,6 @@ console.log(scroll);
                       <video
                         key={item.id}
                         src={item.video}
-                        alt=""
                         autoPlay
                         controls
                       />

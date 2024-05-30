@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const Ring = ({t}) => {
   return (
     <div className="ring">
-      <Link to="/">{t("back.toMain")}</Link>
+      <Link className="back backposition" to="/">{t("back.toMain")}</Link>
       <h1>{t("section.title")}</h1>
       <ul className="ringList">
         <li>
@@ -13,7 +13,7 @@ export const Ring = ({t}) => {
           </Link>
         </li>
         <li>
-          <Link to="/WeddingRings">
+          <Link to="/Inner/53">
             {t("section.section2")}
             <img src="/img/subsect/2.png" alt="" />
           </Link>

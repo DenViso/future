@@ -99,10 +99,7 @@
     }
   }
   
-  /* @-webkit-keyframes pulse {
-    0% {
-      -webkit-transform: scale(0.95); */
-
+  
 .searchDrop{
   position: absolute;
   display: block;

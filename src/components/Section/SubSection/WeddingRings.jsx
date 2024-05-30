@@ -28,7 +28,7 @@ export const WeddingRings = ({ t, cat1 }) => {
   const closeModal = () => {
     setSelectedProduct(null);
   };
-
+console.log(paramValue);
   return (
     <div className="subInner-conteiner">
       <Link to="/Ring">{t("back.toJewelry")}</Link>
@@ -38,7 +38,7 @@ export const WeddingRings = ({ t, cat1 }) => {
             {cat1 !== null &&
               // cat1.length > 0 &&
               cat1.map((product) =>
-                product.category == 53 ? (
+                product.category == paramValue ? (
                   <div
                     className="subInner-section"
                     key={product.id}
