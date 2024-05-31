@@ -11,7 +11,6 @@ import { Care } from "./components/Section/Care";
 import { Reviwes } from "./components/Section/Reviwes";
 import { About } from "./components/Section/About";
 import { Engagement } from "./components/Section/SubSection/Engagement";
-// import { WeddingRings } from "./components/Section/SubSection/WeddingRings";
 import { Women } from "./components/Section/SubSection/Women";
 import { Men } from "./components/Section/SubSection/Men";
 import { Puset } from "./components/Section/SubSection/Puset";
@@ -22,8 +21,7 @@ import { Inner } from "./components/Section/Inner/Inner";
 const App = () => {
   const { t, i18n } = useTranslation();
   const [cat1, setCat1] = useState([]);
-  // const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const location = useLocation();
+  // const location = useLocation();
 
   const categoryMan = async () => {
     try {
@@ -36,113 +34,74 @@ const App = () => {
     }
   };
 
-  // const debouncedCategoryMan = debounce(categoryMan, 500);
-  //  debounce затримує виклики categoryMan на 500 мс
+  useEffect(() => {
+    categoryMan(); // Викликається при монтуванні компонента
+  }, []);
 
   // useEffect(() => {
-  //   const languageSelected = localStorage.getItem("languageSelected");
-  //   if (!languageSelected) {
-  //     setShowLanguageModal(true);
-  //   }
-  //  else {
-  //     debouncedCategoryMan(); // Викликається лише один раз при монтуванні компонента
-  //   }
-  // }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+  //   window.scrollTo(0, 0);
+  // }, [location.pathname]);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     localStorage.setItem("language", lng);
     localStorage.setItem("languageSelected", "true");
-    // setShowLanguageModal(false);
-    categoryMan(); // Завантаження продуктів після вибору мови
   };
 
   return (
     <>
-      {/* {showLanguageModal ? (
-        <div className="language-modal">
-          <img src="/img/logo/logo1.png" alt="" />
-          <h2>Виберіть мову</h2>
-          <button onClick={() => changeLanguage("uk")}>Українська</button>
-          <h2>Choose language</h2>
-          <button onClick={() => changeLanguage("en")}>English</button>
-        </div>
-      ) : ( */}
-        <Routes>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout
+              t={t}
+              cat1={cat1}
+              changeLanguage={changeLanguage}
+              i18n={i18n}
+            />
+          }
+        >
+          <Route index element={<MainePage t={t} />} />
+          <Route path="Ring" element={<Ring t={t} />} />
+          <Route path="Diamond" element={<Diamond t={t} />} />
+          <Route path="Services" element={<Services t={t} />} />
+          <Route path="Care" element={<Care t={t} />} />
+          <Route path="Reviews" element={<Reviwes t={t} />} />
+          <Route path="About" element={<About t={t} />} />
+
+          <Route path="Engagement" element={<Engagement t={t} cat1={cat1} />} />
           <Route
-            path="/"
-            element={
-              <Layout
-                t={t}
-                cat1={cat1}
-                changeLanguage={changeLanguage}
-                i18n={i18n}
-                
-              />
-            }
-          >
-            <Route index element={<MainePage t={t} />} />
-            <Route path="Ring" element={<Ring t={t} />} />
-            <Route path="Diamond" element={<Diamond t={t} />} />
-            <Route path="Services" element={<Services t={t} />} />
-            <Route path="Care" element={<Care t={t} />} />
-            <Route path="Reviews" element={<Reviwes t={t} />} />
-            <Route path="About" element={<About t={t} />} />
+            path="Engagement/Inner/:paramValue"
+            element={<Inner t={t} cat1={cat1} />}
+          />
+          <Route path="Puset" element={<Puset t={t} cat1={cat1} />} />
+          <Route
+            path="Puset/Inner/:paramValue"
+            element={<Inner t={t} cat1={cat1} />}
+          />
 
-            <Route
-              path="Engagement"
-              element={<Engagement t={t} cat1={cat1} />}
-            />
-            <Route
-              path="Engagement/Inner/:paramValue"
-              element={<Inner t={t} cat1={cat1} />}
-            />
-            <Route path="Puset" element={<Puset t={t} cat1={cat1} />} />
-            <Route
-              path="Puset/Inner/:paramValue"
-              element={<Inner t={t} cat1={cat1} />}
-            />
-            {/* <Route
-              path="WeddingRings/:53"
-              element={<WeddingRings t={t} cat1={cat1} />}
-            /> */}
-            <Route
-              path="Inner/:paramValue"
-              element={<Inner t={t} cat1={cat1} />}
-            />
+          <Route
+            path="Inner/:paramValue"
+            element={<Inner t={t} cat1={cat1} />}
+          />
 
-            <Route path="Women" element={<Women t={t} cat1={cat1} />} />
-            <Route
-              path="Women/Inner/:paramValue"
-              element={<Inner cat1={cat1} t={t} />}
-            />
-            <Route path="Men" element={<Men t={t} cat1={cat1} />} />
-            <Route
-              path="Men/Inner/:paramValue"
-              element={<Inner cat1={cat1} t={t} />}
-            />
+          <Route path="Women" element={<Women t={t} cat1={cat1} />} />
+          <Route
+            path="Women/Inner/:paramValue"
+            element={<Inner cat1={cat1} t={t} />}
+          />
+          <Route path="Men" element={<Men t={t} cat1={cat1} />} />
+          <Route
+            path="Men/Inner/:paramValue"
+            element={<Inner cat1={cat1} t={t} />}
+          />
 
-            <Route path="CreatedBy" element={<CreatedBy t={t} />} />
-          </Route>
-        </Routes>
-      {/* )} */}
+          <Route path="CreatedBy" element={<CreatedBy t={t} />} />
+        </Route>
+      </Routes>
     </>
   );
 };
-
-// Допоміжна функція debounce
-// function debounce(func, delay) {
-//   let timer;
-//   return function (...args) {
-//     clearTimeout(timer);
-//     timer = setTimeout(() => {
-//       func.apply(this, args);
-//     }, delay);
-//   };
-// }
 
 export default App;

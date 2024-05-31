@@ -13,7 +13,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     setActiveMenu(null);
   }, [location.pathname]);
 
@@ -152,7 +152,7 @@ console.log(currentLanguage);
               +38 (093) 691-89-98
             </a>{" "}
             <br />
-            <a href="mailto:3sTnE@example.com">yourEmail@example.com</a>
+            <a href="future.com.ua@gmail.com">future.com.ua@gmail.com</a>
           </div>
         </div>
         <div className="footerMap">
@@ -181,14 +181,14 @@ console.log(currentLanguage);
             >
               <button
                 className={currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"}
-                style={{ color: "white", border: "1px solid white", marginBottom: "10px" }}
+                style={{ color: "white",border:"none"}}
                 onClick={() => changeLanguage("uk")}
               >
                 Укр
               </button>
               <button
                 className={currentLanguage == "en" ? " lngBtn  activeLng" : "lngBtn"}
-                style={{ color: "white", border: "1px solid white" }}
+                style={{ color: "white" ,border:"none"}}
                 onClick={() => changeLanguage("en")}
               >
                 Eng

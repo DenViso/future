@@ -11,10 +11,7 @@ export const Inner = ({ t, cat1 }) => {
   const [likedProducts, setLikedProducts] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
   const [scroll, setScroll] = useState(false);
-
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [selectedProduct]);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const delay = setTimeout(() => {
@@ -42,10 +39,17 @@ export const Inner = ({ t, cat1 }) => {
 
   const openModal = (product) => {
     setSelectedProduct(product);
+    setScrollPosition(window.scrollY);
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.classList.add("modal-open");
   };
 
   const closeModal = () => {
     setSelectedProduct(null);
+    document.body.classList.remove("modal-open");
+    const scrollY = document.body.style.top;
+    document.body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
   };
 
   const handleLike = (product) => {
@@ -78,12 +82,11 @@ export const Inner = ({ t, cat1 }) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  console.log(cat1);
 
   return (
     <div className="subInner-container">
       {!scroll ? (
-        <Link className={selectedProduct ?"": "back"} to="/Ring">
+        <Link className={selectedProduct ? "" : "back"} to="/Ring">
           {t("back.toJewelry")}
         </Link>
       ) : (

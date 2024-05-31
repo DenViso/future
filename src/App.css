@@ -18,7 +18,7 @@
   /* font-family: 'Roboto', sans-serif; */
   color:var(--white);
   font-family: var(--fontFamily);
-  /* font-size: 62.5%; */
+  font-size: 62.5%;
 }
 .wrapper {
   display: flex;
@@ -48,19 +48,21 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--);
+  /* border: 1px solid var(--); */
   cursor: pointer;
   /* border: none; */
-  outline: none;
+  /* outline: none; */
   background:transparent;
-    color:var(--black);
+  /* color:var(--black); */
   font-size:1rem;
   font-weight: 500;
+  color: var(--black);
 
 }
 .activeLng{
   background:var(--grey);
   border: none;
+  color: var(--white);
   
 }
 .menu,

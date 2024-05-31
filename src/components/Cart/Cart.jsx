@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./cart.css";
+import { Modal } from "./Modal"; // Додамо компонент модального вікна
 
 export const Cart = ({ setShowCart, t }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState([]);
 
   useEffect(() => {
     const storedItems = localStorage.getItem("likedProducts");
@@ -17,6 +19,15 @@ export const Cart = ({ setShowCart, t }) => {
     localStorage.setItem("likedProducts", JSON.stringify(updatedCartItems));
   };
 
+  const openModal = (product) => {
+    console.log(product);
+    setSelectedProduct(product);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
+console.log(selectedProduct);
   return (
     <div>
       <div className="cart">
@@ -24,7 +35,7 @@ export const Cart = ({ setShowCart, t }) => {
         {cartItems.length > 0 ? (
           <div>
             {cartItems.map((item) => (
-              <div key={item.id} className="cart-item">
+              <div key={item.id} className="cart-item" onClick={() => openModal(item)}>
                 {item.media_files && item.media_files.length > 0 && (
                   <img
                     src={item.media_files[0].photo}
@@ -33,16 +44,16 @@ export const Cart = ({ setShowCart, t }) => {
                   />
                 )}
                 <div className="cart-text">
-                <h2>Арт. продукту:<br /> {item.sku}</h2> 
-              {item.gold_assay && <p>Проба :<br /> {item.gold_assay}</p>} 
-              {item.gold_color && <p>Колір :<br /> {item.gold_color}</p>} 
-              {item.size && <p>Розмір :<br /> {item.size}</p>} 
-              {item.stone_characteristics && <p>Характеристики каміння :<br /> {item.stone_characteristics}</p>} 
-              {item.weight && <p>Вага виробу :<br /> {item.weight}</p>} 
+                  <h2>Арт. продукту:<br /> {item.sku}</h2> 
+                  {item.gold_assay && <p>Проба :<br /> {item.gold_assay}</p>} 
+                  {item.gold_color && <p>Колір :<br /> {item.gold_color}</p>} 
+                  {item.size && <p>Розмір :<br /> {item.size}</p>} 
+                  {item.stone_characteristics && <p>Характеристики каміння :<br /> {item.stone_characteristics}</p>} 
+                  {item.weight && <p>Вага виробу :<br /> {item.weight}</p>} 
                 </div>
                 <button
                   className="remove-btn"
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={(e) => { e.stopPropagation(); removeFromCart(item.id); }}
                 >
                   <img src="/img/img/logo/del.png" alt="" />
                 </button>
@@ -56,6 +67,7 @@ export const Cart = ({ setShowCart, t }) => {
           {t("cart.button")}
         </button>
       </div>
+      {selectedProduct && <Modal product={selectedProduct} onClose={closeModal} />}
     </div>
   );
 };

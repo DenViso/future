@@ -17,13 +17,13 @@
   align-items: center;
   justify-content: center;
   /* height: 1000px; */
-  gap: 10px;
+  gap: 20px;
   flex-wrap: wrap;
   width: 100%;
   background-color: var(--white);
   z-index: 10;
   position: relative;
-  margin-top: 2rem;
+  padding: 2rem 0px;
 }
 
 
@@ -65,7 +65,7 @@
   height: 50px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 200;
+  z-index: 95;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +126,7 @@ font-size: 10px;
 /* MODAL */
 
 .modal {
-  position:fixed ;
+  position:absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -196,13 +196,14 @@ font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  /* gap: 10px; */
+  /* width: 123%; */
+  /* height: 100%; */
   /* flex-wrap: wrap; */
-  width: 100%;
-  height: 100%;
+  flex-direction: column;
 }
 .modal-video>video{
-  width: 50%;
+  width: 450px;
   height:500px;
   border-radius: 10px;}
 .modal-img>img{
@@ -294,6 +295,11 @@ border:1px solid var(--black);
   left: -50px;
   transform: rotate(45deg);
   transform-origin: 100% 100%;
+}
+.modal-open {
+  /* position: fixed; */
+  overflow-y: scroll;
+  width: 100%;
 }
 
 @keyframes beat {
