@@ -32,11 +32,11 @@ export const Cart = ({ setShowCart, t }) => {
   };
 console.log(selectedProduct);
   return (
-    <div>
-      <div className= "cart">
-        {/* <p>{t("cart.text")}</p> */}
-        {cartItems.length > 0 ? (
-          <div>
+    <>
+    <div className= "cart">
+       {cartItems.length > 0 ? 
+
+  (<div className={showModal ? "no-bacground" : "cart-conteiner"}>
             {cartItems.map((item) => (
               <div key={item.id} className="cart-item" onClick={() => openModal(item)}>
                 {item.media_files && item.media_files.length > 0 && (
@@ -69,8 +69,10 @@ console.log(selectedProduct);
         <button className="close-btn" onClick={() => setShowCart(false)}>
           {t("cart.button")}
         </button>
+        {showModal&& <Modal product={selectedProduct} onClose={closeModal} />}
+       
       </div>
-      {showModal&& <Modal product={selectedProduct} onClose={closeModal} />}
-    </div>
+      
+      </>
   );
 };

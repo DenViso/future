@@ -1,6 +1,6 @@
 .cart{
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,11 +12,11 @@
   right: 50%;
   transform: translate(50%, -50%);
   padding: 20px;
-
+overflow-y: scroll;
 }
-.cart>div{
+.cart-conteiner{
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +24,7 @@
   gap: 20px;
   overflow: auto;
   position: relative;
+  overflow-y: scroll;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
@@ -155,33 +156,36 @@ overflow: hidden;
     right: 50%;
     transform: translate(50%, -50%);
     /* height: 100%; */
-    /* border-radius: 0; */
-    background-color:var(--white);
-    /* display: flex;
+    border-radius: 0;
+    background-color:var(--grey); 
+     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px; */
-    padding: 30px;
+    gap: 20px; 
+     padding: 30px; 
     z-index: 100; 
   }
-  .cart>ul{
-    margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap: 20px;
-    overflow-y: auto;
-    
-  }
-  .cart>ul>li{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 20px;
+  .cart-conteiner{
     width: 100%;
-  }
+  
+    margin-top: 5%;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  
+  
+    background-color:var(--grey); 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    overflow-y: scroll;
+    /* flex-wrap: nowrap; */
+    margin-top: 40px;
+  } 
+ 
   .cart>p{
     font-size: 26px;
   }
@@ -195,7 +199,12 @@ overflow: hidden;
   }
   .cart-item-image{
     width: 50%;
+    border-radius: 10px;
     
+  }
+  .cart-item-image>img{
+    width: 100%;
+    height: 200px;
   }
   .cart-text{
     width: 50%;
@@ -219,20 +228,18 @@ overflow: hidden;
     padding: 0px;
   }
   .cart-item{
-    position: fixed;
-    /* border: 1px solid var(--grey); */
-    border-radius: 10px;
-    width: 100%;
-    height: 100dvh;
-    z-index: 205;
-    left: 0;
-    top: 0;
-    background: grey;
+   display: flex; 
+   align-items: center;
+   justify-content: flex-start;
+   /* gap: 10px; */
+   width: 100%;
+   height: 300px;
+   
   }
-  .cart-item-image{
+  /* .cart-item-image{
     border-radius: 10px 0px 0px 10px;
     width: 50%;
-  }
+  } */
   .remove-btn{
     position: absolute;
     bottom: 5px;
