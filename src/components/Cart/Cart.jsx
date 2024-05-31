@@ -33,7 +33,7 @@ export const Cart = ({ setShowCart, t }) => {
 console.log(selectedProduct);
   return (
     <div>
-      <div className={openModal ? {style: {display: "none"}} : "cart"}>
+      <div className= "cart">
         {/* <p>{t("cart.text")}</p> */}
         {cartItems.length > 0 ? (
           <div>

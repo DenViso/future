@@ -219,13 +219,19 @@ overflow: hidden;
     padding: 0px;
   }
   .cart-item{
-    position: relative;
+    position: fixed;
     /* border: 1px solid var(--grey); */
     border-radius: 10px;
+    width: 100%;
+    height: 100dvh;
+    z-index: 205;
+    left: 0;
+    top: 0;
+    background: grey;
   }
   .cart-item-image{
     border-radius: 10px 0px 0px 10px;
-    height: 100%;
+    width: 50%;
   }
   .remove-btn{
     position: absolute;
