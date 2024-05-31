@@ -553,7 +553,7 @@ footer {
 cursor: pointer;  
 }
 .logo1>a>img{
-  min-width: 250px;
+  max-width: 250px;
 }
 
 
@@ -611,10 +611,11 @@ cursor: pointer;
 
   }
   .logo1>a>img{
-    width: 180px;
+    min-width: 170px;
   }
   .header{
     padding: 0.5rem;
+    justify-content: center;
   }
 /* .logo>img{
   position: absolute;

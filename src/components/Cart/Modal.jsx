@@ -3,7 +3,7 @@ import "./cart.css";
 
 export const Modal = ({ product, onClose }) => {
   return (
-    <div className="modal-cart">
+    <div className="modal">
       <div className="modal-content">
         <span className="close" onClick={onClose}>
           &times;

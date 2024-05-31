@@ -44,12 +44,13 @@ export const Inner = ({ t, cat1 }) => {
     document.body.classList.add("modal-open");
   };
 
-  const closeModal = () => {
+  const closeModal = (e) => {
     setSelectedProduct(null);
     document.body.classList.remove("modal-open");
-    const scrollY = document.body.style.top;
-    document.body.style.top = "";
+    // const scrollY = document.body.style.top;
+    // document.cart.style.top = "";
     window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    e.preventDefault();
   };
 
   const handleLike = (product) => {
@@ -96,7 +97,7 @@ export const Inner = ({ t, cat1 }) => {
       )}
       {!loading ? (
         !selectedProduct && (
-          <div className="subInner">
+          <div className={!openModal ? "no-bacground" : "subInner"}>
             {cat1 &&
               cat1.length > 0 &&
               cat1.map((product) =>

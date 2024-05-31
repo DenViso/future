@@ -5,6 +5,7 @@ import { Modal } from "./Modal"; // Додамо компонент модаль
 export const Cart = ({ setShowCart, t }) => {
   const [cartItems, setCartItems] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const storedItems = localStorage.getItem("likedProducts");
@@ -20,17 +21,19 @@ export const Cart = ({ setShowCart, t }) => {
   };
 
   const openModal = (product) => {
-    console.log(product);
+    setShowModal(true);
     setSelectedProduct(product);
+
   };
 
   const closeModal = () => {
+    setShowModal(false);
     setSelectedProduct(null);
   };
 console.log(selectedProduct);
   return (
     <div>
-      <div className="cart">
+      <div className={openModal ? {style: {display: "none"}} : "cart"}>
         {/* <p>{t("cart.text")}</p> */}
         {cartItems.length > 0 ? (
           <div>
@@ -67,7 +70,7 @@ console.log(selectedProduct);
           {t("cart.button")}
         </button>
       </div>
-      {selectedProduct && <Modal product={selectedProduct} onClose={closeModal} />}
+      {showModal&& <Modal product={selectedProduct} onClose={closeModal} />}
     </div>
   );
 };

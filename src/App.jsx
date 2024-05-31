@@ -21,7 +21,7 @@ import { Inner } from "./components/Section/Inner/Inner";
 const App = () => {
   const { t, i18n } = useTranslation();
   const [cat1, setCat1] = useState([]);
-  // const location = useLocation();
+  const location = useLocation();
 
   const categoryMan = async () => {
     try {
@@ -38,9 +38,11 @@ const App = () => {
     categoryMan(); // Викликається при монтуванні компонента
   }, []);
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, [location.pathname]);
+  useEffect(() => {
+    {<Layout/>||<MainePage/>||<Ring/>||<Diamond/>||<Services/>||<Care/>||<Reviwes/>||<About/>||<Engagement/>||<Women/>||<Men/>||<Puset/>||<CreatedBy/>}  {
+      window.scrollTo(0, 0);
+     }
+  }, [location.pathname]);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
