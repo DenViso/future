@@ -186,10 +186,13 @@
 .care > h2 {
   font-family: var(--fontFamily);
   color:var(--black);
+  font-size: 28px;
 }
-.care > p {
+.care>p {
   font-family: var(--fontFamily);
   color: var(--black);
+  font-size: 26px;
+  width: fit-content;
 }
 .care > ul > li {
   font-family: var(--fontFamily);
@@ -204,6 +207,10 @@
   animation: colorRockTitle 3s infinite;
   text-transform: uppercase;
   text-decoration: underline;
+}
+.colorRock-text{
+  font-size: 26px;
+  color: var(--black);
 }
 @keyframes colorRockTitle {
   0% {
@@ -432,6 +439,7 @@ height: 60%;
   font-family: var(--fontFamily);
   font-weight: 600;
   font-size: 36px;
+  margin-top: 20px;
 }
 .dip {
   width: 100%;
@@ -448,7 +456,7 @@ height: 60%;
   border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 580px) {
   .reviwesForm{
     width: 100%;
     padding: 1rem 0;
@@ -535,6 +543,21 @@ height: 60%;
   font-family: var(--fontFamily);
   font-size: 24px;
 }
+.care>p,
+.services > ul > li {
+  /* font-weight: 600; */
+  font-size: 16px;}
+  .colorRock{
+    font-size: 26px;
+  }
+  .colorRock-text{
+    font-size: 16px;
+    color: var(--black);
+  }
+  .care>h2,
+  .services > ul > li > h2 {
+    font-size: 26px;
+  }
 }
 
 /* INNER */

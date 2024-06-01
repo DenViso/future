@@ -50,7 +50,7 @@ export const Reviwes = ({ t }) => {
 
   return (
     <div className="reviwes">
-      <Link to="/">{t("back.toMain")}</Link>
+      <Link className="back" to="/">{t("back.toMain")}</Link>
       <div className="reviwesForm">
         <h2>{t("reviwes.title")}</h2>
         {/* Відображаємо всі наявні відгуки */}
