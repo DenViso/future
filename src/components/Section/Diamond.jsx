@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const Diamond = ({t}) => {
   return (
     <div className="diamond">
-      <Link to="/">{t("back.toMain")}</Link>
+      <Link className="back " to="/">{t("back.toMain")}</Link>
       <h1>{t("stones.title")}</h1>
       <ul className="diamondList">
         <li>
