@@ -8,8 +8,8 @@ export const About = ({ t }) => {
       <Link className="back" to="/">{t("back.toMain")}</Link>
       <h1> {t("about.title")}</h1>
       <div className="dip">
-        <img src="/img/dipl/1.JPG" alt="" />
-        <img src="/img/dipl/2.JPG" alt="" />
+        <img src="/img/dipl/1.jpg" alt="" />
+        <img src="/img/dipl/2.jpg" alt="" />
       </div>
     </div>
   );
