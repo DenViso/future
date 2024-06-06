@@ -113,10 +113,17 @@ export const Inner = ({ t, cat1 }) => {
                       ) : (
                         <img src="/img/noImg.png" alt="" />
                       )}
+                      <div className="subInner-info-text">
                       <p className="text-scu">
                         <span>Арт:</span>
                         {product.sku}
                       </p>
+                     
+                        <p className="text-scu"> {(product.price && <span>Ціна: $ {product.price}</span>
+                        )}</p>
+                     
+                      </div>
+                    
                     </div>
                   </div>
                 ) : null
@@ -160,6 +167,11 @@ export const Inner = ({ t, cat1 }) => {
               {selectedProduct.weight && (
                 <p>
                   Вага виробу :<br /> {selectedProduct.weight}
+                </p>
+              )}
+              {selectedProduct.price && (
+                <p>
+                  Ціна :<br /> {selectedProduct.price}
                 </p>
               )}
             </div>

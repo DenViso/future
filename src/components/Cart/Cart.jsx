@@ -53,6 +53,7 @@ console.log(selectedProduct);
                   {item.size && <p>Розмір :<br /> {item.size}</p>} 
                   {item.stone_characteristics && <p>Характеристики каміння :<br /> {item.stone_characteristics}</p>} 
                   {item.weight && <p>Вага виробу :<br /> {item.weight}</p>} 
+                  {item.price && <p>Ціна :<br /> {item.price}</p>}
                 </div>
                 <button
                   className="remove-btn"

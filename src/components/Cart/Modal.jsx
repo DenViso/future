@@ -15,6 +15,7 @@ export const Modal = ({ product, onClose }) => {
           {product.size && <p>Розмір :<br /> {product.size}</p>} 
           {product.stone_characteristics && <p>Характеристики каміння :<br /> {product.stone_characteristics}</p>} 
           {product.weight && <p>Вага виробу :<br /> {product.weight}</p>} 
+          {product.price && <p>Ціна :<br /> {product.price}</p>}
         </div>
         <div className="modal-img">
           {product.media_files && product.media_files.length > 0 && product.media_files.map((item) => (

@@ -25,6 +25,19 @@
   position: relative;
   padding: 2rem 0px;
 }
+.subInner-info-text{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* height: 100%; */
+  /* gap: 20px; */
+  flex-wrap: wrap;
+  width: 97%;
+  background-color: var(--white);
+  z-index: 10;
+  position: relative;
+  padding: 0px 0px;
+}
 
 
 .back{
