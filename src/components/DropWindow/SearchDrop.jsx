@@ -63,7 +63,7 @@ export const SearchDrop = ({  t, cat1 }) => {
       {showModal && (
         <div className="modal-search">
           
-          <h1>Результати пошуку</h1>
+          <h1 >Результати пошуку</h1>
           {searchResults.length > 0 ? (
             searchResults.map((item) => (
               <div className="modal-info-search-conteiner" key={item.id}>
@@ -101,7 +101,7 @@ export const SearchDrop = ({  t, cat1 }) => {
               </div>
             ))
           ) : (
-            <p>Нічого не знайдено</p>
+            <p >Нічого не знайдено</p>
           )}
         </div>
       )}

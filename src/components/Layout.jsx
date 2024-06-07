@@ -128,7 +128,7 @@ console.log(currentLanguage);
             <div className="">
               <img
                 className="iconSize"
-                src="/img/headerIcon/cart.png"
+                src="/img/h.svg"
                 alt="Cart"
                 onClick={handleClick}
               />

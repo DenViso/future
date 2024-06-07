@@ -16,6 +16,7 @@ export const Inner = ({ t, cat1 }) => {
   useEffect(() => {
     const delay = setTimeout(() => {
       setLoading(false);
+      scrollPosition && window.scrollTo(0, scrollPosition);
     }, 1000);
 
     return () => clearTimeout(delay);
@@ -200,8 +201,8 @@ export const Inner = ({ t, cat1 }) => {
             <div
               className="heart"
               onClick={() => handleLike(selectedProduct)}
-              style={{ color: isLiked ? "red" : "white" }}
-            ></div>
+              
+            >{!isLiked ? <img style={{width:"40px",height:"40px"}} src="/img/wh.svg" alt="heart" />: <img style={{width:"40px",height:"40px"}} src="/img/rh.svg" alt="heart" />}</div>
           </div>
         </div>
       )}

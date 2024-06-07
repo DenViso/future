@@ -39,9 +39,16 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    {<Layout/>||<MainePage/>||<Ring/>||<Diamond/>||<Services/>||<Care/>||<Reviwes/>||<About/>||<Engagement/>||<Women/>||<Men/>||<Puset/>||<CreatedBy/>}  {
+    {
+      <Layout /> || <MainePage /> || <Ring /> || <Diamond /> || (
+          <Services />
+        ) || <Care /> || <Reviwes /> || <About /> || <Engagement /> || (
+          <Women />
+        ) || <Men /> || <Puset /> || <CreatedBy />;
+    }
+    {
       window.scrollTo(0, 0);
-     }
+    }
   }, [location.pathname]);
 
   const changeLanguage = (lng) => {

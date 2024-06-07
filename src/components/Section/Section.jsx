@@ -42,6 +42,12 @@ export const Section = ({ t }) => {
               <img src="/img/logo/section/team.png" alt="" />
             </Link>
           </li>
+          <li className="sectionPart">
+            <a href="https://www.instagram.com/future.jewelry/?igsh=MXUyNGZlZHc3cDUxMg%3D%3D">
+              <h2>{t("dropMenu.sec8")}</h2>
+              <img src="/img/soc.svg" alt="" />
+            </a>
+          </li>
         </ul>
       </div>
     </>
