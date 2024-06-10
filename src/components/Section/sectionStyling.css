@@ -165,6 +165,12 @@
 .services > ul > li > h2 {
   font-family: var(--fontFamily);
   color:var(--black);
+  font-size: 2.5rem;
+}
+.services > ul > li > p {
+  font-family: var(--fontFamily);
+  color:var(--black);
+  font-size: 2rem;
 }
 .importAnim {
   font-family: var(--fontFamily);
@@ -550,13 +556,19 @@ height: 60%;
   .colorRock{
     font-size: 26px;
   }
+  
+  
+  .services > ul > li>p{
+    color: var(--black);
+    font-size: 2rem;
+  }
   .colorRock-text{
-    font-size: 16px;
+    font-size: 2rem;
     color: var(--black);
   }
   .care>h2,
   .services > ul > li > h2 {
-    font-size: 26px;
+    font-size: 2.5rem;
   }
 }
 
