@@ -177,10 +177,10 @@ export const Inner = ({ t, cat1 }) => {
               )}
             </div>
             <div className="modal-img">
-              {selectedProduct.media_files &&
+              {
                 selectedProduct.media_files.length > 0 &&
                 selectedProduct.media_files.map((item) => (
-                  <img key={item.id} src={item.photo} alt="" />
+                  <img src={item.photo} alt="img" />
                 ))}
             </div>
             <div className="modal-video">
