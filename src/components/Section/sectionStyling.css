@@ -463,6 +463,9 @@ height: 60%;
 }
 
 @media (max-width: 580px) {
+  .section{
+    display: none;
+  }
   .reviwesForm{
     width: 100%;
     padding: 1rem 0;
@@ -570,6 +573,10 @@ height: 60%;
   .services > ul > li > h2 {
     font-size: 2.5rem;
   }
+  .menuDrop{
+    height: fit-content;
+  }
+
 }
 
 /* INNER */
