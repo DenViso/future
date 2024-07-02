@@ -56,7 +56,7 @@ export const MenuDrop = ({ hideDropMenu, t }) => {
         <li className="menuDropPart">
             <a href="https://www.instagram.com/future.jewelry/?igsh=MXUyNGZlZHc3cDUxMg%3D%3D">
               <p>{t("dropMenu.sec8")}</p>
-              <img src="/img/soc.svg" alt="" />
+              <img src="/img/soc.svg" alt="instagram" />
             </a>
           </li>
       </ul>
