@@ -96,7 +96,7 @@ console.log(currentLanguage);
         </div>
         <div className="logo1">
           <Link to="/">
-            <img src="/img/logo/logo1.png" alt="Logo" />
+            <img src="/img/logo/logo150.png" alt="Logo" />
           </Link>
         </div>
 
