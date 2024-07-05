@@ -11,14 +11,14 @@ export const Puset = ({ t }) => {
           {/* соло */}
           <Link to="Inner/35">
             {t("section.section5")}
-            <img src="/img/sect/jew/pus/1.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/pus/1.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* соло+розсип */}
           <Link to="inner/33">
             {t("section.section6")}
-            <img src="/img/sect/jew/pus/2.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/pus/2.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -26,7 +26,7 @@ export const Puset = ({ t }) => {
           <Link to="inner/32">
             {" "}
             {t("section.section7")}
-            <img src="/img/sect/jew/pus/3.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/pus/3.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -34,7 +34,7 @@ export const Puset = ({ t }) => {
           <Link to="inner/34">
             {" "}
             {t("section.section8")}
-            <img src="/img/sect/jew/pus/4.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/pus/4.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -42,7 +42,7 @@ export const Puset = ({ t }) => {
           <Link to="inner/37">
             {" "}
             {t("section.section9")}
-            <img src="/img/sect/jew/pus/5.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/pus/5.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -50,7 +50,7 @@ export const Puset = ({ t }) => {
           <Link to="inner/36">
             {" "}
             {t("section.section22")}
-            <img src="/img/sect/jew/pus/6.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/pus/6.jpg" alt="" />
           </Link>
         </li>
       </ul>

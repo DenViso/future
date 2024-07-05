@@ -11,7 +11,7 @@ export const MainePage = ({t}) => {
     <section>
       <div className="mainVideo">
         <video
-          
+          loading="lazy"
           src={"/video/intro.mp4"}
           type="video/mp4"
           autoPlay

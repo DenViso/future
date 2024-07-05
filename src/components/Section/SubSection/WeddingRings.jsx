@@ -47,7 +47,7 @@ console.log(paramValue);
                     <div className="subInner-section-img">
                       {product.media_files.length > 0 &&
                         product.media_files[0].photo && (
-                          <img src={product.media_files[0].photo} alt="" />
+                          <img loading="lazy" src={product.media_files[0].photo} alt="" />
                         )}
                       <p className="text-scu">
                         <span>Арт:</span>
@@ -105,7 +105,7 @@ console.log(paramValue);
               {selectedProduct.media_files &&
                 selectedProduct.media_files.length > 0 &&
                 selectedProduct.media_files.map((item) => (
-                  <img key={item.id} src={item.photo} alt="" />
+                  <img loading="lazy" key={item.id} src={item.photo} alt="" />
                 ))}
             </div>
             <div className="modal-video">

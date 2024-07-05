@@ -19,7 +19,7 @@ export const Modal = ({ product, onClose }) => {
         </div>
         <div className="modal-img">
           {product.media_files && product.media_files.length > 0 && product.media_files.map((item) => (
-            <img key={item.id} src={item.photo} alt="" />
+            <img key={item.id} loading="lazy" src={item.photo} alt="" />
           ))}
         </div>
         <div className="modal-video">

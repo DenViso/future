@@ -11,32 +11,32 @@ export const Engagement = ({t}) => {
         <li>
           <Link to="Inner/47">
           {t("section.section5")}
-            <img src="/img/sect/jew/1eng/1.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/1eng/1.jpg" alt="" />
           </Link>
         </li>
         <li>
           <Link to="Inner/48">
           {t("section.section6")}
-            <img src="/img/sect/jew/1eng/2.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/1eng/2.jpg" alt="" />
           </Link>
         </li>
         <li>
           <Link to="Inner/51">
           {t("section.section7")}
-            <img src="/img/sect/jew/1eng/3.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/1eng/3.jpg" alt="" />
           </Link>
         </li>
         <li>
           <Link to="Inner/50">
           {t("section.section8")}
-            <img src="/img/sect/jew/1eng/4.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/1eng/4.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* знайти назву каталога */}
           <Link to="Inner/49">
           {t("section.section9")}
-            <img src="/img/sect/jew/1eng/5.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/1eng/5.jpg" alt="" />
           </Link>
         </li>
       </ul>

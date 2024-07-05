@@ -89,11 +89,11 @@ export const Reviwes = ({ t }) => {
         </form>
       </div>
       <div className="revswesImg">
-        <img src="./img/rev/1.jpg" alt="" />
-        <img src="./img/rev/2.jpg" alt="" />
-        <img src="./img/rev/3.jpg" alt="" />
-        <img src="./img/rev/4.jpg" alt="" />
-        <img src="./img/rev/5.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/1.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/2.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/3.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/4.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/5.jpg" alt="" />
       </div>
     </div>
   );

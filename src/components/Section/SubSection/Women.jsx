@@ -10,21 +10,21 @@ export const Women = ({t}) => {
           {/* каблучки */}
           <Link to="Inner/39">
             {t("section.section10")}
-            <img src="/img/sect/jew/3wom/1.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/3wom/1.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* доріжки */}
           <Link to="Inner/30"> 
             {t("section.section11")}
-            <img src="/img/sect/jew/3wom/2.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/3wom/2.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* пусет 38 */}
           <Link to="/Puset">
             {t("section.section12")}
-            <img src="/img/sect/jew/3wom/3.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/3wom/3.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -32,28 +32,28 @@ export const Women = ({t}) => {
           <Link to="Inner/28">
             {" "}
             {t("section.section13")}
-            <img src="/img/sect/jew/3wom/4.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/3wom/4.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* хрестик жін */}
           <Link to="Inner/31">
             {t("section.section14")}
-            <img src="/img/sect/jew/3wom/5.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/3wom/5.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* підв.жін. */}
           <Link to="Inner/29">
             {t("section.section15")}
-            <img src="/img/sect/jew/3wom/6.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/3wom/6.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* ланц.жін. */}
           <Link to="Inner/27">
             {t("section.section16")}
-            <img src="/img/sect/jew/3wom/7.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/3wom/7.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -61,14 +61,14 @@ export const Women = ({t}) => {
           <Link to="Inner/26">
             {" "}
             {t("section.section17")}
-            <img src="/img/sect/jew/3wom/8.jpg" alt="" />
+            <img loading="lazy" src="/img/sect/jew/3wom/8.jpg" alt="" />
           </Link>
         </li>
         {/* <li> */}
           {/* інші */}
           {/* <Link to="Inner/3"> */}
             {/* {t("section.section18")} */}
-            {/* <img src="/img/men/other.jpg" alt="" /> */}
+            {/* <img loading="lazy" src="/img/men/other.jpg" alt="" /> */}
           {/* </Link> */}
         {/* </li> */}
       </ul>

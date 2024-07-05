@@ -53,7 +53,7 @@ export const SearchDrop = ({  t, cat1 }) => {
           onChange={handleInputChange}
         />
         <button onClick={handleSearch}>
-          <img src="/img/headerIcon/search.png" alt="search icon" />
+          <img loading="lazy" src="/img/headerIcon/search.png" alt="search icon" />
         </button>
         <datalist id="search-parameters">
           <option value="Якщо ви знаєте артикул товара введіть його тут мінімум 3-ри символи" />

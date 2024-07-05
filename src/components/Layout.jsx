@@ -69,7 +69,7 @@ console.log(currentLanguage);
       {/*HEADER*/}
       <header className="header">
         <div className="menu">
-          <img
+          <img loading="lazy"
             className="iconSize"
             src="/img/headerIcon/menu.png"
             alt="Menu"
@@ -78,7 +78,7 @@ console.log(currentLanguage);
           {activeMenu === "menu" && (
             <MenuDrop hideDropMenu={() => setActiveMenu(null)} t={t} />
           )}
-          <img
+          <img loading="lazy"
             className="iconSize"
             src="/img/headerIcon/search.png"
             alt="Search"
@@ -96,7 +96,7 @@ console.log(currentLanguage);
         </div>
         <div className="logo1">
           <Link to="/">
-            <img src="/img/logo/logo150.png" alt="Logo" />
+            <img loading="lazy" src="/img/logo/logo150.png" alt="Logo" />
           </Link>
         </div>
 
@@ -119,14 +119,14 @@ console.log(currentLanguage);
           )}
           <div className="lng">
             <a href="tel:+380936918998" onClick={handlePhoneClick}>
-              <img
+              <img loading="lazy"
                 className="iconSize"
                 src="/img/headerIcon/contact2.png"
                 alt="Menu"
               />
             </a>
             <div className="">
-              <img
+              <img loading="lazy"
                 className="iconSize"
                 src="/img/h.svg"
                 alt="Cart"
@@ -145,7 +145,7 @@ console.log(currentLanguage);
       <footer>
         <div className="footerLeft">
           <Link to="/">
-            <img src="/img/logo/logo.png" alt="Logo" />
+            <img loading="lazy" src="/img/logo/logo.png" alt="Logo" />
           </Link>
           <div className="footerText">
             <a href="tel:+380936918998" onClick={handlePhoneClick}>
@@ -208,7 +208,7 @@ console.log(currentLanguage);
         <p style={{ color: "black" }}>
           Copyright © 2021. All Rights Reserved.
           <Link to="/CreatedBy">
-            <img
+            <img loading="lazy"
               style={{
                 width: "20px",
                 height: "20px",

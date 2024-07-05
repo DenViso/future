@@ -110,9 +110,9 @@ export const Inner = ({ t, cat1 }) => {
                   >
                     <div className="subInner-section-img">
                       {product.media_files && product.media_files.length > 0 && product.media_files[0].photo ? (
-                        <img src={product.media_files[0].photo} alt="" />
+                        <img loading="lazy" src={product.media_files[0].photo} alt="" />
                       ) : (
-                        <img src="/img/noImg.png" alt="" />
+                        <img loading="lazy" src="/img/noImg.png" alt="" />
                       )}
                       <div className="subInner-info-text">
                       <p className="text-scu">
@@ -201,7 +201,7 @@ export const Inner = ({ t, cat1 }) => {
               className="heart"
               onClick={() => handleLike(selectedProduct)}
               
-            >{!isLiked ? <img style={{width:"40px",height:"40px"}} src="/img/wh.svg" alt="heart" />: <img style={{width:"40px",height:"40px"}} src="/img/rh.svg" alt="heart" />}</div>
+            >{!isLiked ? <img loading="lazy" style={{width:"40px",height:"40px"}} src="/img/wh.svg" alt="heart" />: <img loading="lazy" style={{width:"40px",height:"40px"}} src="/img/rh.svg" alt="heart" />}</div>
           </div>
         </div>
       )}
