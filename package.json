@@ -8,13 +8,13 @@
     "dev": "vite --host",
     "build": "vite build",
     "predeploy": "npm run build",
-    
-"deploy": "gh-pages -d dist -b github-pages-build",
+    "deploy": "gh-pages -d dist -b github-pages-build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.6.8",
+    "compression": "^1.7.4",
     "i18n": "^0.15.1",
     "i18next": "^23.10.1",
     "i18next-browser-languagedetector": "^7.2.1",
