@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import React from "react";
 import { NextArrow, PrevArrow } from "./CustomArrows";
+import LazyLoad from "react-lazyload";
 
 export const SimpleSlider = () => {
   const settings = {
@@ -17,70 +18,87 @@ export const SimpleSlider = () => {
   return (
     <div className="slider-container">
       <Slider {...settings}>
+        {/* <div>
+          <LazyLoad>
+            {" "}
+            <img
+              loading="lazy"
+              className="slideImg"
+              src="./img/sliderPic/1.1.jpg"
+              alt=""
+            />
+          </LazyLoad>
+        </div> */}
         <div>
-          <img
-            loading="lazy"
-            className="slideImg"
-            src="./img/sliderPic/1.1.jpg"
-            alt=""
-          />
+          <LazyLoad>
+            <img
+              loading="lazy"
+              className="slideImg"
+              src="./img/sliderPic/1.2.jpg"
+              alt=""
+            />
+          </LazyLoad>
         </div>
         <div>
-          <img
-            loading="lazy"
-            className="slideImg"
-            src="./img/sliderPic/1.2.jpg"
-            alt=""
-          />
+          <LazyLoad>
+            <img
+              loading="lazy"
+              className="slideImg"
+              src="./img/sliderPic/1.jpg"
+              alt=""
+            />
+          </LazyLoad>
         </div>
         <div>
-          <img
-            loading="lazy"
-            className="slideImg"
-            src="./img/sliderPic/1.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            loading="lazy"
-            className="slideImg"
-            src="./img/sliderPic/2.jpg"
-            alt=""
-          />
+          <LazyLoad>
+            <img
+              loading="lazy"
+              className="slideImg"
+              src="./img/sliderPic/2.jpg"
+              alt=""
+            />
+          </LazyLoad>
         </div>
 
+        {/* <div>
+          <LazyLoad>
+            <img
+              loading="lazy"
+              className="slideImg"
+              src="./img/sliderPic/1.1.jpg"
+              alt=""
+            />
+          </LazyLoad>
+        </div> */}
         <div>
-          <img
-            loading="lazy"
-            className="slideImg"
-            src="./img/sliderPic/1.1.jpg"
-            alt=""
-          />
+          <LazyLoad>
+            <img
+              loading="lazy"
+              className="slideImg"
+              src="./img/sliderPic/1.2.jpg"
+              alt=""
+            />
+          </LazyLoad>
         </div>
         <div>
-          <img
-            loading="lazy"
-            className="slideImg"
-            src="./img/sliderPic/1.2.jpg"
-            alt=""
-          />
+          <LazyLoad>
+            <img
+              loading="lazy"
+              className="slideImg"
+              src="./img/sliderPic/1.jpg"
+              alt=""
+            />
+          </LazyLoad>
         </div>
         <div>
-          <img
-            loading="lazy"
-            className="slideImg"
-            src="./img/sliderPic/1.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            loading="lazy"
-            className="slideImg"
-            src="./img/sliderPic/2.jpg"
-            alt=""
-          />
+          <LazyLoad>
+            <img
+              loading="lazy"
+              className="slideImg"
+              src="./img/sliderPic/2.jpg"
+              alt=""
+            />
+          </LazyLoad>
         </div>
       </Slider>
     </div>

@@ -78,7 +78,7 @@
   padding: 0 5.5rem;
   justify-content: center;
 }
-.logo1 > a > img {
+.logoHeader{
   width: 100%;
   padding: 2.2rem;
 }
@@ -294,7 +294,7 @@ footer {
   padding: 3rem 4rem;
 }
 .footerLeft {
-  width: 20%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -315,14 +315,14 @@ footer {
   text-align: center;
 }
 
-.footerLeft > a > img {
+.footerLogo {
   width: 200px;
 }
 .footerMap {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 30%;
   padding: 0 5.5rem;
   padding: 1rem;
 }
@@ -339,7 +339,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 25%;
 }
 .footerAdrress > address > p {
   font-family: var(--fontFamily);
@@ -432,6 +432,26 @@ footer {
 .cBImg {
   width: 60px;
   height: 60px;
+}
+.copyright{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black );
+}
+.goto{
+  width: 20px;
+                  height: 20px;
+                  margin-Left: 15px;
+                  text-align: center;
+}
+.footerLogo{
+  width: inherit;
+  height: 350px;
 }
 @media (max-width: 1470px) {
   .sectionList {
@@ -530,7 +550,7 @@ footer {
     align-items: center;
     justify-content: center;
   }
-  .logo1 > a > img {
+  .logoHeader {
     min-width: 245px;
   }
   .header {
@@ -605,8 +625,9 @@ footer {
     justify-content: center;
     gap: 2rem;
   }
-  .footerLeft > a > img {
+  .footerLogo{
     width: 100%;
+    height: fit-content;
   }
   .footerMap {
     width: 100%;
@@ -619,6 +640,13 @@ footer {
   .footerMap > iframe {
     width: 100%;
     height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .footerAdrress {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { MenuDrop } from "./DropWindow/MenuDrop";
 import { SearchDrop } from "./DropWindow/SearchDrop";
 import { Cart } from "./Cart/Cart";
+import LazyLoad from "react-lazyload";
 
 export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   const [activeMenu, setActiveMenu] = useState(null); // "menu", "search", or null
@@ -69,24 +70,28 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
       {/*HEADER*/}
       <header className="header">
         <div className="menu">
-          <img
-            loading="lazy"
-            className="iconSize"
-            src="/img/headerIcon/menu.png"
-            alt="Menu"
-            onMouseEnter={() => handleMouseEnter("menu")}
-          />
+          <LazyLoad >
+            <img 
+              loading="lazy"
+              className="iconSize"
+              src="/img/headerIcon/menu.png"
+              alt="Menu"
+              onMouseEnter={() => handleMouseEnter("menu")}
+            />
+          </LazyLoad>
           {activeMenu === "menu" && (
             <MenuDrop hideDropMenu={() => setActiveMenu(null)} t={t} />
           )}
-          <img
-            loading="lazy"
-            className="iconSize"
-            src="/img/headerIcon/search.png"
-            alt="Search"
-            onMouseEnter={() => handleMouseEnter("search")}
-            onMouseLeave={() => handleMouseLeave(null)}
-          />
+          <LazyLoad>
+            <img
+              loading="lazy"
+              className="iconSize"
+              src="/img/headerIcon/search.png"
+              alt="Search"
+              onMouseEnter={() => handleMouseEnter("search")}
+              onMouseLeave={() => handleMouseLeave(null)}
+            />
+          </LazyLoad>
           {activeMenu === "search" && (
             <SearchDrop
               className="search-menu"
@@ -98,7 +103,10 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
         </div>
         <div className="logo1">
           <Link to="/">
-            <img loading="lazy" src="/img/logo/logo150.png" alt="Logo" />
+            <LazyLoad>
+              
+              <img className="logoHeader" loading="lazy" src="/img/logo/logo150.png" alt="Logo" />
+            </LazyLoad>
           </Link>
         </div>
 
@@ -125,21 +133,26 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
           )}
           <div className="lng">
             <a href="tel:+380936918998" onClick={handlePhoneClick}>
-              <img
-                loading="lazy"
-                className="iconSize"
-                src="/img/headerIcon/contact2.png"
-                alt="Menu"
-              />
+              <LazyLoad>
+                {" "}
+                <img
+                  loading="lazy"
+                  className="iconSize"
+                  src="/img/headerIcon/contact2.png"
+                  alt="Menu"
+                />
+              </LazyLoad>
             </a>
             <div className="">
-              <img
-                loading="lazy"
-                className="iconSize"
-                src="/img/h.svg"
-                alt="Cart"
-                onClick={handleClick}
-              />
+              <LazyLoad>
+                <img
+                  loading="lazy"
+                  className="iconSize"
+                  src="/img/h.svg"
+                  alt="Cart"
+                  onClick={handleClick}
+                />
+              </LazyLoad>
               {showCart && <Cart setShowCart={setShowCart} t={t} />}
             </div>
           </div>
@@ -153,12 +166,14 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
       <footer>
         <div className="footerLeft">
           <Link to="/">
-            <img loading="lazy" src="/img/logo/logo.png" alt="Logo" />
+            <LazyLoad>
+              <img className="footerLogo"  src="/img/logo/logo.png" alt="Logo" />
+            </LazyLoad>
           </Link>
           <div className="footerText">
             <a href="tel:+380936918998" onClick={handlePhoneClick}>
               +38 (093) 691-89-98
-            </a>{" "}
+            </a>
             <br />
             <a href="future.com.ua@gmail.com">future.com.ua@gmail.com</a>
           </div>
@@ -215,20 +230,22 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
           textAlign: "center",
         }}
       >
-        <p style={{ color: "black", fontSize: "14px" }}>
+        <p className="copyright" >
           Copyright © 2021. All Rights Reserved.
           <Link to="/CreatedBy">
-            <img
-              loading="lazy"
-              style={{
-                width: "20px",
-                height: "20px",
-                marginLeft: "15px",
-                textAlign: "center",
-              }}
-              src="/img/createdBy/chick.png"
-              alt=""
-            />
+            {/* <LazyLoad> */}
+              <img className="goto"
+                // loading="lazy"
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  marginLeft: "15px",
+                  textAlign: "center",
+                }}
+                src="/img/createdBy/chick.png"
+                alt=""
+              />
+            {/* </LazyLoad> */}
           </Link>
         </p>
       </div>

@@ -24,7 +24,7 @@ export const WomenInner = ({ t, cat1 }) => {
                     {/* Відображення фото */}
                     {product.media_files.length > 0 &&
                       product.media_files[0].photo && (
-                        <img
+                        <img 
                           loading="lazy"
                           src={product.media_files[0].photo}
                           alt=""

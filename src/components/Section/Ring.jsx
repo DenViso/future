@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazyload";
+
 export const Ring = ({ t }) => {
   return (
     <div className="ring">
@@ -11,13 +13,17 @@ export const Ring = ({ t }) => {
         <li>
           <Link to="/Engagement">
             {t("section.section1")}
-            <img loading="lazy" src="/img/sect/jew/1eng.jpg" alt="" />
+            <LazyLoad>
+              <img className ="ringImg" loading="lazy" src="/img/sect/jew/1eng.jpg" alt="" />
+            </LazyLoad>
           </Link>
         </li>
         <li>
           <Link to="/Inner/53">
             {t("section.section2")}
-            <img loading="lazy" src="/img/sect/jew/2weRing.jpg" alt="" />
+            <LazyLoad>
+              <img className ="ringImg" loading="lazy" src="/img/sect/jew/2weRing.jpg" alt="" />
+            </LazyLoad>
           </Link>
         </li>
       </ul>
@@ -26,13 +32,17 @@ export const Ring = ({ t }) => {
         <li>
           <Link to="/Women">
             {t("section.section3")}
-            <img loading="lazy" src="/img/sect/jew/3wom.jpg" alt="" />
+            <LazyLoad>
+              <img className ="ringImg" loading="lazy" src="/img/sect/jew/3wom.jpg" alt="" />
+            </LazyLoad>
           </Link>
         </li>
         <li>
           <Link to="/Men">
             {t("section.section4")}
-            <img loading="lazy" src="/img/sect/jew/4man.jpg" alt="" />
+            <LazyLoad>
+              <img className ="ringImg" loading="lazy" src="/img/sect/jew/4man.jpg" alt="" />
+            </LazyLoad>
           </Link>
         </li>
       </ul>

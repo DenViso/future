@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazyload";
 
 export const Puset = ({ t }) => {
   return (
@@ -11,14 +12,14 @@ export const Puset = ({ t }) => {
           {/* соло */}
           <Link to="Inner/35">
             {t("section.section5")}
-            <img loading="lazy" src="/img/sect/jew/pus/1.jpg" alt="" />
+            <LazyLoad><img className="ringImg" loading="lazy" src="/img/sect/jew/pus/1.jpg" alt="" /></LazyLoad>
           </Link>
         </li>
         <li>
           {/* соло+розсип */}
           <Link to="inner/33">
             {t("section.section6")}
-            <img loading="lazy" src="/img/sect/jew/pus/2.jpg" alt="" />
+            <LazyLoad><img className="ringImg" loading="lazy" src="/img/sect/jew/pus/2.jpg" alt="" /></LazyLoad>
           </Link>
         </li>
         <li>
@@ -26,7 +27,7 @@ export const Puset = ({ t }) => {
           <Link to="inner/32">
             {" "}
             {t("section.section7")}
-            <img loading="lazy" src="/img/sect/jew/pus/3.jpg" alt="" />
+            <LazyLoad><img className="ringImg" loading="lazy" src="/img/sect/jew/pus/3.jpg" alt="" /></LazyLoad>
           </Link>
         </li>
         <li>
@@ -34,7 +35,7 @@ export const Puset = ({ t }) => {
           <Link to="inner/34">
             {" "}
             {t("section.section8")}
-            <img loading="lazy" src="/img/sect/jew/pus/4.jpg" alt="" />
+            <LazyLoad><img className="ringImg" loading="lazy" src="/img/sect/jew/pus/4.jpg" alt="" /></LazyLoad>
           </Link>
         </li>
         <li>
@@ -42,7 +43,7 @@ export const Puset = ({ t }) => {
           <Link to="inner/37">
             {" "}
             {t("section.section9")}
-            <img loading="lazy" src="/img/sect/jew/pus/5.jpg" alt="" />
+            <LazyLoad><img className="ringImg" loading="lazy" src="/img/sect/jew/pus/5.jpg" alt="" /></LazyLoad>
           </Link>
         </li>
         <li>
@@ -50,7 +51,7 @@ export const Puset = ({ t }) => {
           <Link to="inner/36">
             {" "}
             {t("section.section22")}
-            <img loading="lazy" src="/img/sect/jew/pus/6.jpg" alt="" />
+            <LazyLoad><img className="ringImg" loading="lazy" src="/img/sect/jew/pus/6.jpg" alt="" /></LazyLoad>
           </Link>
         </li>
       </ul>
