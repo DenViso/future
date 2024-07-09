@@ -18,17 +18,7 @@ export const SimpleSlider = () => {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        {/* <div>
-          <LazyLoad>
-            {" "}
-            <img
-              loading="lazy"
-              className="slideImg"
-              src="./img/sliderPic/1.1.jpg"
-              alt=""
-            />
-          </LazyLoad>
-        </div> */}
+        
         <div>
           <LazyLoad>
             <img
@@ -59,17 +49,7 @@ export const SimpleSlider = () => {
             />
           </LazyLoad>
         </div>
-
-        {/* <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              className="slideImg"
-              src="./img/sliderPic/1.1.jpg"
-              alt=""
-            />
-          </LazyLoad>
-        </div> */}
+       
         <div>
           <LazyLoad>
             <img
