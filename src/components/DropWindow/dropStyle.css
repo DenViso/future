@@ -1,9 +1,9 @@
 /* menuDrop */
 
-.menuDrop{
+.menuDrop {
   position: absolute;
   display: block;
-  top:80px;
+  top: 80px;
   left: 0;
   width: 345px;
   height: fit-content;
@@ -12,10 +12,10 @@
   z-index: 100;
   animation: dropIn 0.7s;
 }
-.drop-active{
+.drop-active {
   display: block;
 }
-.menuDropList{
+.menuDropList {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -23,19 +23,18 @@
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
- 
 }
-.menuDropPart>a{
+.menuDropPart > a {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
   width: 300px;
-  padding:1rem 3rem;
+  padding: 1rem 3rem;
   border-radius: 10px;
   border: 3px solid var(--white);
 }
-.menuDropPart>a>p{
+.menuDropPart > a > p {
   color: var(--white);
   font-family: var(--fontFamily);
   font-weight: 400;
@@ -43,94 +42,88 @@
   cursor: pointer;
   text-align: center;
 }
-.menuDropPart>a>img{
+.menuDropPart > a > img {
   width: 40px;
 }
-.menuDropPart>p:hover{
+.menuDropPart > p:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 @keyframes dropIn {
-  from{
+  from {
     opacity: 0;
     transform: translateX(-100%);
   }
-  to{
+  to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
 /* DropSearch */
-.closed{
+.closed {
+  color: var(--black);
+  font-size: 45px;
+  text-align: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  border: 1px solid var(--black);
+}
+.closed:hover {
+  animation: 1s pulsar;
+}
+@keyframes pulsar {
+  0% {
+    rotate: 0deg;
+  }
 
-    color: var(--black);
-    font-size: 45px;
-    text-align: center;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -20px;
-    left: 10px;
-    border: 1px solid  var(--black);
-  
+  50% {
+    rotate: 180deg;
+    box-shadow: 1px 1px 10px 1px var(--white);
   }
-  .closed:hover{
-    animation: 1s pulsar ;
+
+  100% {
+    rotate: 0deg;
   }
-  @keyframes pulsar {
-    0% {
-      rotate: 0deg;
-    }
-  
-    50% {
-     rotate: 180deg;
-     box-shadow: 1px 1px 10px 1px var(--white);
-    }
-  
-    100% {
-      rotate: 0deg;
-    }
-  }
-  
-  
-.searchDrop{
+}
+
+.searchDrop {
   position: absolute;
   display: block;
-  top:80px;
+  top: 80px;
   left: 0;
   width: 245px;
   height: fit-content;
-  background:var(--grey);
+  background: var(--grey);
   border-radius: 0 7px 7px 0;
   z-index: 90;
- animation: dropIn 0.7s;   
- 
- 
+  animation: dropIn 0.7s;
 }
-.search>button>img{
+.search > button > img {
   width: 25px;
   height: 25px;
 }
-.search{
+.search {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   padding: 1rem;
 }
-.search-active{
+.search-active {
   display: block;
 }
 
-
-.modal-search{
+.modal-search {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,54 +137,51 @@
   top: 0;
   left: 0;
   z-index: 20;
- 
 }
-.modal-search>h1{
+.modal-search > h1 {
   font-size: 2.5rem;
   color: var(--black);
 }
-.modal-search>p{
+.modal-search > p {
   font-size: 2.5rem;
   color: var(--black);
 }
-.modal-info-search>h2{
+.modal-info-search > h2 {
   font-size: 2rem;
   color: var(--black);
 }
-.modal-info-search-conteiner{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.modal-info-search-conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid var(--white);
   padding-bottom: 20px;
   margin-top: 2rem;
 }
-.modal-info-search-conteiner>button{
+.modal-info-search-conteiner > button {
   color: var(--black);
   background-color: var(--white);
   width: 50px;
   height: 50px;
   border: none;
   outline: none;
-  /* padding: 1rem; */
   border-radius: 50%;
   font-family: var(--fontFamily);
   font-weight: 600;
   font-size: 40px;
   cursor: pointer;
 }
-input{
+input {
   color: var(--black);
   width: 100%;
   height: 30px;
   font-size: 21px;
 }
-.modal-info-search{
+.modal-info-search {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  /* flex-direction: column; */
   gap: 2rem;
   padding: 1rem;
   width: 100vw;
@@ -204,31 +194,29 @@ input{
 }
 @media (max-width: 580px) {
   /* DropMenu */
-  .menuDrop{
+  .menuDrop {
     width: 100%;
     height: fit-content;
     border-radius: 0;
     background-color: var(--white);
-    
   }
-  .menuDropPart>p{
+  .menuDropPart > p {
     color: black;
     font-family: "Cormorant SC", serif;
     font-weight: 600;
     font-size: 28px;
-  
   }
   /* SearchDrop */
-  .searchDrop{
+  .searchDrop {
     width: 100%;
-    height:200px;
+    height: 200px;
     border-radius: 0;
-    background-color:var(--white);
+    background-color: var(--white);
   }
-  .search{
+  .search {
     flex-direction: column;
   }
-  .search>input{
+  .search > input {
     width: 100%;
     height: 80px;
     background-color: var(--white);
@@ -240,38 +228,34 @@ input{
     font-family: var(--fontFamily);
     font-weight: 600;
     font-size: 20px;
-
   }
-  .search>button{
+  .search > button {
     width: 100%;
     height: 70px;
 
-    /* background-color: rgb(250, 248, 248); */
-border: solid 3px var(--black);   
- border-radius: 5px;
-    /* border: none; */
+    border: solid 3px var(--black);
+    border-radius: 5px;
     outline: none;
     padding: 0 1rem;
     font-family: var(--fontFamily);
     font-weight: 600;
     font-size: 20px;
-
   }
-  .search>button>img{
+  .search > button > img {
     width: 50px;
     height: 50px;
   }
-  .menuDropPart>a{
+  .menuDropPart > a {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
     width: 300px;
-    padding:1rem 3rem;
+    padding: 1rem 3rem;
     border-radius: 10px;
     border: 3px solid var(--fontFamily);
   }
-  .menuDropPart>a>p{
+  .menuDropPart > a > p {
     color: var(--black);
     font-family: var(--fontFamily);
     font-weight: 600;

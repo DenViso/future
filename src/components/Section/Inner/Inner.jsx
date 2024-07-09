@@ -48,8 +48,7 @@ export const Inner = ({ t, cat1 }) => {
   const closeModal = (e) => {
     setSelectedProduct(null);
     document.body.classList.remove("modal-open");
-    // const scrollY = document.body.style.top;
-    // document.cart.style.top = "";
+
     window.scrollTo(0, parseInt(scrollY || "0") * -1);
     e.preventDefault();
   };
@@ -109,22 +108,30 @@ export const Inner = ({ t, cat1 }) => {
                     onClick={() => openModal(product)}
                   >
                     <div className="subInner-section-img">
-                      {product.media_files && product.media_files.length > 0 && product.media_files[0].photo ? (
-                        <img loading="lazy" src={product.media_files[0].photo} alt="" />
+                      {product.media_files &&
+                      product.media_files.length > 0 &&
+                      product.media_files[0].photo ? (
+                        <img
+                          loading="lazy"
+                          src={product.media_files[0].photo}
+                          alt=""
+                        />
                       ) : (
                         <img loading="lazy" src="/img/noImg.png" alt="" />
                       )}
                       <div className="subInner-info-text">
-                      <p className="text-scu">
-                        <span>Арт:</span>
-                        {product.sku}
-                      </p>
-                     
-                        <p className="text-scu"> {(product.price && <span>Ціна: $ {product.price}</span>
-                        )}</p>
-                     
+                        <p className="text-scu">
+                          <span>Арт:</span>
+                          {product.sku}
+                        </p>
+
+                        <p className="text-scu">
+                          {" "}
+                          {product.price && (
+                            <span>Ціна: $ {product.price}</span>
+                          )}
+                        </p>
                       </div>
-                    
                     </div>
                   </div>
                 ) : null
@@ -143,7 +150,8 @@ export const Inner = ({ t, cat1 }) => {
             </span>
             <div className="modal-info">
               <h2>
-                Арт. продукту:<br /> {selectedProduct.sku}
+                Арт. продукту:
+                <br /> {selectedProduct.sku}
               </h2>
               {selectedProduct.gold_assay && (
                 <p>
@@ -162,7 +170,8 @@ export const Inner = ({ t, cat1 }) => {
               )}
               {selectedProduct.stone_characteristics && (
                 <p>
-                  Характеристики каміння :<br /> {selectedProduct.stone_characteristics}
+                  Характеристики каміння :<br />{" "}
+                  {selectedProduct.stone_characteristics}
                 </p>
               )}
               {selectedProduct.weight && (
@@ -177,10 +186,12 @@ export const Inner = ({ t, cat1 }) => {
               )}
             </div>
             <div className="modal-img">
-              {selectedProduct.media_files && selectedProduct.media_files.length > 0 &&
-                selectedProduct.media_files.map((item) => (
-                  item.photo && <img key={item.id} src={item.photo} alt="" />
-                ))}
+              {selectedProduct.media_files &&
+                selectedProduct.media_files.length > 0 &&
+                selectedProduct.media_files.map(
+                  (item) =>
+                    item.photo && <img key={item.id} src={item.photo} alt="" />
+                )}
             </div>
             <div className="modal-video">
               {selectedProduct.media_files &&
@@ -188,20 +199,27 @@ export const Inner = ({ t, cat1 }) => {
                 selectedProduct.media_files.map(
                   (item) =>
                     item.video && (
-                      <video
-                        key={item.id}
-                        src={item.video}
-                        autoPlay
-                        controls
-                      />
+                      <video key={item.id} src={item.video} autoPlay controls />
                     )
                 )}
             </div>
-            <div
-              className="heart"
-              onClick={() => handleLike(selectedProduct)}
-              
-            >{!isLiked ? <img loading="lazy" style={{width:"40px",height:"40px"}} src="/img/wh.svg" alt="heart" />: <img loading="lazy" style={{width:"40px",height:"40px"}} src="/img/rh.svg" alt="heart" />}</div>
+            <div className="heart" onClick={() => handleLike(selectedProduct)}>
+              {!isLiked ? (
+                <img
+                  loading="lazy"
+                  style={{ width: "40px", height: "40px" }}
+                  src="/img/wh.svg"
+                  alt="heart"
+                />
+              ) : (
+                <img
+                  loading="lazy"
+                  style={{ width: "40px", height: "40px" }}
+                  src="/img/rh.svg"
+                  alt="heart"
+                />
+              )}
+            </div>
           </div>
         </div>
       )}

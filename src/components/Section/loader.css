@@ -1,7 +1,3 @@
-/* timeFunction = ease-in-out;
-duration = 4s;
-delay = 0s; */
-
 .contLoader {
   background: var(--white);
   display: flex;
@@ -13,7 +9,6 @@ delay = 0s; */
   margin: 0px;
   display: flex;
   flex-direction: column;
-  /* z-index: ; */
   position: relative;
 }
 .contLoader > h1 {
@@ -24,21 +19,21 @@ delay = 0s; */
   margin-top: 1rem;
 }
 
-.loader{
+.loader {
   width: 112px;
   height: 112px;
 }
 
-.loader>.box1,
-.loader>.box2,
-.loader>.box3 {
+.loader > .box1,
+.loader > .box2,
+.loader > .box3 {
   border: 16px solid var(--black);
   box-sizing: border-box;
   position: absolute;
   display: block;
 }
 
-.loader>.box1 {
+.loader > .box1 {
   width: 112px;
   height: 48px;
   margin-top: 64px;
@@ -46,7 +41,7 @@ delay = 0s; */
   animation: anime1 4s 0s forwards ease-in-out infinite;
 }
 
-.loader>.box2 {
+.loader > .box2 {
   width: 48px;
   height: 48px;
   margin-top: 0px;
@@ -54,7 +49,7 @@ delay = 0s; */
   animation: anime2 4s 0s forwards ease-in-out infinite;
 }
 
-.loader>.box3 {
+.loader > .box3 {
   width: 48px;
   height: 48px;
   margin-top: 0px;

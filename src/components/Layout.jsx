@@ -63,13 +63,14 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   };
 
   const currentLanguage = i18n.language;
-console.log(currentLanguage);
+  console.log(currentLanguage);
   return (
     <>
       {/*HEADER*/}
       <header className="header">
         <div className="menu">
-          <img loading="lazy"
+          <img
+            loading="lazy"
             className="iconSize"
             src="/img/headerIcon/menu.png"
             alt="Menu"
@@ -78,7 +79,8 @@ console.log(currentLanguage);
           {activeMenu === "menu" && (
             <MenuDrop hideDropMenu={() => setActiveMenu(null)} t={t} />
           )}
-          <img loading="lazy"
+          <img
+            loading="lazy"
             className="iconSize"
             src="/img/headerIcon/search.png"
             alt="Search"
@@ -104,13 +106,17 @@ console.log(currentLanguage);
           {!isMobileView && (
             <div className="lng">
               <button
-                className={currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"}
+                className={
+                  currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"
+                }
                 onClick={() => changeLanguage("uk")}
               >
                 Укр
               </button>
               <button
-                className={currentLanguage == "en" ? "lngBtn  activeLng" : "lngBtn"}
+                className={
+                  currentLanguage == "en" ? "lngBtn  activeLng" : "lngBtn"
+                }
                 onClick={() => changeLanguage("en")}
               >
                 Eng
@@ -119,14 +125,16 @@ console.log(currentLanguage);
           )}
           <div className="lng">
             <a href="tel:+380936918998" onClick={handlePhoneClick}>
-              <img loading="lazy"
+              <img
+                loading="lazy"
                 className="iconSize"
                 src="/img/headerIcon/contact2.png"
                 alt="Menu"
               />
             </a>
             <div className="">
-              <img loading="lazy"
+              <img
+                loading="lazy"
                 className="iconSize"
                 src="/img/h.svg"
                 alt="Cart"
@@ -172,23 +180,25 @@ console.log(currentLanguage);
               className="lng"
               style={{
                 color: "white",
-                // border: "1px solid white",
                 display: "flex",
-                // flexDirection: "column",
                 alignItems: "center",
                 marginTop: "20px",
               }}
             >
               <button
-                className={currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"}
-                style={{ color: "white",border:"none"}}
+                className={
+                  currentLanguage == "uk" ? "lngBtn  activeLng" : "lngBtn"
+                }
+                style={{ color: "white", border: "none" }}
                 onClick={() => changeLanguage("uk")}
               >
                 Укр
               </button>
               <button
-                className={currentLanguage == "en" ? " lngBtn  activeLng" : "lngBtn"}
-                style={{ color: "white" ,border:"none"}}
+                className={
+                  currentLanguage == "en" ? " lngBtn  activeLng" : "lngBtn"
+                }
+                style={{ color: "white", border: "none" }}
                 onClick={() => changeLanguage("en")}
               >
                 Eng
@@ -205,10 +215,11 @@ console.log(currentLanguage);
           textAlign: "center",
         }}
       >
-        <p style={{ color: "black" }}>
+        <p style={{ color: "black", fontSize: "14px" }}>
           Copyright © 2021. All Rights Reserved.
           <Link to="/CreatedBy">
-            <img loading="lazy"
+            <img
+              loading="lazy"
               style={{
                 width: "20px",
                 height: "20px",

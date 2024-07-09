@@ -1,42 +1,37 @@
-import React from 'react'
-import "../../App.css" 
+import React from "react";
+import "../../App.css";
 
-import {SimpleSlider} from '../SimpleSlider/SimpleSlider'
-import {Section} from '../Section/Section'
+import { SimpleSlider } from "../SimpleSlider/SimpleSlider";
+import { Section } from "../Section/Section";
 
-export const MainePage = ({t}) => {
+export const MainePage = ({ t }) => {
   return (
-    
     <main>
-    <section>
-      <div className="mainVideo">
-        <video
-          loading="lazy"
-          src={"/video/intro.mp4"}
-          type="video/mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-         
-        />
-        <div className="mainText">
-          
-          <h1>Look to the future, become more beautiful... </h1>
-          <span></span>
+      <section>
+        <div className="mainVideo">
+          <video
+            loading="lazy"
+            src={"/video/intro.mp4"}
+            type="video/mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+          <div className="mainText">
+            <h1>Look to the future, become more beautiful... </h1>
+            <span></span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section style={{ backgroundColor: "white" }}>
-      <SimpleSlider />
-    </section>
+      <section style={{ backgroundColor: "white" }}>
+        <SimpleSlider />
+      </section>
 
-    <section>
-      <Section t={t} />
-    </section>
-  </main>
-  )
-}
-
- 
+      <section>
+        <Section t={t} />
+      </section>
+    </main>
+  );
+};

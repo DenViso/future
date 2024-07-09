@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export const Ring = ({t}) => {
+export const Ring = ({ t }) => {
   return (
     <div className="ring">
-      <Link className="back backposition" to="/">{t("back.toMain")}</Link>
+      <Link className="back backposition" to="/">
+        {t("back.toMain")}
+      </Link>
       <h1>{t("section.title")}</h1>
       <ul className="ringList">
         <li>
@@ -18,9 +20,9 @@ export const Ring = ({t}) => {
             <img loading="lazy" src="/img/sect/jew/2weRing.jpg" alt="" />
           </Link>
         </li>
-        </ul>
-       
-        <ul className="ringList">
+      </ul>
+
+      <ul className="ringList">
         <li>
           <Link to="/Women">
             {t("section.section3")}

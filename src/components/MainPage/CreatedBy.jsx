@@ -6,8 +6,18 @@ export const CreatedBy = ({ t }) => {
       <h2 className="createdByTitle">{t("created.title")}</h2>
       <ul>
         <li className="createdByList">
-          <img loading="lazy" className="cBImg" src="/img/createdBy/1.png" alt="" />
-          <img loading="lazy" className="cBImg" src="/img/createdBy/2.png" alt="" />
+          <img
+            loading="lazy"
+            className="cBImg"
+            src="/img/createdBy/1.png"
+            alt=""
+          />
+          <img
+            loading="lazy"
+            className="cBImg"
+            src="/img/createdBy/2.png"
+            alt=""
+          />
 
           <div className="cBTel">
             <a className="address" href="tel:+380 0634545828">
@@ -21,7 +31,12 @@ export const CreatedBy = ({ t }) => {
         </li>
 
         <li className="createdByList">
-          <img loading="lazy" className="cBImg" src="/img/createdBy/3.png" alt="" />
+          <img
+            loading="lazy"
+            className="cBImg"
+            src="/img/createdBy/3.png"
+            alt=""
+          />
           <a className="address" href="mailto:itdeniro00@gmail.com">
             itdeniro00@gmail.com
           </a>
