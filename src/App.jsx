@@ -17,6 +17,7 @@ import { Puset } from "./components/Section/SubSection/Puset";
 import { CreatedBy } from "./components/MainPage/CreatedBy";
 import { Layout } from "./components/Layout";
 import { Inner } from "./components/Section/Inner/Inner";
+import {Err} from "./components/Err.jsx";
 
 const App = () => {
   const { t, i18n } = useTranslation();
@@ -107,6 +108,7 @@ const App = () => {
           />
 
           <Route path="CreatedBy" element={<CreatedBy t={t} />} />
+          <Route path="*" element={<Err t={t} />} /> {/* Додавання маршруту для 404 */}
         </Route>
       </Routes>
     </>
