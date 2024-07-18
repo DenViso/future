@@ -11,7 +11,7 @@ export const MainePage = ({ t }) => {
         <div className="mainVideo">
           <video
             loading="lazy"
-            src={"/video/intro.mp4"}
+            src={"/video/intro.webm"}
             type="video/mp4"
             autoPlay
             loop

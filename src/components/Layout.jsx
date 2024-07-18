@@ -105,7 +105,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
           <Link to="/">
             <LazyLoad>
               
-              <img className="logoHeader" loading="lazy" src="/img/logo/logo150.png" alt="Logo" />
+              <img className="logoHeader" loading="lazy" src="/img/logo/logo150.webp" alt="Logo" />
             </LazyLoad>
           </Link>
         </div>

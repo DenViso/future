@@ -18,7 +18,7 @@ export const SimpleSlider = () => {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        {['1.1_1.webp', '1.2_1.webp', '2_1.webp','1.webp','2.2_1.webp'].map((img, index) => (
+        {[ '1.2_1.webp', '2_1.webp','1.webp','2.2_1.webp'].map((img, index) => (
           <div key={index}>
             <LazyLoad>
               <img
