@@ -18,68 +18,18 @@ export const SimpleSlider = () => {
   return (
     <div className="slider-container">
       <Slider {...settings}>
-        
-        <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              className="slideImg"
-              src="./img/sliderPic/1.2.jpg"
-              alt=""
-            />
-          </LazyLoad>
-        </div>
-        <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              className="slideImg"
-              src="./img/sliderPic/1.jpg"
-              alt=""
-            />
-          </LazyLoad>
-        </div>
-        <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              className="slideImg"
-              src="./img/sliderPic/2.jpg"
-              alt=""
-            />
-          </LazyLoad>
-        </div>
-       
-        <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              className="slideImg"
-              src="./img/sliderPic/1.2.jpg"
-              alt=""
-            />
-          </LazyLoad>
-        </div>
-        <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              className="slideImg"
-              src="./img/sliderPic/1.jpg"
-              alt=""
-            />
-          </LazyLoad>
-        </div>
-        <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              className="slideImg"
-              src="./img/sliderPic/2.jpg"
-              alt=""
-            />
-          </LazyLoad>
-        </div>
+        {['1.2.jpg', '1.jpg', '2.jpg'].map((img, index) => (
+          <div key={index}>
+            <LazyLoad>
+              <img
+                loading="lazy"
+                className="slideImg"
+                src={`./img/sliderPic/${img}`}
+                alt={`Slide ${index + 1}`}
+              />
+            </LazyLoad>
+          </div>
+        ))}
       </Slider>
     </div>
   );
