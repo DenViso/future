@@ -355,7 +355,7 @@ export const Inner = ({ t, cat1 }) => {
       // Відновлюємо скрол після закриття модального вікна
       window.scrollTo(0, scrollPosition);
     }
-  }, [scrollPosition]);
+  }, [scrollPosition, closeModal]);
 
   const handleLike = (product) => {
     let updatedLikes;
