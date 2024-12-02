@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import React from "react";
 import { NextArrow, PrevArrow } from "./CustomArrows";
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
 
 export const SimpleSlider = () => {
   const settings = {
@@ -20,14 +20,14 @@ export const SimpleSlider = () => {
       <Slider {...settings}>
         {[ '1.2_1.webp', '2_1.webp','1.webp','2.2_1.webp'].map((img, index) => (
           <div key={index}>
-            <LazyLoad>
+            {/* <LazyLoad> */}
               <img
                 loading="lazy"
                 className="slideImg"
                 src={`./img/sliderPic/${img}`}
                 alt={`Slide ${index + 1}`}
               />
-            </LazyLoad>
+            {/* </LazyLoad> */}
           </div>
         ))}
       </Slider>
