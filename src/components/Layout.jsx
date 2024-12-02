@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { MenuDrop } from "./DropWindow/MenuDrop";
 import { SearchDrop } from "./DropWindow/SearchDrop";
 import { Cart } from "./Cart/Cart";
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
 
 export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   const [activeMenu, setActiveMenu] = useState(null); // "menu", "search", or null
@@ -60,7 +60,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
   };
 
   const handleSearch = () => {
-    setActiveMenu(null); 
+    setActiveMenu(null);
     // Закриття пошукового меню після натискання кнопки пошуку
     // Логіка пошуку
   };
@@ -76,7 +76,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
       {/*HEADER*/}
       <header className="header">
         <div className="menu">
-          <LazyLoad>
+          {/* <LazyLoad> */}
             <img
               loading="lazy"
               className="iconSize"
@@ -84,11 +84,11 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
               alt="Menu"
               onMouseEnter={() => handleMouseEnter("menu")}
             />
-          </LazyLoad>
+          {/* </LazyLoad> */}
           {activeMenu === "menu" && (
             <MenuDrop hideDropMenu={() => setActiveMenu(null)} t={t} />
           )}
-          <LazyLoad>
+          {/* <LazyLoad> */}
             <img
               loading="lazy"
               className="iconSize"
@@ -97,7 +97,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
               onMouseEnter={() => handleMouseEnter("search")}
               onMouseLeave={() => handleMouseLeave(null)}
             />
-          </LazyLoad>
+          {/* </LazyLoad> */}
           {activeMenu === "search" && (
             <SearchDrop
               className="search-menu"
@@ -109,14 +109,14 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
         </div>
         <div className="logo1">
           <Link to="/">
-            <LazyLoad>
+            {/* <LazyLoad> */}
               <img
                 className="logoHeader"
                 loading="lazy"
                 src="/img/logo/logo150.webp"
                 alt="Logo"
               />
-            </LazyLoad>
+            {/* </LazyLoad> */}
           </Link>
         </div>
 
@@ -143,7 +143,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
           )}
           <div className="lng">
             <a href="tel:+380936918998" onClick={handlePhoneClick}>
-              <LazyLoad>
+              {/* <LazyLoad> */}
                 {" "}
                 <img
                   loading="lazy"
@@ -151,10 +151,10 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
                   src="/img/headerIcon/contact2.png"
                   alt="Menu"
                 />
-              </LazyLoad>
+              {/* </LazyLoad> */}
             </a>
             <div className="">
-              <LazyLoad>
+              {/* <LazyLoad> */}
                 <img
                   loading="lazy"
                   className="iconSize"
@@ -162,7 +162,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
                   alt="Cart"
                   onClick={handleClick}
                 />
-              </LazyLoad>
+              {/* </LazyLoad> */}
               {showCart && <Cart setShowCart={setShowCart} t={t} />}
             </div>
           </div>
@@ -176,9 +176,9 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
       <footer>
         <div className="footerLeft">
           <Link to="/">
-            <LazyLoad>
+            {/* <LazyLoad> */}
               <img className="footerLogo" src="/img/logo/logo.png" alt="Logo" />
-            </LazyLoad>
+            {/* </LazyLoad> */}
           </Link>
           <div className="footerText">
             <a href="tel:+380936918998" onClick={handlePhoneClick}>
@@ -263,7 +263,6 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
     </>
   );
 };
-
 
 // import React, { useState, useEffect, Suspense } from "react";
 // import { Link, Outlet, useLocation } from "react-router-dom";
