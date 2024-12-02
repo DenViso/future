@@ -285,6 +285,19 @@ export const Inner = ({ t, cat1 }) => {
   const [scroll, setScroll] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
+
+   // Отримуємо параметр id з query-параметрів
+   const searchParams = new URLSearchParams(location.search);
+   const productId = searchParams.get('id');  // отримуємо значення id
+ 
+   useEffect(() => {
+     if (productId) {
+       // Логіка для завантаження продукту з id
+       // Наприклад, викликаємо API чи фільтруємо дані за id
+       const product = cat1.find(product => product.id === parseInt(productId));
+       setSelectedProduct(product);
+     }
+   }, [productId]);
   // Завантаження продуктів
   useEffect(() => {
     const delay = setTimeout(() => {
