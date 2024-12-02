@@ -1,57 +1,47 @@
-
 import React, { useState, useEffect } from "react";
 import "../inner.css";
 import { Loader } from "../SubSection/Loader";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 
 export const Inner = ({ t, cat1 }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { paramValue } = useParams();
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [likedProducts, setLikedProducts] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
-  const [scroll, setScroll] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
+  // const location = useLocation(); // Отримуємо інформацію про URL
+  // const [selectedProduct, setSelectedProduct] = useState(null);
 
-   // Отримуємо параметр id з query-параметрів
-   const searchParams = new URLSearchParams(location.search);
-   const productId = searchParams.get('id');  // отримуємо значення id
- console.log("product id: ", productId);
- 
-  //  useEffect(() => {
-  //    if (productId) {
-  //      // Логіка для завантаження продукту з id
-  //      // Наприклад, викликаємо API чи фільтруємо дані за id
-  //      const product = cat1.find(product => product.id === parseInt(productId));
-  //      setSelectedProduct(product);
-  //       console.log("product id: ", selectedProduct);
-  //    }
-  //  }, [productId]);
-  // // Завантаження продуктів
   useEffect(() => {
-    if (productId) {
-      const product = cat1.find((product) => product.id === parseInt(productId));
-      if (product) {
-        setSelectedProduct(product);
-        console.log("Selected Product:", product);
+    // Парсимо параметр "id" із URL
+    const searchParams = new URLSearchParams(location.search);
+    const idFromUrl = searchParams.get("id");
+
+    if (idFromUrl && Array.isArray(cat1) && cat1.length > 0) {
+      // Шукаємо продукт у cat1 за id
+      const matchingProduct = cat1.find(
+        (product) => product.id === parseInt(idFromUrl, 10)
+      );
+
+      if (matchingProduct) {
+        console.log("Product found:", matchingProduct); // Лог для підтвердження
+        setSelectedProduct(matchingProduct); // Встановлюємо знайдений продукт
       } else {
-        console.warn("Product not found for id:", productId);
-        setSelectedProduct(null);
+        console.warn(`No product matches id: ${idFromUrl}`); // Лог для відсутнього продукту
       }
     }
-  }, [productId, cat1]); // Додаємо cat1 у залежності
-  
+  }, [location.search, cat1]); // Хук оновлюється при зміні URL або масиву cat1
+
+  // Імітація завантаження
   useEffect(() => {
     const delay = setTimeout(() => {
       setLoading(false);
-      // Повернення до збереженої позиції прокрутки, якщо вона є
     }, 1000);
-
     return () => clearTimeout(delay);
   }, []);
 
@@ -67,136 +57,113 @@ export const Inner = ({ t, cat1 }) => {
   useEffect(() => {
     if (selectedProduct) {
       const isProductLiked = likedProducts.some(
-        (product) => product.id === selectedProduct.id
+        (product) => product.id == selectedProduct.id
       );
       setIsLiked(isProductLiked);
     }
   }, [selectedProduct, likedProducts]);
 
+  // Відкриття модального вікна
   const openModal = (product) => {
     setSelectedProduct(product);
+    setScrollPosition(window.scrollY);
 
-    // Зберігаємо поточну позицію прокрутки
-    const currentScrollY = window.scrollY;
-    setScrollPosition(currentScrollY);
-
-    // Оновлюємо URL з параметром 'id'
+    // Додаємо параметр `id` до URL
     navigate(`${location.pathname}?id=${product.id}`, { replace: true });
+console.log(location.pathname.includes(product.id));
 
-    // Фіксуємо сторінку
-    document.body.style.top = `-${currentScrollY}px`;
-
-    // Додаємо клас для модального вікна
+    // Блокуємо прокрутку
+    document.body.style.top = `-${window.scrollY}px`;
     document.body.classList.add("modal-open1");
   };
 
+
+  // Закриття модального вікна
   const closeModal = () => {
     setSelectedProduct(null);
-
-    // Зняття класу для модального вікна
     document.body.classList.remove("modal-open1");
-
-    // Отримуємо позицію прокрутки зі стану
-    const scrollY = scrollPosition;
-
-    // Скидаємо стилі фіксації
     document.body.style.position = "";
     document.body.style.top = "";
+    window.scrollTo(0, scrollPosition);
 
-    // Відновлюємо прокрутку
-    window.scrollTo(0, scrollY);
-
-    // Очищуємо параметр 'id' з URL
+    // Видаляємо параметр `id` з URL
     navigate(location.pathname, { replace: true });
   };
 
-  useEffect(() => {
-    if (scrollPosition > 0) {
-      // Відновлюємо скрол після закриття модального вікна
-      window.scrollTo(0, scrollPosition);
-    }
-  }, [scrollPosition, closeModal]);
-
+  // Обробка лайків
   const handleLike = (product) => {
     let updatedLikes;
     if (isLiked) {
-      updatedLikes = likedProducts.filter((item) => item.id !== product.id);
+      updatedLikes = likedProducts.filter((item) => item.id != product.id);
     } else {
       updatedLikes = [...likedProducts, product];
     }
     setLikedProducts(updatedLikes);
     localStorage.setItem("likedProducts", JSON.stringify(updatedLikes));
     setIsLiked(!isLiked);
-
-    refreshProducts();
   };
+// useEffect(() => {
+//   if (paramValue && cat1 && cat1.length > 0) {
+//     const matchingProduct = cat1.map((product) => product.id == parseInt(paramValue, 10));
+    
+ 
+    
+    
+//     if (matchingProduct) {
+//       console.log("Product found:", matchingProduct);
+//       setSelectedProduct(matchingProduct);
+//     } else {
+//       console.warn('No product matches id:', paramValue);
+//       setSelectedProduct(null);
+//     }
+//   }
+// }, [paramValue, cat1]);
+  if (loading) {
+    return <Loader />;
+  }
 
-  const refreshProducts = () => {
-    const storedLikes = localStorage.getItem("likedProducts");
-    if (storedLikes) {
-      setLikedProducts(JSON.parse(storedLikes));
-    } else {
-      setLikedProducts([]);
-    }
-  };
+  if (!cat1 || cat1.length == 0) {
+    return <div>{t("noProductsFound")}</div>;
+  }
+
 
   return (
     <div className="subInner-container">
-      {!scroll ? (
-        <Link className={selectedProduct ? "" : "back"} to="/Ring">
-          {t("back.toJewelry")}
-        </Link>
-      ) : (
-        <Link className="scroll" to="/Ring">
-          &#8593;
-        </Link>
-      )}
-      {!loading ? (
-        !selectedProduct && (
-          <div className={!openModal ? "no-bacground" : "subInner"}>
-            {cat1 &&
-              cat1.length > 0 &&
-              cat1.map((product) =>
-                product.category == paramValue ? (
-                  <div
-                    className="subInner-section"
-                    key={product.id}
-                    onClick={() => openModal(product)}
-                  >
-                    <div className="subInner-section-img">
-                      {product.media_files &&
-                      product.media_files.length > 0 &&
-                      product.media_files[0].photo ? (
-                        <img
-                          loading="lazy"
-                          src={product.media_files[0].photo}
-                          alt=""
-                        />
-                      ) : (
-                        <img loading="lazy" src="/img/noImg.png" alt="" />
-                      )}
-                      <div className="subInner-info-text">
-                        <p className="text-scu">
-                          <span>Арт:</span>
-                          {product.sku}
-                        </p>
+      <Link className="back" to="/Ring">
+        {t("back.toJewelry")}
+      </Link>
 
-                        <p className="text-scu">
-                          {" "}
-                          {product.price && (
-                            <span>Ціна: $ {product.price}</span>
-                          )}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ) : null
-              )}
-          </div>
-        )
-      ) : (
-        <Loader />
-      )}
+      <div className={!selectedProduct ? "subInner" : "no-background"}>
+        {cat1.map((product) =>
+          product.category == paramValue ? (
+            <div
+              className="subInner-section"
+              key={product.id}
+              onClick={() => openModal(product)}
+            >
+              <div className="subInner-section-img">
+                {product.media_files && product.media_files.length > 0 ? (
+                  <img
+                    loading="lazy"
+                    src={product.media_files[0].photo || "/img/noImg.png"}
+                    alt={product.sku}
+                  />
+                ) : (
+                  <img loading="lazy" src="/img/noImg.png" alt="No Image" />
+                )}
+                <div className="subInner-info-text">
+                  <p className="text-sku">
+                    <span>Арт:</span> {product.sku}
+                  </p>
+                  <p className="text-price">
+                    {product.price && <span>Ціна: $ {product.price}</span>}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ) : null
+        )}
+      </div>
 
       {selectedProduct && (
         <div className="modal">
@@ -209,70 +176,38 @@ export const Inner = ({ t, cat1 }) => {
                 Арт. продукту:
                 <br /> {selectedProduct.sku}
               </h2>
-              {selectedProduct.gold_assay && (
-                <p>
-                  Проба :<br /> {selectedProduct.gold_assay}
-                </p>
-              )}
-              {selectedProduct.gold_color && (
-                <p>
-                  Колір :<br /> {selectedProduct.gold_color}
-                </p>
-              )}
-              {selectedProduct.size && (
-                <p>
-                  Розмір :<br /> {selectedProduct.size}
-                </p>
-              )}
-              {selectedProduct.stone_characteristics && (
-                <p>
-                  Характеристики каміння :<br />{" "}
-                  {selectedProduct.stone_characteristics}
-                </p>
-              )}
-              {selectedProduct.weight && (
-                <p>
-                  Вага виробу :<br /> {selectedProduct.weight}
-                </p>
-              )}
-              {selectedProduct.price && (
-                <p>
-                  Ціна :<br /> {selectedProduct.price}
-                </p>
-              )}
+              {selectedProduct.gold_assay && <p>Проба: {selectedProduct.gold_assay}</p>}
+              {selectedProduct.gold_color && <p>Колір: {selectedProduct.gold_color}</p>}
+              {selectedProduct.size && <p>Розмір: {selectedProduct.size}</p>}
+              {selectedProduct.weight && <p>Вага: {selectedProduct.weight}</p>}
+              {selectedProduct.price && <p>Ціна: {selectedProduct.price}</p>}
             </div>
             <div className="modal-img">
-              {selectedProduct.media_files &&
-                selectedProduct.media_files.length > 0 &&
-                selectedProduct.media_files.map(
-                  (item) =>
-                    item.photo && <img key={item.id} src={item.photo} alt="" />
-                )}
+              {selectedProduct.media_files?.map((item) =>
+                item.photo ? <img key={item.id} src={item.photo} alt="Product" /> : null
+              )}
             </div>
             <div className="modal-video">
-              {selectedProduct.media_files &&
-                selectedProduct.media_files.length > 0 &&
-                selectedProduct.media_files.map(
-                  (item) =>
-                    item.video && (
-                      <video key={item.id} src={item.video} autoPlay controls />
-                    )
-                )}
+              {selectedProduct.media_files?.map((item) =>
+                item.video ? (
+                  <video key={item.id} src={item.video} autoPlay controls />
+                ) : null
+              )}
             </div>
             <div className="heart" onClick={() => handleLike(selectedProduct)}>
               {!isLiked ? (
                 <img
                   loading="lazy"
-                  style={{ width: "40px", height: "40px" }}
                   src="/img/wh.svg"
-                  alt="heart"
+                  alt="Like"
+                  style={{ width: "40px", height: "40px" }}
                 />
               ) : (
                 <img
                   loading="lazy"
-                  style={{ width: "40px", height: "40px" }}
                   src="/img/rh.svg"
-                  alt="heart"
+                  alt="Unlike"
+                  style={{ width: "40px", height: "40px" }}
                 />
               )}
             </div>
