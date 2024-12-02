@@ -127,7 +127,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* overflow: hidden; */
 }
+
 .modal-content {
   background-color: var(--grey);
 
@@ -250,7 +252,9 @@
 .heart:hover {
   animation: beat 0.6s infinite;
 }
-
+/* .modal-open1{
+  overflow-y: hidden;
+} */
 .modal-open {
   overflow-y: scroll;
   width: 100%;
