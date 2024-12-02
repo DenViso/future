@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
 
 export const Puset = ({ t }) => {
   return (
