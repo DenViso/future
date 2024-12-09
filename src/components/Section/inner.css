@@ -259,8 +259,9 @@
   overflow-y: scroll;
   width: 100%;
 }
-.no-bacground {
+.no-background {
   display: none;
+
 }
 @keyframes beat {
   0% {

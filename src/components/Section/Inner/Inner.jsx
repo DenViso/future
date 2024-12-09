@@ -102,22 +102,7 @@ console.log(location.pathname.includes(product.id));
     localStorage.setItem("likedProducts", JSON.stringify(updatedLikes));
     setIsLiked(!isLiked);
   };
-// useEffect(() => {
-//   if (paramValue && cat1 && cat1.length > 0) {
-//     const matchingProduct = cat1.map((product) => product.id == parseInt(paramValue, 10));
-    
- 
-    
-    
-//     if (matchingProduct) {
-//       console.log("Product found:", matchingProduct);
-//       setSelectedProduct(matchingProduct);
-//     } else {
-//       console.warn('No product matches id:', paramValue);
-//       setSelectedProduct(null);
-//     }
-//   }
-// }, [paramValue, cat1]);
+
   if (loading) {
     return <Loader />;
   }
@@ -125,6 +110,9 @@ console.log(location.pathname.includes(product.id));
   if (!cat1 || cat1.length == 0) {
     return <div>{t("noProductsFound")}</div>;
   }
+console.log(selectedProduct);
+console.log(openModal);
+
 
 
   return (
@@ -133,7 +121,7 @@ console.log(location.pathname.includes(product.id));
         {t("back.toJewelry")}
       </Link>
 
-      <div className={!selectedProduct ? "subInner" : "no-background"}>
+      <div className={selectedProduct === null ? "subInner" : "no-background"}>
         {cat1.map((product) =>
           product.category == paramValue ? (
             <div
