@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 export const Services = ({ t }) => {
   return (
     <div className="services">
-      <Link className="back" to="/">{t("back.toMain")}</Link>
+      <Link className="back" to="/">
+        {t("back.toMain")}
+      </Link>
       <h1>{t("services.title")}</h1>
       <ul>
-        <li><p>{t("services.text1")}</p></li>
+        <li>
+          <p>{t("services.text1")}</p>
+        </li>
         <li>
           <p>{t("services.text2")}</p>
           <br />

@@ -114,6 +114,11 @@
  },
  "created":{
   "title":"Created by"
+},
+"err":{
+  "err-h1":"Error 404",
+  "err-h3":"Look like you're lost",
+  "err-p":"the page you are looking for not avaible!"
 }
  
 }

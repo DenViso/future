@@ -50,7 +50,9 @@ export const Reviwes = ({ t }) => {
 
   return (
     <div className="reviwes">
-      <Link className="back" to="/">{t("back.toMain")}</Link>
+      <Link className="back" to="/">
+        {t("back.toMain")}
+      </Link>
       <div className="reviwesForm">
         <h2>{t("reviwes.title")}</h2>
         {/* Відображаємо всі наявні відгуки */}
@@ -89,11 +91,11 @@ export const Reviwes = ({ t }) => {
         </form>
       </div>
       <div className="revswesImg">
-        <img src="./img/rev/1.jpg" alt="" />
-        <img src="./img/rev/2.jpg" alt="" />
-        <img src="./img/rev/3.jpg" alt="" />
-        <img src="./img/rev/4.jpg" alt="" />
-        <img src="./img/rev/5.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/1.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/2.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/3.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/4.jpg" alt="" />
+        <img loading="lazy" src="./img/rev/5.jpg" alt="" />
       </div>
     </div>
   );

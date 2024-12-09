@@ -12,14 +12,14 @@ import { Link } from "react-router-dom";
           {/* чолов перст */}
           <Link to="Inner/41">
             {t("section.section19")}
-            <img src="/img/sect/jew/4man/1.jpg" alt="" />
+            <img className="ringImg" loading="lazy" src="/img/sect/jew/4man/1.jpg" alt="" />
           </Link>
         </li>
         <li>
           {/* ланцюг */}
           <Link to="Inner/43">
             {t("section.section16")}
-            <img  src="/img/sect/jew/4man/2.jpg" alt="" />
+            <img className="ringImg" loading="lazy" src="/img/sect/jew/4man/2.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -27,7 +27,7 @@ import { Link } from "react-router-dom";
           <Link to="Inner/44">
             {" "}
             {t("section.section20")}
-            <img src="/img/sect/jew/4man/3.jpg" alt="" />
+            <img className="ringImg" loading="lazy" src="/img/sect/jew/4man/3.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -35,7 +35,7 @@ import { Link } from "react-router-dom";
           <Link to="Inner/45">
             {" "}
             {t("section.section21")}
-            <img src="/img/sect/jew/4man/4.JPG" alt="" />
+            <img className="ringImg" loading="lazy" src="/img/sect/jew/4man/4.jpg" alt="" />
           </Link>
         </li>
         <li>
@@ -43,7 +43,7 @@ import { Link } from "react-router-dom";
           <Link to="Inner/42">
             {" "}
             {t("section.section18")}
-            <img src="/img/sect/jew/4man/5.jpg" alt="" />
+            <img className="ringImg" loading="lazy" src="/img/sect/jew/4man/5.jpg" alt="" />
           </Link>
         </li>
       </ul>

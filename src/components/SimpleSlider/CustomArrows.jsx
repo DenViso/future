@@ -1,6 +1,5 @@
 import React from "react";
-import "../../App.css"
-
+import "../../App.css";
 
 const NextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -14,7 +13,7 @@ const NextArrow = (props) => {
         backgroundSize: "contain",
         width: "50px",
         height: "50px",
-        
+
         cursor: "pointer",
       }}
       onClick={onClick}
