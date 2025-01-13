@@ -1,0 +1,528 @@
+@import url("https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Cormorant+SC:wght@300;400;500;600;700&display=swap");
+
+/* Ring */
+.ring {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  position: relative;
+}
+.ring > h2 {
+  font-family: var(--fontFamily);
+  font-size: 40px;
+  color: var(--black);
+  font-weight: 600;
+}
+.ringList {
+  width: 100%;
+  position: relative;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.ringList > li {
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  border-radius: 10px;
+  background-color: var(--white);
+  padding: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+.ringList > li > a {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+  color: var(--black);
+  font-family: var(--fontFamily);
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px var(--black);
+  padding: 50px 10px;
+}
+.ringImg {
+  width: 200px;
+  height: 220px;
+
+  border-radius: 10px;
+}
+
+.ringList > li:hover > a {
+  text-decoration: underline;
+}
+
+.backposition {
+  position: absolute;
+  top: -14px;
+  left: -450px;
+  margin: 1rem;
+  color: var(--grey);
+}
+
+/* Diamond */
+.diamondList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+.diamondList > li {
+  font-family: var(--fontFamily);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.diamondList > li > a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+.diamondList > li > a > h2 {
+  font-family: var(--fontFamily);
+  font-size: 30px;
+  color: var(--black);
+  font-weight: 400;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.diamondImg {
+  width: 350px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+/* Services */
+.services > ul {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  position: relative;
+  color: var(--white);
+}
+.services > ul > li {
+  font-family: var(--fontFamily);
+  color: var(--black);
+}
+.services > ul > li > h2 {
+  font-family: var(--fontFamily);
+  color: var(--black);
+  font-size: 2.5rem;
+}
+.services > ul > li > p {
+  font-family: var(--fontFamily);
+  color: var(--black);
+  font-size: 2rem;
+}
+.importAnim {
+  font-family: var(--fontFamily);
+  animation: important 3s infinite;
+}
+@keyframes important {
+  0% {
+    color: var(--black);
+  }
+  50% {
+    color: var(--white);
+  }
+  100% {
+    color: var(--black);
+  }
+}
+
+/* Care */
+.care > h2 {
+  font-family: var(--fontFamily);
+  color: var(--black);
+  font-size: 28px;
+}
+.care > p {
+  font-family: var(--fontFamily);
+  color: var(--black);
+  font-size: 26px;
+  width: fit-content;
+}
+.care > ul > li {
+  font-family: var(--fontFamily);
+  color: var(--black);
+}
+.colorRockTitle {
+  font-size: 30px;
+  color: var(--black);
+  font-weight: 600;
+  text-align: center;
+  margin: 0rem 0 1rem 0;
+  animation: colorRockTitle 3s infinite;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+.colorRock-text {
+  font-size: 26px;
+  color: var(--black);
+}
+@keyframes colorRockTitle {
+  0% {
+    color: var(--black);
+  }
+  50% {
+    color: var(--grey);
+    text-shadow: var(--grey) 2px 2px 4px;
+  }
+  100% {
+    color: var(--black);
+  }
+}
+.colorRockNum {
+  font-size: 24px;
+  color: var(--grey);
+  font-weight: 600;
+}
+.colorRock {
+  color: var(--grey);
+  font-size: 36px;
+  font-weight: 600;
+}
+/* Reviwes */
+.reviwesForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  position: relative;
+}
+.reviwesForm > h2 {
+  font-size: 34px;
+  font-family: var(--fontFamily);
+  color: var(--black);
+}
+.reviwesForm > ul {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  overflow-x: auto;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  box-shadow: 1px 1px 10px 1px var(--white);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+  height: 6px;
+  border-radius: 3px;
+}
+.reviwesForm > ul > li {
+  font-family: var(--fontFamily);
+  font-size: 28px;
+  min-width: 150px;
+  height: 300px;
+  text-align: center;
+  color: var(--black);
+  background-color: var(--white);
+  border-radius: 7px;
+  padding: 5px;
+  box-shadow: 1px 1px 10px 1px var(--black);
+  display: flex;
+  flex-direction: column;
+}
+
+.reviwesForm > ul > li > strong {
+  font-family: var(--fontFamily);
+  font-size: 30px;
+  color: var(--black);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  text-align: center;
+  height: 30%;
+  overflow: scroll;
+}
+
+.reviwesForm > ul > li > p {
+  font-family: var(--fontFamily);
+  font-size: 30px;
+  color: var(--black);
+  word-wrap: break-word;
+  height: 60%;
+  overflow-wrap: break-word;
+  overflow: scroll;
+  width: 100%;
+  text-align: center;
+}
+.reviwesFormMain {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: var(--white);
+  position: relative;
+  color: var(--white);
+}
+
+.reviwesFormMain > input {
+  width: 45%;
+  height: 30px;
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 20px;
+  font-family: var(--fontFamily);
+}
+.reviwesFormMain > button {
+  width: 23%;
+  height: 30px;
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 20px;
+  font-family: var(--fontFamily);
+  cursor: pointer;
+  text-align: center;
+}
+.reviwesFormMain > button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.revswesImg {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+  position: relative;
+  color: var(--white);
+}
+.revswesImg > img {
+  width: 250px;
+  height: 550px;
+  border-radius: 20px;
+  box-shadow: var(--white) 0 0 10px;
+}
+
+/* About */
+.about,
+.dip,
+.reviwes,
+.care,
+.services,
+.ring,
+.diamond {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: var(--white);
+  position: relative;
+}
+.about > a,
+.dip > a,
+.reviwes > a,
+.care > a,
+.services > a,
+.diamond > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1rem;
+  color: var(--grey);
+}
+.about > a:hover,
+.ring > a:hover,
+.dip > a:hover,
+.reviwes > a:hover,
+.care > a:hover,
+.services > a:hover,
+.diamond > a:hover {
+  text-shadow: var(--white) 0 0 10px;
+  color: var(--white);
+}
+.about > h1,
+.dip > h1,
+.reviwes > h1,
+.care > h1,
+.services > h1,
+.ring > h1,
+.diamond > h1 {
+  color: var(--black);
+  font-family: var(--fontFamily);
+  font-weight: 600;
+  font-size: 36px;
+  margin-top: 20px;
+}
+.dip {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.dip > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 580px) {
+  .section {
+    display: none;
+  }
+  .reviwesForm {
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .reviwesForm > ul {
+    width: 100%;
+  }
+  .reviwesFormMain {
+    flex-direction: column;
+  }
+  .reviwesFormMain > input {
+    width: 110%;
+    height: 60px;
+  }
+  .reviwesFormMain > button {
+    width: 110%;
+    height: 60px;
+  }
+  .revswesImg {
+    flex-direction: column;
+  }
+  .revswesImg > img {
+    width: 100%;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .diamondList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .diamondList > li {
+    width: 40%;
+  }
+  .diamondList > li > a > h2 {
+    font-size: 20px;
+  }
+  .diamondList > li > a > img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .ringList > li > a {
+    font-size: 20px;
+  }
+  .ring {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem 0;
+  }
+  .ringList > li {
+    width: 45%;
+  }
+  .ringImg {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .reviwesForm > ul > li > strong {
+    width: 140px;
+    overflow-wrap: break-word;
+    font-family: var(--fontFamily);
+    font-size: 24px;
+  }
+  .care > p,
+  .services > ul > li {
+    font-size: 16px;
+  }
+  .colorRock {
+    font-size: 26px;
+  }
+
+  .services > ul > li > p {
+    color: var(--black);
+    font-size: 2rem;
+  }
+  .colorRock-text {
+    font-size: 2rem;
+    color: var(--black);
+  }
+  .care > h2,
+  .services > ul > li > h2 {
+    font-size: 2.5rem;
+  }
+  .menuDrop {
+    height: fit-content;
+  }
+}
