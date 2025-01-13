@@ -8,13 +8,23 @@ export const SearchDrop = ({ t, cat1 }) => {
   const [searchHistory, setSearchHistory] = useState([]);
 
   useEffect(() => {
-    const storedHistory =
-      JSON.parse(localStorage.getItem("searchHistory")) || [];
-    setSearchHistory(storedHistory);
+
+    try {
+      const storedHistory =
+        JSON.parse(localStorage.getItem("searchHistory")) || [];
+      setSearchHistory(storedHistory);
+    } catch (error) {
+      console.error("Помилка завантаження історії пошуку:", error);
+    }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    try {
+      localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    } catch (error) {
+      console.error("Помилка збереження історії пошуку:", error);
+    }
+
   }, [searchHistory]);
 
   const handleInputChange = (e) => {
@@ -22,17 +32,33 @@ export const SearchDrop = ({ t, cat1 }) => {
   };
 
   const handleSearch = () => {
-    if (searchTerm === "") return;
+
+    // if (searchTerm.trim().length < 3) {
+    //   alert("Введіть мінімум 3 символи для пошуку");
+    //   return;
+    // }
+
+    if (!cat1 || cat1.length === 0) {
+      alert("Немає даних для пошуку");
+      return;
+    }
+
     setShowModal(true);
-    console.log("Searching for:", searchTerm);
 
     const results = cat1.filter((item) => item.sku.includes(searchTerm));
     setSearchResults(results);
-    console.log("Search results:", results);
+
 
     if (!searchHistory.includes(searchTerm)) {
       setSearchHistory((prevHistory) => [...prevHistory, searchTerm]);
     }
+
+
+    // else {
+    //   setTimeout(() => {
+    //     setShowModal(false);
+    // }, 1000);
+    // } 
   };
 
   const handleCloseModal = () => {
@@ -40,25 +66,25 @@ export const SearchDrop = ({ t, cat1 }) => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
+    if (showModal) {
+      window.scrollTo(0, 0);
+    }
+  }, [showModal]);
   return (
     <div className="searchDrop">
       <div className="search">
         <input
+
+          onClick={handleSearch}
+
           type="text"
           placeholder={t("dropMenu.sec7")}
           value={searchTerm}
           onChange={handleInputChange}
+
+          list="search-parameters" // Пов'язання з datalist
         />
-        <button onClick={handleSearch}>
-          <img
-            loading="lazy"
-            src="/img/headerIcon/search.png"
-            alt="search icon"
-          />
-        </button>
         <datalist id="search-parameters">
           <option value="Якщо ви знаєте артикул товара введіть його тут мінімум 3-ри символи" />
         </datalist>

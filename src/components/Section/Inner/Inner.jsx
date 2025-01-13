@@ -17,6 +17,7 @@ export const Inner = ({ t, cat1 }) => {
   // const location = useLocation(); // Отримуємо інформацію про URL
   // const [selectedProduct, setSelectedProduct] = useState(null);
 
+
   useEffect(() => {
     // Парсимо параметр "id" із URL
     const searchParams = new URLSearchParams(location.search);
@@ -66,6 +67,7 @@ export const Inner = ({ t, cat1 }) => {
   // Відкриття модального вікна
   const openModal = (product) => {
     setSelectedProduct(product);
+
     setScrollPosition(window.scrollY);
 
     // Додаємо параметр `id` до URL
@@ -78,9 +80,11 @@ console.log(location.pathname.includes(product.id));
   };
 
 
+
   // Закриття модального вікна
   const closeModal = () => {
     setSelectedProduct(null);
+
     document.body.classList.remove("modal-open1");
     document.body.style.position = "";
     document.body.style.top = "";
@@ -89,6 +93,7 @@ console.log(location.pathname.includes(product.id));
     // Видаляємо параметр `id` з URL
     navigate(location.pathname, { replace: true });
   };
+
 
   // Обробка лайків
   const handleLike = (product) => {
@@ -110,8 +115,10 @@ console.log(location.pathname.includes(product.id));
   if (!cat1 || cat1.length == 0) {
     return <div>{t("noProductsFound")}</div>;
   }
+
 console.log(selectedProduct);
 console.log(openModal);
+
 
 
 
@@ -168,7 +175,11 @@ console.log(openModal);
               {selectedProduct.gold_color && <p>Колір: {selectedProduct.gold_color}</p>}
               {selectedProduct.size && <p>Розмір: {selectedProduct.size}</p>}
               {selectedProduct.weight && <p>Вага: {selectedProduct.weight}</p>}
-              {selectedProduct.price && <p>Ціна: {selectedProduct.price}</p>}
+
+              {selectedProduct.stone_characteristics
+ && <p>Характеристики каменя: {selectedProduct.stone_characteristics
+  }</p>}
+
             </div>
             <div className="modal-img">
               {selectedProduct.media_files?.map((item) =>

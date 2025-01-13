@@ -96,6 +96,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
               alt="Search"
               onMouseEnter={() => handleMouseEnter("search")}
               onMouseLeave={() => handleMouseLeave(null)}
+
             />
           {/* </LazyLoad> */}
           {activeMenu === "search" && (
