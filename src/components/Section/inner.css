@@ -356,7 +356,7 @@
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    height: -webkit-fill-available;
+    height: auto;
     gap: 10px;
     width: 100%;
     background-color: var(--grey);
