@@ -352,11 +352,11 @@
   }
 
   .modal-content {
-    /* display: -webkit-flex; */
+    display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    /* height:100%; */
+    height: -webkit-fill-available;
     gap: 10px;
     width: 100%;
     background-color: var(--grey);
