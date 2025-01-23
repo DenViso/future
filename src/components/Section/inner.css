@@ -341,7 +341,7 @@
   /* modal зробить щоб було видно все */
   .modal {
     width: 100%;
-    height: fit-content;
+    height: 1000px;
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
