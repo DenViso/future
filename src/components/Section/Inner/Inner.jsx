@@ -176,7 +176,7 @@ console.log(selectedProduct);
 
       {selectedProduct && (
         <div className="modal">
-          <div className="modal-content">
+          <div className="modal-content" style={{ height: "auto" }}>
             <span className="close" onClick={closeModal}>
               &times;
             </span>
