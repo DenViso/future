@@ -119,6 +119,18 @@
   "err-h1":"Error 404",
   "err-h3":"Look like you're lost",
   "err-p":"the page you are looking for not avaible!"
+},
+"product":{
+ "title":"Product ID:",
+"p1":"Sample:",
+"p2":"Color:",
+"p3":"Size:",
+"p4":"Weight:",
+"p5":"Stone Characteristics:",
+"p6":"Price:",
+"p7":"uah",
+"p8":"Certificate"
+
 }
  
 }

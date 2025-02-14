@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { useTranslation } from "react-i18next";
@@ -19,11 +19,28 @@ import { Layout } from "./components/Layout";
 import { Inner } from "./components/Section/Inner/Inner";
 import { Err } from "./components/Err";
 import { ApiErr } from "./components/ApiErr";
+import { ProductPage } from "./components/Section/Inner/ProductPage";
 
 const App = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const { data: cat1, error } = useFetchDataWithRetry("https://api.future.in.ua/api/v1/products/"); // Використовуємо хук
+  const [usdRate, setUsdRate] = useState(null);
+
+ // Отримання курсу USD з API НБУ
+   useEffect(() => {
+    fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&json")
+      .then(response => response.json())
+      .then(data => {
+        if (data.length > 0) {
+          setUsdRate((data[0].rate * 1.01).toFixed(2)); // Округлення до сотих
+        }
+      })
+      .catch(error => console.error("Помилка отримання курсу валют:", error));
+  }, []);
+
+console.log(usdRate);
+
 
   useEffect(() => {
     // Прокрутка до верху при зміні шляху
@@ -71,27 +88,28 @@ const App = () => {
             <Route path="Engagement" element={<Engagement t={t} cat1={cat1} />} />
             <Route
               path="Engagement/Inner/:paramValue"
-              element={<Inner t={t} cat1={cat1} />}
+              element={<Inner t={t} cat1={cat1}  usdRate={usdRate}/>}
             />
-            <Route path="Puset" element={<Puset t={t} cat1={cat1} />} />
+            <Route path="Puset" element={<Puset t={t} cat1={cat1} usdRate={usdRate}/>} />
             <Route
               path="Puset/Inner/:paramValue"
-              element={<Inner t={t} cat1={cat1} />}
+              element={<Inner t={t} cat1={cat1} usdRate={usdRate}/>}
             />
             <Route
               path="Inner/:paramValue"
-              element={<Inner t={t} cat1={cat1} />}
+              element={<Inner t={t} cat1={cat1} usdRate={usdRate}/>}
             />
-            <Route path="Women" element={<Women t={t} cat1={cat1} />} />
+            <Route path="Women" element={<Women t={t} cat1={cat1} usdRate={usdRate}/>} />
             <Route
               path="Women/Inner/:paramValue"
-              element={<Inner cat1={cat1} t={t} />}
+              element={<Inner cat1={cat1} t={t} usdRate={usdRate}/>}
             />
-            <Route path="Men" element={<Men t={t} cat1={cat1} />} />
+            <Route path="Men" element={<Men t={t} cat1={cat1} usdRate={usdRate}/>} />
             <Route
               path="Men/Inner/:paramValue"
-              element={<Inner cat1={cat1} t={t} />}
+              element={<Inner cat1={cat1}  t={t} usdRate={usdRate}/>}
             />
+            <Route path="/product/:productId" element={<ProductPage cat1={cat1} usdRate={usdRate} t={t} />} />
             <Route path="CreatedBy" element={<CreatedBy t={t} />} />
             <Route path="*" element={<Err t={t} />} /> {/* Додавання маршруту для 404 */}
           </Route>

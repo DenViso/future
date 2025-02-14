@@ -177,10 +177,20 @@
   justify-content: flex-start;
   -webkit-align-items: center;
   align-items: center;
-  overflow: scroll;
-  position: fixed;
+  /* overflow: scroll;
+  position: fixed; */
 } 
-
+.modal-title{
+ 
+  font-size: 32px;
+  color: var(--black);
+  font-weight: 400;
+}
+.modal-title>span{
+  font-size: 36px;
+  color: var(--black);
+  font-weight: 700;
+}
 .close {
   color: var(--black);
   font-size: 45px;
@@ -248,10 +258,15 @@
   height: 500px;
   border-radius: 10px;
 }
-
+.modal-img{
+  display: flex;
+  width: 100%;
+  height: auto;
+  /* margin-top: 2rem; */
+}
 .modal-img > img {
   width: 450px;
-  /* height: 100%; */
+  height: 400px;
   border-radius: 10px;
 }
 
@@ -276,6 +291,11 @@
   color: var(--black);
   font-size: 2.5rem;
   margin-bottom: 3px;
+}
+.modal-info>p>span{
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--black);
 }
 
 .modal-info > h2 {
@@ -350,6 +370,24 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.6);
   }
+ .modal-title {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 10px 0px;
+    font-size: medium;
+    color: var(--black);
+    position: relative;
+    top: 30px;
+    font-size: 2.6rem;  
+  }
+
+  .modal-title>span{
+    font-size: 32px;
+    color: var(--black);
+  }
 
   .modal-content {
     display: -webkit-flex;
@@ -362,9 +400,9 @@
     gap: 10px;
     width: 100%;
     background-color: var(--grey);
-    z-index: 10;
+    z-index: 100;
     position: relative;
-    position: absolute;
+   
     top: 0;
   }
 
@@ -454,7 +492,7 @@
 
   .heart {
     position: absolute;
-    top: 47px;
+    top: 20px;
     right: 60px;
     cursor: pointer;
     cursor: pointer;

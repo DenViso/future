@@ -19,7 +19,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
     }
     setActiveMenu(null);
   }, [location.pathname]);
-  console.log(location.pathname);
+  // console.log(location.pathname);
 
   useEffect(() => {
     const handleResize = () => {
