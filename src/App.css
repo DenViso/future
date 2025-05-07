@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
-  color: black;
   --fontFamily: "Montserrat", sans-serif;
   --black: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
@@ -297,15 +296,11 @@ footer {
 }
 .footerLeft {
   width: 45%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-}
-.footerLeft > img {
-  width: 100%;
 }
 .footerText {
   display: flex;
@@ -322,11 +317,7 @@ footer {
 }
 
 .footerLogo {
-  width: 95%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 200px;
 }
 .footerMap {
   display: flex;
@@ -462,11 +453,11 @@ footer {
                   margin-Left: 15px;
                   text-align: center;
 }
-/* .footerLogo{
+.footerLogo{
   max-width: 45rem;
   width: 38rem;
   height: 350px;
-} */
+}
 @media (max-width: 1470px) {
   .sectionList {
     width: 100%;
@@ -629,9 +620,7 @@ footer {
   footer {
     width: 100%;
     flex-direction: column;
-display: flex;
-    align-items: center;
-    justify-content: center;
+
     gap: 2rem;
   }
   .footerLeft {
@@ -642,9 +631,7 @@ display: flex;
     gap: 2rem;
   }
   .footerLogo{
-    width: 36rem;
-    height: 18rem;
-    /* margin-left: 1rem; */
+    width: 100%;
     /* height: fit-content; */
   }
   .footerMap {
