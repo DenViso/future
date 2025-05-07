@@ -424,6 +424,7 @@
   border-radius: 10px;
 }
 
+
 @media (max-width: 580px) {
   .section {
     display: none;
