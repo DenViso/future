@@ -141,16 +141,19 @@ export const ProductPage = ({ cat1, usdRate, t }) => {
   const [likedProducts, setLikedProducts] = useState([]);
 
   // Захищений пошук продукту
-  useEffect(() => {
-    if (Array.isArray(cat1)) {
-      const product = cat1.find((p) => p.id === parseInt(productId, 10));
-      if (product) {
-        setSelectedProduct(product);
-      } else {
-        setSelectedProduct(null);
-      }
-    }
-  }, [productId, cat1]);
+ useEffect(() => {
+  if (!Array.isArray(cat1)) {
+    setSelectedProduct(null);
+    return;
+  }
+
+  const product = cat1.find((p) => p.id === parseInt(productId, 10));
+  if (product) {
+    setSelectedProduct(product);
+  } else {
+    setSelectedProduct(null);
+  }
+}, [productId, cat1]);
 
   useEffect(() => {
     const storedLikes = localStorage.getItem("likedProducts");
