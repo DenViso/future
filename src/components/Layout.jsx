@@ -85,7 +85,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
               onMouseEnter={() => handleMouseEnter("menu")}
             />
           {/* </LazyLoad> */}
-          {activeMenu === "menu" && (
+          {activeMenu == "menu" && (
             <MenuDrop hideDropMenu={() => setActiveMenu(null)} t={t} />
           )}
           {/* <LazyLoad> */}
@@ -98,7 +98,7 @@ export const Layout = ({ t, cat1, changeLanguage, i18n }) => {
               // onMouseLeave={() => handleMouseLeave(null)}
             />
           {/* </LazyLoad> */}
-          {activeMenu === "search" && (
+          {activeMenu == "search" && (
             <SearchDrop
               className="search-menu"
               handleSearch={handleSearch}
