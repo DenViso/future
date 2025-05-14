@@ -130,9 +130,9 @@
   margin-left: 10px;
   font-size: 10px;
 }
-.text-price{
+.text-price {
   color: var(--black);
-  /* margin-left: 10px; */
+ 
   font-size: 12px;
 }
 
@@ -182,16 +182,14 @@
   justify-content: flex-start;
   -webkit-align-items: center;
   align-items: center;
-  /* overflow: scroll;
-  position: fixed; */
-} 
-.modal-title{
  
+}
+.modal-title {
   font-size: 32px;
   color: var(--black);
   font-weight: 400;
 }
-.modal-title>span{
+.modal-title > span {
   font-size: 36px;
   color: var(--black);
   font-weight: 700;
@@ -243,8 +241,7 @@
   gap: 10px;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  width: 90%;
-  /* height: 100%; */
+  width: 100%;
 }
 
 .modal-video {
@@ -263,12 +260,7 @@
   height: 500px;
   border-radius: 10px;
 }
-.modal-img{
-  display: flex;
-  width: 100%;
-  height: auto;
-  /* margin-top: 2rem; */
-}
+
 .modal-img > img {
   width: 450px;
   height: 400px;
@@ -297,7 +289,7 @@
   font-size: 2.5rem;
   margin-bottom: 3px;
 }
-.modal-info>p>span{
+.modal-info > p > span {
   font-size: 28px;
   font-weight: 600;
   color: var(--black);
@@ -317,10 +309,9 @@
   width: 30px;
   height: 30px;
   background-color: initial;
-  border: none;
   font-size: 30px;
   place-self: center;
-  cursor: pointer;
+
   border: 1px solid var(--black);
 }
 
@@ -337,12 +328,12 @@
   animation: beat 0.6s infinite;
 }
 
-.modal-open1{
+.modal-open1 {
   overflow-y: hidden;
 }
 
 .modal-open {
-  overflow-y:hidden;
+  overflow-y: hidden;
   width: 100%;
 }
 
@@ -361,7 +352,7 @@
     transform: scale(1);
   }
 }
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
   .subInner-conteiner {
     padding: 20px 0px;
     display: -webkit-flex;
@@ -412,11 +403,9 @@
     width: 100%;
     height: 75%;
   }
-
-  
 }
 
-@media (max-width: 580px ) {
+@media (max-width: 580px) {
   /* modal зробить щоб було видно все */
   .modal {
     width: 100%;
@@ -429,21 +418,19 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.6);
   }
- .modal-title {
+  .modal-title {
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     width: 100%;
     position: relative;
     padding: 10px 0px;
-    font-size: medium;
     color: var(--black);
-    position: relative;
     top: 30px;
-    font-size: 2.6rem;  
+    font-size: 2.6rem;
   }
 
-  .modal-title>span{
+  .modal-title > span {
     font-size: 32px;
     color: var(--black);
   }
@@ -461,29 +448,28 @@
     background-color: var(--grey);
     z-index: 100;
     position: relative;
-   
+
     top: 0;
   }
 
   .modal-info {
     width: 100%;
-    /* height: 100%; */
+    
   }
 
   .modal-img {
     width: 100%;
-    /* height: 100%; */
+    
     padding: 0px 10px;
   }
 
   .modal-img > img {
     width: 100%;
-    /* height: 100%; */
   }
 
   .modal-video {
     width: 100%;
-    /* height: 100%; */
+
     padding: 0px 10px;
   }
 
@@ -554,7 +540,7 @@
     top: 20px;
     right: 60px;
     cursor: pointer;
-  
+
     width: 10px;
     height: 10px;
   }
@@ -579,7 +565,7 @@
   }
 }
 
- @media ( min-width: 200px ) and ( max-width: 410px ) {
+@media (min-width: 200px) and (max-width: 410px) {
   .subInner-conteiner {
     padding: 20px 0px;
     display: -webkit-flex;
@@ -622,19 +608,18 @@
   }
 
   .subInner-section-img {
-           display: flex
-;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
 
   .subInner-section-img > img {
     width: 90%;
     height: 60%;
-    border-radius: 18px 18px 8px 8px ;
+    border-radius: 18px 18px 8px 8px;
   }
 
   .subBack {
@@ -642,13 +627,12 @@
     font-size: 20px;
     color: var(--white);
   }
-   .text-price{
-     font-size: 13px;
-
-   }
-       .subInner-info-text {
-        display: -webkit-flex;
-       display: flex;
+  .text-price {
+    font-size: 13px;
+  }
+  .subInner-info-text {
+    display: -webkit-flex;
+    display: flex;
     flex-direction: column; /* вертикально */
     justify-content: center; /* центрує p всередині */
     align-items: flex-start; /* вирівнює по лівому краю */
@@ -658,5 +642,5 @@
     height: 25%; /* або 100% якщо потрібно */
     position: relative;
     z-index: 10;
-    }
- }
+  }
+}
