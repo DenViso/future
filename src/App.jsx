@@ -21,7 +21,7 @@ import { Err } from "./components/Err";
 import { ApiErr } from "./components/ApiErr";
 import { ProductPage } from "./components/Section/Inner/ProductPage";
 
-const App = () => {
+ const App = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const { data: cat1, error } = useFetchDataWithRetry("https://api.future.in.ua/api/v1/products/"); // Використовуємо хук

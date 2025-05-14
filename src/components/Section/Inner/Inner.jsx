@@ -483,7 +483,7 @@ export const Inner = ({ t, cat1, usdRate }) => {
                   </p>
                   <p
                     className="text-price"
-                    style={{ fontSize: "14px", color: "black" }}
+                    
                   >
                     {product.price &&
                       "Ціна: " + (product.price * usdRate).toFixed(2) + " грн"}

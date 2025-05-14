@@ -1,137 +1,66 @@
-// import React from "react";
-// import "./cart.css";
-
-// export const Modal = ({ product, onClose }) => {
-//   return (
-//     <div className="modal">
-//       <div className="modal-content">
-//         <span className="close" onClick={onClose}>
-//           &times;
-//         </span>
-//         <div className="modal-info">
-//           <h2>
-//             Арт. продукту:
-//             <br /> {product.sku}
-//           </h2>
-//           {product.gold_assay && (
-//             <p>
-//               Проба :<br /> {product.gold_assay}
-//             </p>
-//           )}
-//           {product.gold_color && (
-//             <p>
-//               Колір :<br /> {product.gold_color}
-//             </p>
-//           )}
-//           {product.size && (
-//             <p>
-//               Розмір :<br /> {product.size}
-//             </p>
-//           )}
-//           {product.stone_characteristics && (
-//             <p>
-//               Характеристики каміння :<br /> {product.stone_characteristics}
-//             </p>
-//           )}
-//           {product.weight && (
-//             <p>
-//               Вага виробу :<br /> {product.weight}
-//             </p>
-//           )}
-//           {product.price && (
-//             <p>
-//               Ціна :<br /> {product.price}
-//             </p>
-//           )}
-//         </div>
-//         <div className="modal-img">
-//           {product.media_files &&
-//             product.media_files.length > 0 &&
-//             product.media_files.map((item) => (
-//               <img key={item.id} loading="lazy" src={item.photo} alt="" />
-//             ))}
-//         </div>
-//         <div className="modal-video">
-//           {product.media_files &&
-//             product.media_files.length > 0 &&
-//             product.media_files.map(
-//               (item) =>
-//                 item.video && (
-//                   <video key={item.id} src={item.video} autoPlay controls />
-//                 )
-//             )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 import React from "react";
-import "./cart.css"; // бажано перейменувати у modal.css для ясності
+import "./cart.css";
 
 export const Modal = ({ product, onClose }) => {
-  if (!product) return null;
-
-  const {
-    sku,
-    gold_assay,
-    gold_color,
-    size,
-    stone_characteristics,
-    weight,
-    price,
-    media_files
-  } = product;
-
-  const images = Array.isArray(media_files)
-    ? media_files.filter((m) => m.photo)
-    : [];
-
-  const videos = Array.isArray(media_files)
-    ? media_files.filter((m) => m.video)
-    : [];
-
   return (
-    <div className="modal" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+    <div className="modal">
+      <div className="modal-content">
         <span className="close" onClick={onClose}>
           &times;
         </span>
         <div className="modal-info">
           <h2>
             Арт. продукту:
-            <br /> {sku}
+            <br /> {product.sku}
           </h2>
-          {gold_assay && <p>Проба:<br />{gold_assay}</p>}
-          {gold_color && <p>Колір:<br />{gold_color}</p>}
-          {size && <p>Розмір:<br />{size}</p>}
-          {stone_characteristics && <p>Характеристики каміння:<br />{stone_characteristics}</p>}
-          {weight && <p>Вага виробу:<br />{weight}</p>}
-          {price && <p>Ціна:<br />{Number(price).toLocaleString("uk-UA")} грн</p>}
+          {product.gold_assay && (
+            <p>
+              Проба :<br /> {product.gold_assay}
+            </p>
+          )}
+          {product.gold_color && (
+            <p>
+              Колір :<br /> {product.gold_color}
+            </p>
+          )}
+          {product.size && (
+            <p>
+              Розмір :<br /> {product.size}
+            </p>
+          )}
+          {product.stone_characteristics && (
+            <p>
+              Характеристики каміння :<br /> {product.stone_characteristics}
+            </p>
+          )}
+          {product.weight && (
+            <p>
+              Вага виробу :<br /> {product.weight}
+            </p>
+          )}
+          {product.price && (
+            <p>
+              Ціна :<br /> {product.price}
+            </p>
+          )}
         </div>
-
-        {images.length > 0 && (
-          <div className="modal-img">
-            {images.map((item) => (
-              <img key={item.id || item.photo} loading="lazy" src={item.photo} alt={`Фото ${sku}`} />
+        <div className="modal-img">
+          {product.media_files &&
+            product.media_files.length > 0 &&
+            product.media_files.map((item) => (
+              <img key={item.id} loading="lazy" src={item.photo} alt="" />
             ))}
-          </div>
-        )}
-
-        {videos.length > 0 && (
-          <div className="modal-video">
-            {videos.map((item) => (
-              <video
-                key={item.id || item.video}
-                src={item.video}
-                autoPlay
-                controls
-                muted
-                playsInline
-                preload="metadata"
-              />
-            ))}
-          </div>
-        )}
+        </div>
+        <div className="modal-video">
+          {product.media_files &&
+            product.media_files.length > 0 &&
+            product.media_files.map(
+              (item) =>
+                item.video && (
+                  <video key={item.id} src={item.video} autoPlay controls />
+                )
+            )}
+        </div>
       </div>
     </div>
   );
