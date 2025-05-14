@@ -421,7 +421,7 @@
   .modal-title {
     display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
+   
     width: 100%;
     position: relative;
     padding: 10px 0px;
